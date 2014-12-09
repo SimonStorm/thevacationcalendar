@@ -1,0 +1,349 @@
+
+p, .TextItem, div {
+   font-size : 12px;
+   font-family : gill, helvetica, serif ;
+   color : #5E5E5E;
+}
+
+.CommentColor {
+   font-size : 12px;
+   font-family : gill, helvetica, serif ;
+   color : #32302B;
+}
+
+.Instructions {
+   font-size : 12px;
+   font-family : gill, helvetica, serif ;
+   color : #A9A9A1;
+}
+
+.SalesText {
+   font-size : 16px;
+   font-family : gill, helvetica, serif ;
+   color : #5E5E5E;
+}
+
+.Error {
+   font-size : 12px;
+   font-family : gill, helvetica, serif ;
+   color : #CC0000;
+}
+
+td.InfoText {
+   font-size : 12px;
+   font-family : gill, helvetica, serif ;
+   color : #5E5E5E;
+}
+
+li {
+   font-family : gill, helvetica, serif ;
+   color : #5C979E;
+   font-size : 16px;
+   text-decoration: none;
+   font-weight : normal;
+   border-spacing: 5px;
+   padding: 5px; 
+}
+
+h3 {
+   font-family : gill, helvetica, serif ;
+   color : #5C979E;
+   font-size : 16px;
+   text-decoration: none;
+   font-weight : normal;
+   border-spacing: 0px;
+   padding: 0px; 
+}
+
+h2 {
+   font-family : gill, helvetica, serif ;
+   color : #5C979E;
+   font-size : 20px;
+   text-decoration: none;
+   font-weight : normal;
+}
+
+h1 {
+	font-family:gill, helvetica, serif ;
+   color : #5C979E;
+   text-align : left;
+   font-size : 24px;
+   text-decoration: none;
+   font-weight : normal;
+}
+
+body {
+    font-weight : normal;
+    font-size:	12px;
+    font-family : gill, helvetica, serif ;
+	color: #5C979E;
+	text-decoration : none;
+	margin: 0px;
+	border-spacing: 0px;
+	padding: 0px; 
+	background-color: #FFFFFF;
+	background-repeat: repeat;
+}
+
+input, select, textarea {
+	font-family: gill, helvetica, serif ;
+	font-size: 12px;
+	text-decoration: none;
+	background-color: #F2F2F2;
+	border: 1px dotted #A8A8A8;
+}
+
+blockquote {
+   font-size : 12px;
+   font-family : gill, helvetica, serif ;
+   color : #000000;
+   text-align : left;
+}
+
+table.LoginBox {
+	background-repeat: repeat;
+	border-width: 2px;
+	border-color: #FFFFFF;
+	border-style: solid;
+}
+
+td.IndexHeader {
+	background-repeat: repeat;
+	border-width: 2px;
+	border-color: #FFFFFF;
+	background-color: #D7DA87;
+	border-style: solid;
+   font-family : gill, helvetica, serif ;
+   color : #5C979E;
+   font-size : 16px;
+   text-decoration: none;
+   font-weight : normal;
+   border-spacing: 0px;
+   padding: 0px; 
+}
+
+td.AdText {
+   font-family : gill, helvetica, serif ;
+   color : #5E5E5E;
+   font-size : 11px;
+   text-decoration: none;
+   font-weight : normal;
+}
+
+a.AdLink:visited, a.AdLink:link, a.AdLink:active {
+   font-family : gill, helvetica, serif ;
+   color : #5E5E5E;
+   font-size : 11px;
+   text-decoration: none;
+   font-weight : normal;
+   text-decoration : underline;
+}
+
+table {
+	background-color: #F1EACF;
+	background-repeat: repeat;
+}
+
+td.NavNormal {
+	background-color:#D7DA87;
+	border-width: 1px;
+	border-color: #FFFFFF;
+	border-style: solid;	
+}
+
+a.NavLink:visited, a.NavLink:link, a.NavLink:active {
+    font-weight : normal;
+    font-size:	12px;
+    font-family : gill, helvetica, serif ;
+	color: #5C979E;
+	text-decoration : none;
+}
+
+a.FooterLinks:visited, a.FooterLinks:link, a.FooterLinks:active {
+    font-weight : normal;
+    font-size:	10px;
+    font-family : arial ;
+	color: #5E5E5E;
+	text-decoration : underline;
+}
+
+
+td.NavSelected {
+	background-color:#AFB769;
+	border-width: 1px;
+	border-color: #FFFFFF;
+	border-style: solid;
+}
+
+a.NavSelectedLink:visited, a.NavSelectedLink:link, a.NavSelectedLink:active {
+    font-weight : normal;
+    font-size:	12px;
+    font-family : gill, helvetica, serif ;
+	color: #FFFFFF;
+	text-decoration : none;
+}
+
+td.NavOver {
+	background-color:#AFB769;
+	border-width: 1px;
+	border-color: #FFFFFF;
+	border-style: solid;
+}
+
+a.NavOverLink:visited, a.NavOverLink:link, a.NavOverLink:active {
+    font-weight : normal;
+    font-size:	12px;
+    font-family : gill, helvetica, serif ;
+	color: #FFFFFF;
+	text-decoration : none;
+}
+
+td.Heading {
+   font-family : arial ;
+   color : #5C979E;
+   text-align : left;
+   font-size : 24px;
+   text-decoration: none;
+   font-weight : normal;
+}
+
+td.Title {
+   font-family : arial ;
+   color : #5E5E5E;
+   text-align : center;
+   font-size : 18px;
+   text-decoration: none;
+   font-weight : normal;
+}
+
+
+table.Calendar {
+   font-size : 12px;
+   color : #0000ff;
+   margin: 0px;
+   border-spacing: 0px;
+   padding: 0px; 
+   background-color:#dff0f3;
+   font-family:gill, helvetica, serif ;
+   background-color: #FFFBF0;
+   background-repeat: repeat;
+}
+
+
+td.CalendarHeader	{
+	background:	#F0F4EA;
+	color:		#5E5E5E;
+	text-align:	center;
+	font-size:	12px;
+	font-family : gill, helvetica, serif ;
+    text-decoration: none;
+    font-weight : normal;
+   border-width: 1px;
+   border-color: #94918B;
+   border-style: solid;	
+	}
+	
+
+td.CalendarDayFilled	{
+   font-size : 12px;
+   font-family:gill, helvetica, serif ;
+   text-decoration: none;
+   font-weight : normal;
+   border-width: 1px;
+   border-color: #94918B;
+   border-style: solid;	
+	}
+
+
+td.CalendarDay	{
+   font-size : 12px;
+   font-family:gill, helvetica, serif ;
+   color:		#94918B;
+   background:	#FFFBF0;
+   text-decoration: none;
+   font-weight : normal;
+   border-width: 1px;
+   border-color: #94918B;
+   border-style: solid;	
+	}
+
+
+a:visited, a:link, a:active {
+   font-weight : normal;
+   font-size:	12px;
+   font-family : gill, helvetica, serif ;
+   color : #5581AD;
+   text-decoration : underline;
+}
+
+.errormess	{
+	color:		#CC0000;
+	text-align:	center;
+	font-family : gill, helvetica, serif ;
+	font-size:	12px;
+	}
+
+.TableHeader	{
+	background:	#F0F4EA;
+	color:		#5E5E5E;
+	text-align:	center;
+	font-size:	12px;
+	font-family : gill, helvetica, serif ;
+    text-decoration: none;
+    font-weight : normal;
+   border-width: 1px;
+   border-color: #94918B;
+   border-style: solid;	
+	}
+	
+.TableSideItem	{
+	background:	#F0F4EA;
+	color:		#5E5E5E;
+	text-align:	center;
+	font-size:	12px;
+	font-family : gill, helvetica, serif ;
+    text-decoration: none;
+    font-weight : normal;
+   border-width: 1px;
+   border-color: #94918B;
+   border-style: solid;	
+	}
+
+.TableValue	{
+   font-size : 12px;
+   font-family:gill, helvetica, serif ;
+   color:		#A9A9A1;
+   background:	#FFFBF0;
+   text-decoration: none;
+   font-weight : normal;
+   border-width: 1px;
+   border-color: #94918B;
+   border-style: solid;	
+	}
+
+.BlogText	{
+	color:		#000066;
+	font-size:	12px;
+	}
+
+.BlogOddColor	{
+	background:	#99CC99;
+	}
+
+.BlogEvenColor	{
+	background:	#cccccc;
+	}
+
+.RowOddColor	{
+	background:	#ffffee;
+	}
+
+.RowEvenColor	{
+	background:	#eeeeee;
+	}
+
+a:hover.DesignByLink, a:visited.DesignByLink, a:link.DesignByLink, a:active.DesignByLink {
+   text-decoration : underline;
+	font: 8pt verdana; 
+	color: #000066; 
+}

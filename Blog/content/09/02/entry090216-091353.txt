@@ -1,0 +1,23 @@
+VERSION|0.5.1|SUBJECT|You have been heard....NEW FEATURES ARE HERE!!!!|CONTENT|We are pleased to announce that a new version of TheVacationCalendar.com has been released.... [i] [b]and it is packed with new features that we think you will LOVE!![/b] [/i]  
+
+The first major enhancement is we have made the online calendar interactive so you can manage your vacations directly from the online calendar. Just click on the calendar day and an edit box appears which will allow you to add, edit and delete vacations.
+
+[img=images/EditVacation.jpg popup=false] 
+
+We have also added color options to both the background and text so you can now color code your calendar. This should definitely liven things up a bit. 
+
+[img=images/Calendar.jpg popup=false]
+
+Next, we decided that since people are getting more use out of their vacation homes thanks to the online calendar system in TheVacationCalendar.com, we needed to provide a way to memorialize the great times you are having. So we added a new photo album. It is pretty simple for the first iteration, just add photos and comments. As always, the Administrator has the ability to remove any photos or comments that are inappropriate.
+
+[img=images/PhotoAlbum.jpg popup=false]
+
+Since we were on a roll, we decided to pick up two more enhancements that were requested by the user community. Through the Administrator&#039;s manage account screen, anyone who wants to be notified when a vacation is added, updated or deleted can now get an email with the changes. Additionally, some users want to use the blog as a way to notify the group they share their vacation home with. Now, the initial add of a new blog can be automatically emailed to any one or list of email addresses. All of this functionality is easily maintained the Administrator&#039;s manage account screen under the Manage Website heading.
+
+[img=images/ManageWebsite.jpg popup=false]
+
+Lastly, to be able to provide better service, some hidden features were added to the website. We added auditing so we can track all of the changes that occur on the website so we can answer any questions that come up. Additionally, we added more logging so that TheVacationCalendar team can see what functionality everyone is using and what functionality is not getting used. This will help us focus our efforts on what is the most important to the user community.
+
+Well, that is it (whew!) for now. Now get back to planning your next vacation!!
+
+TheVacationCalendar Team|CATEGORIES|3|TB_PING||IP-ADDRESS|65.246.5.254|CREATEDBY|admin|DATE|1234793633

@@ -1,0 +1,1 @@
+plugin|Calendar|enabled||firstDay|sunday|dateFormat|%x

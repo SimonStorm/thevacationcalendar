@@ -1,0 +1,22 @@
+VERSION|0.5.1|SUBJECT|FAQ|CONTENT| [h3]Middle of the day turnover[/h3] 
+ [b]Question:[/b]  Our vacation home turnover goes from 4pm Saturday to 4pm the following Saturday. How do I show that on TheVacationCalendar.com?
+
+ [b]Answer:[/b]  TheVacationCalendar.com is set up to show where people are &quot;sleeping&quot;. This means that in your situation, you should book Saturday through Friday, which means the next group would book the following Saturday since they would be sleeping at the vacation home that night.
+
+
+ [h3]Website Cost[/h3] 
+ [b]Question:[/b]  How much does it cost to use your online calendar?
+
+ [b]Answer:[/b]  The subscription cost (through PayPal) is $20 per year. When you sign up yo get a free month to try out the website and see if it meets your needs. Cancelling is easy. Either do it through PayPal or through the Unsubscribe button found on the Administrator&#039;s manage account screen. 
+
+
+ [h3]Why not use Google Calendar?[/h3] 
+ [b]Question:[/b]  How does your site compare to Google Calendar? 
+
+ [b]Answer:[/b]  First of all, let me say I love the various Google tools. If you run a website Google Analytics is awesome. In my option, Google Calendar does fulfill some aspects of managing a vacation home, however, it is built for a broader set of applications and does not have the grainularity or vacation specific functionality that TheVacationCalendar.com offers.
+
+The online calendar has much of the same functionality as Google Calendar, however, Google only has a limited set of user privledges. This means that if someone can schedule a vacation on Google Calendar, they can also change other people&#039;s vacations. This is the exact problem that TheVacationCalendar.com solves. The individual usernames ensures that you and only you can update a vacation that you scheduled.
+
+Next, TheVacationCalendar.com is much, much more than just an online calendar. Our users RAVE about the house bulletin board. The blog seems to be getting more and more use and we are excited about the first iteration of the Photo Album. All of this is functionality that can only be found on TheVacationCalendar.com. 
+
+Lastly, TheVacationCalendar.com has a lot more potential. There is a long list of enhancements already in the pipeline (  [url=http://www.thevacationcalendar.com/Blog/index.php?entry=entry090101-094330 new=true]Click here to see the enhancement list[/url]  ) and hopefully more coming from our user community (hint, hint). As we build TheVacationCalendar.com together we hope it becomes an essencial tool for all vacation homes. |CATEGORIES|7|TB_PING||IP-ADDRESS|65.246.5.254|CREATEDBY|admin|DATE|1233672817

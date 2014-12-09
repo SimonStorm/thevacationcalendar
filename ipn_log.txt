@@ -1,0 +1,1615 @@
+[10/15/2008 8:48 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=18:48:11 Oct 15, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, password=rPmIAERFULWxQ, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-62G41339X04815531, custom=19, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AInNoJdOOCOynDshZVNazu0TcKSLAvNpdPrVgZ3MJYXz0oHxj-vXbP5H, payer_email=admin_1223600278_per@thevacationcalendar.com, username=pp-toytax, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 16 Oct 2008 01:48:21 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=7-vNQeu-lKoKhgAITJzbIIgFF7tX4qJuC7aV13b8Jm2-k9r3piriThGnx6N3NPt2g5YoNEg8PjyE0kDnP8VSbnpp8beY0kznRuqgZKHVo99_x5A2Kx716FCml8CYgd0yhDPljW%7ca9Omu_biyA6F2OTM3BIAT-kPUVAui_myXG8fsZ5Wag6RhyV1CVWXwQTdtXUlhJjNWf_DO0%7c-SgL16eDrtoJoAoWFyU-vOePyLjJFuDuRH_Q6DGhVp-w2f-xbbYbLjIfw88mxGJ4-8BKz0%7c1224121702; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 14-Oct-2018 01:48:22 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 11-Oct-2028 01:48:22 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.284211224121701892; path=/; expires=Tue, 02-Sep-02 19:20:05 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/15/2008 8:50 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=18:50:37 Oct 15, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, password=EDg7Ct.qU0bVo, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-7FM95984LM2371945, custom=19, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=ANJIYbptU8r96zIc1LfR8ibIXYwMAyV5673rZpoiSjAVuN2jU02EyyIL, payer_email=admin_1223600278_per@thevacationcalendar.com, username=pp-marshbing, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 16 Oct 2008 01:50:47 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=E_wMlBnt8oIkmBzUMIkmPaQPTdogMWwZQYtFTeE9asdWVd77b0oY7lW-qkPVtH5lRBSs63tgBmoudixbol96UN8CFuPdKr6U0ZppdEgFIld-p2fTPOi3S7SUM6M5LN6GA8wGh0%7cN-JoQRGIvyf04DBcASVtZstUv7XdrRwr55uqItf7QxmjELw8CqcRPf2wy9DC486alhAiaG%7cUIgPgt0S2w01AUhqsG7rR1TvYoXhB5FP2XdpmA60bRAQlB-n77dAp2UaA2Zql7FoMu3AIG%7c1224121847; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 14-Oct-2018 01:50:47 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 11-Oct-2028 01:50:47 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.217191224121847624; path=/; expires=Tue, 02-Sep-02 19:22:31 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/15/2008 9:00 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:00:44 Oct 15, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-64K97833XA4618217, custom=20, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AE5dUxADGFVopSO-pDv1b792W0IwAReuSzSJsMUiAM51JcLIAYKLAKud, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 16 Oct 2008 02:00:50 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=63EPiqEWLh_Y7rypF7w00ZQOqJjmDB_YozgyacjhZNQLUfQh4juoU_fIKqD3jxYgXsGJwD8GKlTgs_Pc-U9EMMHNqS51eY1R8npomiCV6JlcAk5g1V4VHx3BaQI5LJJbVHiEdG%7ctlaXK4VvCrWMJanLDgU5BW_PpCGRoPwbjLksWU28wX4j_2n7uy3VlkpqrP6XcJnGeBF2kG%7cnRn86HyvQGS4uJ6PP-CTf_eRomM2U7TzJeomoLo_aTJRuY0wyDwHXL9BqsB-pQqGGYEx-W%7c1224122450; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 14-Oct-2018 02:00:50 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 11-Oct-2028 02:00:50 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.22863122412245068; path=/; expires=Tue, 02-Sep-02 19:32:34 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/15/2008 9:10 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:10:48 Oct 15, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-7W407959GG159273T, custom=21, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AfZ81pnFrsSDL5sSWP4E1DdDJ4fiAcJxagbvdpv7J14e18-4hKvaS0-Y, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 16 Oct 2008 02:10:54 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=PezZF4g1IMAAfRiBSsZ20J6FfVx8NpwnYkckpAsWYPoF0ukADsMe5penAa_0Q437y4C92qfRC3adQGc9qNKjPYdwSNFq2j9ho1lEcsztL6k_C9Aj5p4P7W44KG2vCjr4MwFrnG%7ckhghYQ1WxtWkmjmLCbNmO1wUnB14PVRpGyNcIQ8fFK3xeQjJ7w8EdaTp0tvVBGRt8nYQa0%7c1StcaFRIAumnG1qCZB1OglfUEaPWjziwlwV985EmSQOdvbCouGMAmXGBBmOJOzVym_yqWG%7c1224123055; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 14-Oct-2018 02:10:55 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 11-Oct-2028 02:10:55 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.81981224123054666; path=/; expires=Tue, 02-Sep-02 19:42:38 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/15/2008 9:15 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:14:51 Oct 15, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-0S442430JC686033E, custom=22, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AVH22V3-40JS2ZTx.PbhBZPzlMTaALUEaDGeYEAvaJ.CQqGQ4TZVNh0K, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 16 Oct 2008 02:15:09 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=L_jT2wNuY-lKd1LRx3U4B27qCxW90Ah11tK1pU376LCBB0CIQFzpqyDzzMdp9m8eJSg_7eHIjLTDZxIU2mXVTcorEbyteyR335oL6_6sZ_bCRQgDtusuObB6DkQj2lWmzce1z0%7cxGJKn34ffPoOHVQsg1KxS7anoGirKOuK7QdZ0hAdZp_TQ-C0s6uMW4unX048RwD6eOQ9Q0%7c0Qmh6picMSigXqEwMec_9kPw-Nwqy3-lwHjFaX9QnQE9ggiLHWJGTkZv6f5hdkWhLOnCJm%7c1224123310; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 14-Oct-2018 02:15:10 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 11-Oct-2028 02:15:10 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.56031224123309695; path=/; expires=Tue, 02-Sep-02 19:46:53 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/17/2008 10:02 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=20:02:29 Oct 17, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-7US64532DF5675643, custom=23, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AseqzBTWxJMkcGALiFlwQisly.6PAU7z8ytEg23Q4vgDqW.rM.9LLfOi, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 18 Oct 2008 03:02:36 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=UUxh6o6twTzOC07wZE5vnzFt1XqifB8qgkPhSSGvaU_ikQYDSwSxHMgj6pjGXhcjyd2Hbu7iF52k-r9GH1t5TFxdWLpcPeJrYySi3zPefw6-1D_zmO-VyuQikm1bm-3r9VdnEm%7cI2mztesucWl3h0ya7px3QQbQ_QAe9VqKaX2TVG2OkABBNLSZBFMjvz4DrKj0sUoAGh6cGG%7c9mDMPTJDr_quMCj7WfkppMsgLPf6GpHFVevTXBVSw3LhWlVmu2QzM5foCGY_Ced_az_N6m%7c1224298957; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 16-Oct-2018 03:02:37 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 13-Oct-2028 03:02:37 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.311891224298956914; path=/; expires=Thu, 04-Sep-02 20:34:20 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/18/2008 8:13 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 18 Oct 2008 13:13:15 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=SHzUmT3nY67FYlEkwB_nYAPmBi4wVNyHuS7KcHQPpu3huoAn2AoAXNutkQAdlBwSm2GSplQX8hYrjn4SEAESWS2sRXpWVSYUYKbVqvneWFffWWxZp6xhLAGt7FlIlwYFkzQi0W%7cKnr88mN5-shY0GyU8-f1skuKIFOirXuBKOL37iiuNDmYCddfS9lvio9q22Zax-uYkQRv20%7cnCtoplzA4DnTNNobV23AM_g2cu79vjzqxnYKCYnnTHvETLpvApPgQQO-wlb4Dyklm5ITwW%7c1224335595; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 16-Oct-2018 13:13:15 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 13-Oct-2028 13:13:15 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.219051224335595202; path=/; expires=Fri, 05-Sep-02 06:44:59 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7  
+INVALID
+0
+
+
+
+[10/19/2008 12:31 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 19 Oct 2008 17:31:57 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=vxU2pipuuTl7dNunZQJhlRBi_1kOsIpaGHzX8B91i-G6w1aU57BoVuxwVEX65oR5HrQxDNxhIyI0uyaWCbK014Dgh0Jn-5PhH6_2RIOvO-0kGEvzs5VIs2GTc7Ox9yazqYoiFW%7cjPqQsVlafr6xsoXw0XyGvOk46armYIq44ypJhV4oaKbvl0iMywfjRCU4cCiKlrbFvV9wLm%7c4mdT0B37YwCmFb60J5RTonS4oTKGusyt7GkAFdEq12-PQ6l74auXeZx659go1svh8avGym%7c1224437517; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 17-Oct-2018 17:31:57 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 14-Oct-2028 17:31:57 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.219221224437517120; path=/; expires=Sat, 06-Sep-02 11:03:41 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7  
+INVALID
+0
+
+
+
+[10/20/2008 8:18 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=18:18:49 Oct 20, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-18G69988UJ387991U, custom=24, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AQWeRyDJx-gN2CurnXUFUwnlu4rFAZ9xCdKpMEF8peOfEkC9nn1fwOgj, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 21 Oct 2008 01:18:53 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=UfWYmihJMxmsY8ZG5VvQCtYr6Jzl39WwQK4WIy3OIiLwJvhZuP-j7QKdqqAnXJIRsbB1Ln2fYauBFOfLP05_ohe6NR9sIghCUYB447r19gCzPmwQz2worNfW92I1AJ9ZWFtJDW%7cszHTffT3c2TmX2S55JuyMOiBMviD0s5Cyn13xuSGUHhzqq2nOGfQRhtPx3C_3HUkB8CvTG%7cz8CbLi_r8wGZ77bnseCJIdOPbcTX5X04Sf0dQaEBHrAZu6jxvUMnfaS38JZ84K63yF1OaW%7c1224551933; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 19-Oct-2018 01:18:53 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 16-Oct-2028 01:18:53 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.262951224551933635; path=/; expires=Sun, 07-Sep-02 18:50:37 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/21/2008 10:16 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=20:16:20 Oct 21, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-9GU28867B9069433X, custom=25, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AXv97M1G2B4myTvRI5IkTrQ6RIeuAugAB8v4x1UAZHNdvpGFTHKdJ9IH, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 D, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 22 Oct 2008 03:16:29 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=INto2A0zQgeE96zh7OPVtFyLASI38udMXxRTLW8SKv4Z6nMgDSadq-3LVlGFRzSJkWa0FbyeFbPo3Kv-OeaptMboPp9dA_F0az1m2myRiSUUDOoSYB876MKbpA16OboJMXafmW%7cEFMhFRTDB--JR6bPxG1zxsxTQeWhgul9ysVckxG4cK-7PAxeWVPTFXDUQaG0SYRrtesEP0%7cWIOZSxm9fVPuoaekqjryACWEunkmJablUfacz9PzZm1k4M2s5E-PJzpd6McyMWU5YV-KOm%7c1224645389; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 20-Oct-2018 03:16:29 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 17-Oct-2028 03:16:29 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.188241224645389129; path=/; expires=Mon, 08-Sep-02 20:48:13 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/22/2008 9:53 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=07:53:23 Oct 22, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-84J461104M3149413, custom=26, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=ApjBGkvxGGBrOmfYUYn9Y5uhtYYiAE2Zn.VFeDVcNPZe6q.gamHwdDK7, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 D, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 22 Oct 2008 14:53:30 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=mMRqnBGh9YlT7dPMTNI14mA8YreElxEiIMeX0nLQhZJ1zYGouz6UiPOTp3O71PxowBPI6E-SKP19QRef6sCs53k_HmIJgK_P8I9gFvb7Wd0QDclNKAIgLKxFKbvim6lCt30CD0%7c7P2n5LC69RVNZNsstmb-HUlb07dfTb-k3EAEQiOUMnkzKSGGrazvkaIopOQzLpXictd_km%7cY4nui4RrcZNPmeDx7jwlB_QhexSvRKNgW5h6jzWWvamAIhB_AKCAc-x6KnVkuBJgiJ6Jpm%7c1224687210; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 20-Oct-2018 14:53:30 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 17-Oct-2028 14:53:30 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.10141224687210524; path=/; expires=Tue, 09-Sep-02 08:25:14 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/22/2008 9:02 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:02:02 Oct 22, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-84J461104M3149413, custom=26, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=At3Z1YDvvAw0ak4kWSsNmLdqVzLYAyvqO1WOgUJ2zAvbFZ0gmN0fJbcl, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 D, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 23 Oct 2008 02:02:09 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=fUeAlpZqrx_4RJRmzUo4sl8JIPQI_yO3vpQnkUoGSZiojVUJfDC9vtzppcCnDdEfvttLyKezFPh2NrV28tW7n7lp2DD065Niukd8kFfsRIsiZeKUH-N62z8VIYg7xIGyChR1wm%7cvBgKjNlvfWjPyIJkDJna9lMRkkbdHYvD9AKSzYIXYs3kcTTb2uqEHnEOG0jNK8RAO6KIOW%7crnPO1P2OLxfobMemzwx20ftFA-A1KNzP_bS7F-R_j4ry0jf-9dfI3cnfjCms_ohQbZb-qm%7c1224727329; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 21-Oct-2018 02:02:09 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 18-Oct-2028 02:02:09 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.267591224727329132; path=/; expires=Tue, 09-Sep-02 19:33:53 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/22/2008 9:08 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:08:29 Oct 22, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-9GU28867B9069433X, custom=25, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AJ5SUKjHFVw6iYca1CKlj-ZeJ53-Ab6kzKqYqXBbmc4RFFLgCTuTt.mE, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 D, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 23 Oct 2008 02:08:32 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=26A-_vcsdpz6zYIHGu9AylgpXDqeN9Fq1aWe0jeGpnhvV_U3sc-znn8hBR73apgkvK78laOOlkZC9N6Rr2azDe3JqdYEnuObgcW1IB1oTrmd1Z0lddTx6GrvpVNueBuMx2s3oW%7cE-CpFf21LNf6H03t5Pdx6qWWQeDKPvpVGCooGqEFMGXpsFOFJA9r3oBRrSQeFPL_dPWEYW%7cTXRAqaNTOU7MdkGaTLpbuRsv_OYstWqpKh5cErUbR40OhI9qZVE1eBNnu6mWts1TYOTaFm%7c1224727712; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 21-Oct-2018 02:08:32 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 18-Oct-2028 02:08:32 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.267091224727712466; path=/; expires=Tue, 09-Sep-02 19:40:16 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/22/2008 9:11 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:11:24 Oct 22, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-18G69988UJ387991U, custom=24, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=Aoy02XZ3Kh36.sS3o.R-2oALg-.vAmxsE0YzfEnevWD5Y3qU.UiOhINo, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 23 Oct 2008 02:11:26 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=j9uCvaYnR6CRrNIR8XuOfA5jQRVUQZjZUH3Y7Yhe_9lNXDmrYjGNsoAAXSHCXWfT_MAW7m7It-tLt3gntuG3e5yYd-mSbDtqPuUKnDAi0fsuA6RJqav7yRpwok5jhS6OYgXHcG%7csizll5X2zzkhF00TOTCue10FPe-Tp45nAKVwWRDIAU2-M2BIUy8uKwuHOOXiz35s30DEom%7cqQa6kXZ8W35ZwfvDWN3D12TCcXUbxUp25YtRGavk2_dHLlxAAwnCcikuEjhStwAJz0zOWW%7c1224727887; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 21-Oct-2018 02:11:27 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 18-Oct-2028 02:11:27 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.191831224727886710; path=/; expires=Tue, 09-Sep-02 19:43:10 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/23/2008 7:26 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_eot, subscr_id=S-9GU28867B9069433X, last_name=User, residence_country=US, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, business=admin_1223600237_biz@thevacationcalendar.com, verify_sign=Ah4ay9fpGmOuwpTriRsa3XAfYC2yAG7-Ktvqw0SpccQqcv4p-7dgwRhC, payer_status=verified, test_ipn=1, payer_email=admin_1223600278_per@thevacationcalendar.com, first_name=Test, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payer_id=3UFPLVUA8LCV6, custom=25, charset=windows-1252, notify_version=2.5, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 23 Oct 2008 12:26:40 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=q_z_TyWa11W3vERyNlKNvAljKRGE39G-qC86VpjmoZmZXgsYRXlbjkr3ADmhV4vXugqjL10I7wMujePyMmBW3HivdwhK3o1uUNZ82-PmP3SenUH4am39emq2XXurUNcehoy9PW%7cBW4jM2JDqlqgeJTRsDF6QLwDgGkeq-XJgYFqsf0DkN7HaZLvJfSmYLDKiCyN1wVDSBwiK0%7cU9zmazlsRdYt79FhdR9gtHjEVFMfU2wmTggPtRU-E0ike7zKgXk_rc5kf2vGsKwJ-68GNW%7c1224764801; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 21-Oct-2018 12:26:41 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 18-Oct-2028 12:26:41 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.230651224764800787; path=/; expires=Wed, 10-Sep-02 05:58:24 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/23/2008 11:15 PM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=21:15:22 Oct 23, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-55T20847LD9178733, custom=27, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AQ1q7kqPre2XlvGxACW1IVuuKBfxAzOHMr3IP6w-Jt4tzT8j--riR8Xp, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 D, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 24 Oct 2008 04:15:37 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=570MkKoAYp-vOYvirkvuowiKdQnhwzGSYqyeyiA9Fq4ZPj-3URwRN7cooa4w2AEeMeds342MjZqVR6FyP6z7MbKFz0HD4-T08Du77IRA65pTkXhsP4R_gY04Mn3nZgKPV7Etp0%7cmnkaqFpq66F_DOGGe-KffM23iL19Kb26V4UG_1Ttoas76KHy7C4hQoNDLXYSctgi_Wvh7m%7cIal9pkZO8C2fy3p4caFrWLwFDBO4Gi0Kev8iiiMLgkwkqYGm8bD3u_wqnG4J329yBk_qf0%7c1224821737; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 22-Oct-2018 04:15:37 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 19-Oct-2028 04:15:37 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[10/23/2008 11:19 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=21:19:06 Oct 23, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-9KG049493B189704K, custom=27, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=ASziP.6GxsilGyvJ6BFdRe9lUKf7AwPLTaSTjk8gOwZfP5XL0HGVKkAg, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 D, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 24 Oct 2008 04:19:23 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=p0e8vQ1bLUSWAMnHxgGZZeu7cZNgxH0byFeFc5RgbN5NAGzKfuPJIG4Juu6Nj3dyDx77blqByJdaGYafyUxwS9uLN3DONGbnJ6keZqmncIEjXS0hzRMhoV3I1LE96B56-RPMcm%7cvAO2TUP2MTtegiIJWE2wPfR9vRYE37tV1PkfvsjypnRaEUBlPy6q1UHOdGrJRqmEH7BfpG%7c2PPyGQYEwQDgjWnIM9-D_zHVyIvwXT-C8FteTX5oLpgbLNkJu4pBrK93Z3LwdsZvFuAhoW%7c1224821963; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 22-Oct-2018 04:19:23 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 19-Oct-2028 04:19:23 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.279121224821963278; path=/; expires=Wed, 10-Sep-02 21:51:07 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/24/2008 6:07 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_eot, subscr_id=S-84J461104M3149413, last_name=User, residence_country=US, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, business=admin_1223600237_biz@thevacationcalendar.com, verify_sign=AvpV.wFamaVwASwy.0fCJ9iM.onLAw3zUpQpFyOz2xWZAt8XDIykNpjw, payer_status=verified, test_ipn=1, payer_email=admin_1223600278_per@thevacationcalendar.com, first_name=Test, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payer_id=3UFPLVUA8LCV6, custom=26, charset=windows-1252, notify_version=2.5, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 24 Oct 2008 11:07:18 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=dIRZHF6EJF6xNP53G--DMC1rLSATQxnaAbdCrh0KrhqZQ7rs6D5pmWM406Qa9emjVQJuPNqH86SRgCjmFXJxq_zZciVB6hPOwWKgqf8RP8gXLKyqyp3Bv1pyb4XPwc5c8eR5dW%7cftPvGHsgYlRjyPtBEGbj1W54s_qFEm9a9l8WkDLO7iOTMbJbexnyo7cNmpWtJruRZtRrrG%7cLUEQ4Nk-_y5eKSfbhAyHIJ_5dFFuGr3njsLqT4s-sQK2boW7qiP9t2VsSeonukybmoKE2W%7c1224846439; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 22-Oct-2018 11:07:19 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 19-Oct-2028 11:07:19 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.296061224846438659; path=/; expires=Thu, 11-Sep-02 04:39:02 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/24/2008 9:54 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=07:54:41 Oct 24, 2008 PDT, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95131, first_name=Test, reattempt=1, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-9D997159W22368746, custom=28, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=ApzDi9xije4XivZJZIharltQaDLKAdL19c1VbR7p8HGl7lGupxNqhTVf, payer_email=admin_1223600278_per@thevacationcalendar.com, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 24 Oct 2008 14:54:48 GMT
+Server: Apache/1.3.33 (Unix) mod_fastcgi/2.4.2 mod_gzip/1.3.26.1a mod_ssl/2.8.22 OpenSSL/0.9.7e
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=1RC7qwR-RMWEaumzfWEfTNn_COY4v8701KXAb_eQIaoCB1JL3SetJjou74B6LNHJQnZ11sUr7fM_m9SOoeu8TgtgWsoKAHJoG0fRUuhGzFJChcx1A-m0amrkJ04oL1TUXZIaam%7cEEb6wEAuvtJH6bMpKqqTICbvveUj4v7wGKkP96w_I23eB_KTVnn2A6FgUwabfzTO1uDevm%7c7HTOnO3j4eUHF9Wmkk6KtSaF5DxpvfQy12YcAYNuFXWtIAeAqguP1uLWHR-F_zhylD8nHW%7c1224860088; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 22-Oct-2018 14:54:48 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 19-Oct-2028 14:54:48 GMT; domain=.paypal.com; path=/
+Set-Cookie: Apache=10.191.196.11.156131224860088261; path=/; expires=Thu, 11-Sep-02 08:26:32 GMT
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8  
+VERIFIED
+0
+
+
+
+[10/25/2008 6:07 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=04:07:05 Oct 25, 2008 PDT, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-55T20847LD9178733, custom=27, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AwZPO9.1.dOpbodgGjAsgRkiKurGAHcqJEAu3xT1We29T54e-cBr2sfP, payer_email=admin_1223600278_per@thevacationcalendar.com, txn_id=9YK816725S539763T, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 25 Oct 2008 11:07:20 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=_xHqnvsj9zBw0xz68hszNjITSZ2C1yVAmrTbr4HDYinPARLj2SnM_BCTQqZRwOfdkY2lA59egSuU1xEc7fGPs49fJI1c3eeuZ_HRr3qOmlAPSscs8bfERU5aL5CKb-7fFbG0Am%7c1n8ZimmevP3ikXVzza63LOdLYoZfdNh-R7aLbxSmhQFy7FUL2ktggz_hYykGuRbJnXUso0%7c9OiAOcMXvZ876jZ_v1jbV_OtBQy1R5xb0R6I7ou1pA-30SQtQDN6hApDof4Bqg8eSBYz8G%7c1224932841; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 23-Oct-2018 11:07:21 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 20-Oct-2028 11:07:21 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[10/25/2008 7:16 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=05:16:26 Oct 25, 2008 PDT, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-9KG049493B189704K, custom=27, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AiKZhEEPLJjSIccz.2M.tbyW5YFwAi5imrUrEocsjUrjcVfv1rOWKNOC, payer_email=admin_1223600278_per@thevacationcalendar.com, txn_id=9LC339475C311153W, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 25 Oct 2008 12:16:39 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=LMbKcyxrJHUlEJwCGHXwW6ZUN0iDoG_ClMgDc26yKJbuR1qGkMUho0tdsmvdB4CUKFb61Vowo-CokQpU5QfLxED6BYvhV-6ouyqJiOeTj7W3Jb5XnzEkWD4UmICuJlsD9dVu5m%7cjzFROwmjqWkFeV7sDj0cfji9Q4jfomo6pDvXzJ9o-oGNNS3Ok2lSsq4tyfR9VpI8Gi36qW%7cVpVepC9fntbxvTFMXuljNI8XvyNeCB3ZCF4L9zt42cUh3s2sH4sqb9WVYGH_Kz_h7VQdLW%7c1224936999; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 23-Oct-2018 12:16:39 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 20-Oct-2028 12:16:39 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[10/25/2008 2:31 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=12:31:00 Oct 25, 2008 PDT, payer_id=HTYQEGYQ52R26, address_street=1625 Stowe Road, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.5, subscr_id=S-3NP4642815122992T, custom=29, payer_status=verified, business=mexican_storm@hotmail.com, address_country=United States, address_city=Reston, verify_sign=AaTR.GfFr5GuqW-ai8Xz8IoiZPU6Ao2DEiQuV9vx26jHTw-yuoAaGttF, payer_email=payment@thevacationcalendar.com, last_name=Storm, address_state=VA, receiver_email=mexican_storm@hotmail.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 25 Oct 2008 19:31:07 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=m8RKIwpfbQm0zHLVJlUdfm0xtxEIsRqdU3RpX6iZq0c0JORPfrq-cyCH6QfBCjHL1SZULgU035Tdw7KBepJnIPuKubMCflKrULeC2ELBL_JFloyBAADpAjUbPZOzHdJ8vwnAfG%7cafQxqhSuc35hTP2_6cZaFfwNhBscRzQQHotFT0K3X8P0lQhoUD3VILvaZAn4OTex8X1mFG%7c4sF0BcVC0JgmxQFS82-LK-YT7YwDYPOIh--kBFvLeSnwfyrRbC0lqKSCyg0gIjwgYWo1Ym%7c1224963068; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 23-Oct-2018 19:31:08 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 20-Oct-2028 19:31:08 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/25/2008 2:33 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=12:33:02 Oct 25, 2008 PDT, payer_id=HTYQEGYQ52R26, address_street=1625 Stowe Road, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.5, subscr_id=S-3NP4642815122992T, custom=29, payer_status=verified, business=mexican_storm@hotmail.com, address_country=United States, address_city=Reston, verify_sign=AfRgquebA1SALQvl9r9c7pGRzY7bAvO.ZOIJE7R4dLKbWXEoq62XMymq, payer_email=payment@thevacationcalendar.com, last_name=Storm, address_state=VA, receiver_email=mexican_storm@hotmail.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 25 Oct 2008 19:33:06 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=dgkWzB2rGtA1f_0w1PeyWq-nOQaOnAhtR5or_9VL90lkdI8TplZ7xvKCMvnaHD5gT_am7ntgtVJ0ypatQr0WGkVDDrrUmdlcWRmI186bUnUDp7laxQb6tC35hPnuIqB_qthkum%7cH84SijRHdGSckxThoO4EkcyDPRXmdWEoVevOzDC6qKdN9icwfMAFvqY--eQLVlcqE9CxT0%7cw3lKQPDMBVjKV5GOSqjql4bzOyyodrA-P5bZX6DuRPsFMyIx8ctU7jRd3YY2kdnG5eEvnG%7c1224963186; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 23-Oct-2018 19:33:06 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 20-Oct-2028 19:33:06 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/25/2008 2:37 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=12:37:09 Oct 25, 2008 PDT, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.5, subscr_id=S-8MG310777Y613662M, custom=30, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=AsXeB6RfKHDDIpvYfacKkhpu7KVLAMJyMgv78THw28K.lUUfcR53kUvI, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 25 Oct 2008 19:37:11 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=P0v5N30hjqhX0UYz2Yo1FcBoZnBgJBQQAi99YFrzNb79dC5OnH_VRXz-1GoG8_Y49RjgvONDvZpN2u_gyKdXxmEdzG8ThIiGbBbu5cBKp9yEyXHddxziolyILEmgGPZDu1QrDG%7cKBVtg7PY-JCkW4D0fEKngxETc4zegMz1QvYSBxobe57YvSI40Msmho4xc3Qg_g4a7WsvBG%7cZjzh_hVbJi-kotdhYp1CCkKUnCB8Ttp1rUCx-iqNRobYHjianc6eaYsGGLa9YOrE1c9Vum%7c1224963432; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 23-Oct-2018 19:37:12 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 20-Oct-2028 19:37:12 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/26/2008 3:07 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 26 Oct 2008 08:07:06 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=pydyfEzUOszlIyUVnc4UbXqfSZxNqpBrEvZV_0Zo24CefeknBfsLfcNJbQ3zHs1-e3Cu-KbTLS-0kGXuN-w0NA6p8cxmBg6IOIF4d13XPR5JMRwjbIYB-YcUUob9Mb5Xjm21CG%7ceOU6CshLip-I4MUgcwjNe0e6y9NyT7QbV0HO_mIBqFOY2WSoq_9pslU6VDXQex30BjiUxm%7cTng5KmHfs_5i1qOLnRxnZQfiCAPn0vrcWk9iYlFQFuBYXKpV2b6mfDNVKsJeQtZRDLZ9_0%7c1225008426; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 24-Oct-2018 08:07:06 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 21-Oct-2028 08:07:06 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[10/28/2008 8:00 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=05:59:53 Oct 28, 2008 PDT, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.5, subscr_id=S-3MS52097SK1716646, custom=32, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=ABvixKWsSIMWPYgrjDgLEZqyYXSGAvwyw6ftTAyySrCF.fphzHO.QQUe, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 28 Oct 2008 13:00:04 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Sak-D-QYEPMYSvGzJZ7lPPhUlSUGRcDbMgbgfbm7w45ZAOd6oxvOhl4ZJFSdPc0bFXllYarRxcFo9tvTBS8GiJBgXfg3sWZ3rABNqzqxIlMpx6DyPH1plyTNkf5qy4iquOBKBW%7cwffoOwhdXlKT5qvTrPcKCK51sYBKCOAU9FyycxpS9OisIZw63BVQ_WPkmIx0mYQ_hy0_xG%7cgMs4WjXZiKfOeJYtF7R_w7VIcaWbfCE5TRw_sf1K8hJAGLMALBgeMV07Nw2UpnSd8vIdPm%7c1225198805; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 26-Oct-2018 13:00:05 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 23-Oct-2028 13:00:05 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/28/2008 6:31 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=unconfirmed, subscr_date=16:31:07 Oct 28, 2008 PDT, payer_id=UXZZC8R4A2RCQ, address_street=1302 Longfellow Circle, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95747, first_name=Theresa, reattempt=1, address_country_code=US, address_name=Theresa Breen, notify_version=2.5, subscr_id=S-4SJ815627C943514D, custom=33, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Roseville, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31ASIxwD3YB-wy33rpPB0k1IXy8vqP, payer_email=Theresa_breen@hotmail.com, last_name=Breen, address_state=CA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 28 Oct 2008 23:31:12 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=9h7SqYvmc0NwtvpLCk7Soi06rDzpJNrvTK-6LDT1pcD1Mr2dghoxsFy-mEL8fonZxWsdq5vC53cNAeLRFBiRnMHlad0bNDvWbjmFrqYJjnEMKvTsmlwQB6w-L4elww0jJ_-HxG%7cKhiMkPPR_Wk8_bPUX07uolKPc87BgNjRqUisaIOJ-nGLM7uqoUlyImd1pKj3kmdK_Wj48m%7c3tWiLrms37x55W35kbzrveLZFaY3MtEmqDlq5nHl_8d-N1oTcr03i6xRkPO4_V8jG_Ifl0%7c1225236672; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 26-Oct-2018 23:31:12 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 23-Oct-2028 23:31:12 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[10/31/2008 3:25 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=13:25:03 Oct 31, 2008 PDT, payer_id=7PR5SCF3SXKSL, address_street=212 N Fairmont Ave, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=95240, first_name=Thomas A, reattempt=1, address_country_code=US, address_name=Thomas A Thompson, notify_version=2.5, subscr_id=S-58T523235F554824P, custom=37, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Lodi, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31ADiIXPleokGRJMjWB7.Z4BOB8R5J, payer_email=tommedia@sbcglobal.net, last_name=Thompson, address_state=CA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 31 Oct 2008 20:25:09 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=eqT6uxuBvd7JUku1QZHhCQkrqDD6Yt0ZZFoBZ66SAxrcwhwZKr6E8vuGDQyZGhBGb5rq5XBveDFtaZFKd-53qUCaLvVQ49ugyJm2ewNoqaYUPmcAtTvPOJywpRgt-kV5sGGKZm%7cl1Qh4bwT7lv7lBD2Tab_lesepBd7YuaaIhNDvqkhG3hTR49pTgH1etl7hVEChplBKEdyQm%7cJ31BSZubHTUGas9t5kLvFEcvz1bhVcYY6YShDjTLrXg5HFBLMqa16GTA29KhEJjuwY4wxm%7c1225484710; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 29-Oct-2018 20:25:10 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 26-Oct-2028 20:25:10 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/03/2008 11:48 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=09:48:12 Nov 03, 2008 PST, payer_id=DJ8K3CT58KGTE, address_street=19900 144TH AVE NE, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=98072, first_name=Nancy, reattempt=1, address_country_code=US, address_name=Nancy Adler, notify_version=2.5, subscr_id=S-14Y70806RD119010S, custom=39, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=WOODINVILLE, verify_sign=ALSn9k0WJqFhwR63.9TJs7073pXyAn90f-OyXVHjaEOu2wbKZgRB4YN2, payer_email=justing@sierraind.com, last_name=Adler, address_state=WA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 03 Nov 2008 17:48:19 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=yGYoTe39VxsjdhtWgf6KFWnW8sRZFmmbEEIJTU_3pYs14TF4yMbGfDgJ2QCY0yufm8Urfe7C5mFkiiCsrZ0p8dceemeCFV4daKMEZhFr8YGhOmza28BmuGZHQ35jM1XsT_L_ZG%7clrqlI5QdooqVuvdFaxEVVkDm_VRKyDgiZNUDwO-LgBZ7v9kebDvRUugXvCmjpLyZrvuAr0%7cTAWllHumRuB5tp2vapvbA2AQZtjf8KjQbTBIamwaNyh_NM9W-vvyJ27-JJ46jnib8ESxFG%7c1225734500; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Thu, 01-Nov-2018 17:48:20 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sun, 29-Oct-2028 17:48:20 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/10/2008 8:45 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=18:45:45 Nov 10, 2008 PST, payer_id=Y8E32LVX84C3E, address_street=259 Upper Terrace #4, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=94117, first_name=Michael, reattempt=1, address_country_code=US, address_name=Michael Moser, notify_version=2.5, subscr_id=S-0SN12763TB015170A, custom=44, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=San Francisco, verify_sign=A6WIaJOl-5oo4HepCM6PqTzgDNBUAQqN9NjhQzs6YBXDaG.cqkDKGzOb, payer_email=mike@artbuzzsf.com, payer_business_name=Michael Moser, last_name=Moser, address_state=CA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 11 Nov 2008 02:45:48 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=b4Bj1hFAE1iEqhS56Kbx4pUXPgWyj0de-4pyWcQTdfb94ulqvREQeN393PH70jws60zvFHcuKgKkoBOeoi3eTi3VJgY4GID319Inkq17u91yKiuV2DGkzyGH7PWgtomR04yee0%7cs8GvWHfBs8zn3YU51hewSaK-ZaqoKlF95yus6BysHhi8GvsogGpsq9XMaL0MIkrC5JZJ20%7cu2Och0nY6-7HoNmhzWZ4iTcTHUKYJRvgqESfi0UbyPecG7K4sTA-DdxHCAY4jpN_aumZym%7c1226371548; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 09-Nov-2018 02:45:48 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 06-Nov-2028 02:45:48 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=91
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/12/2008 4:07 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=14:07:09 Nov 12, 2008 PST, payer_id=P9ZMKJTGG8B48, address_street=3541 Herbert St, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=92103, first_name=Kurt, reattempt=1, address_country_code=US, address_name=Kurt Livermore, notify_version=2.6, subscr_id=S-9210616050202611P, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=San Diego, verify_sign=AYLMarPZ4-IDZQ65mihtvDOWdVnqAUekQzqb6IS.jMc34g1qaJrXMDfc, payer_email=kurtlivermore@yahoo.com, last_name=Livermore, address_state=CA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 12 Nov 2008 22:07:13 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=SIL5Bkx0Q5UwYWu67sa4ZrxKVIyZms0TnCoiQVJCUK9oUr_nl4xL7vDVIC9O-6ynkNJu19asdRME-s7n74HqS5Nb4gDl00_4-cDLCHkpFRvogw0bTPb3GChrKgP7qEQEmFyPgG%7chIh7RVBSulKZ1hUoy5b3yPAMyh1DNts2Nfh9WbPh4BzrqPzR_vKpYvXMFtWZ2AxKS7X6Sm%7cckJ8CHKKnILF_Ccr9_4VesOfpAJul8_Hn8zjXoz-UawKz3Pcla1bKOFlArjo4PgjPUeRdm%7c1226527634; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 10-Nov-2018 22:07:14 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 07-Nov-2028 22:07:14 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/14/2008 4:05 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_signup, subscr_id=S-4YX78316TR942101C, last_name=Adams, residence_country=US, mc_currency=USD, item_name=The Vacation Calendar Annual Subscription, business=payment@thevacationcalendar.com, amount1=0.00, amount3=20.00, recurring=1, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31AVabwZjHEu.YpVyLm.OLYNSWCW22, payer_status=verified, payer_email=jra@adamsj.com, first_name=John, receiver_email=payment@thevacationcalendar.com, payer_id=PZYRN7RNLXQX2, reattempt=1, subscr_date=14:05:02 Nov 14, 2008 PST, custom=49, charset=windows-1252, notify_version=2.6, period1=1 M, mc_amount1=0.00, period3=1 Y, mc_amount3=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 14 Nov 2008 22:05:09 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=v6GYTdML_ubemnDGZNtjT4ZaRKtgjPBwbo2vBjgVP9btixCnpAd6CXrqEaiiO_Hq0ZMuUQfiQMl3nkSmj5_5No0Lk-mr_PNJVDhDmYmY1AYlXe2qA-r_LU4ZEz3bJXPOze0lc0%7cUSRo4Acfb_wfgTwLcPB57V4W_MrIvdkOheUQSBt_LUdlRdvypVRiY6S1fdrWmx3tpkhw8W%7cb_7Xb6mnZJDLq96gUr5gRX98Ty4y5Q1Ikog2GlpHgIOWJKT9U4YCE_z86b4C76z7rYyGu0%7c1226700309; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 12-Nov-2018 22:05:09 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 09-Nov-2028 22:05:09 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/14/2008 9:42 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:42:10 Nov 14, 2008 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-9K149935TE479490F, custom=29, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=A5cyQlJurzOXc4EciKL245yWmQYoAnNgo-rXeb9jFsEvlyfTOQOWQJR0, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 15 Nov 2008 03:42:16 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=evKEo2BzA9_FmVZ2OGCP2RZDGSLtKgBoalckgBIyzJmcztDQACzkKv5FctD9ZY8-SlGJ9C87T6Ly3EgGf6xBPpSzNBFx2faSMQusZs1E6kYT9VakqWdryxnLBORT3FmphQOtSW%7cKwzN2lcG8y1hrnFrg00FzfycpaBrHEI-WIOrMXcLUqk4CyJjARoWMxujnPdk8nmxZHoi70%7cwfZQ_WWruG0ZDSGyM7-vNhxgyu3AeGyGEt8icDA6_IFsLcVpt4e4ztTsIr04k0blxBAYRW%7c1226720536; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 13-Nov-2018 03:42:16 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 10-Nov-2028 03:42:16 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/14/2008 9:43 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:43:11 Nov 14, 2008 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-9K149935TE479490F, custom=29, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=AbJfNYA8BIfshd-1nAtdNKN8MuaKAHCJpLMletoJHIaUzWguhQevCZli, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 15 Nov 2008 03:43:15 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Yf-dCdyNal6xO6PZ0jCRw7BgyZ_4dVRJ0ayqbdc2nQGE7JMVND06sLMRMh6jFpDSaCtmzg6EQozLp2B1y39egKn7reZ-ChMR2SgUCwwQEZNDJz6EG5uwHaqNCrzcO-RqInYe00%7cmuyMeKHhDO01el2FlANZbhAftPthZwbeqxYw_Hri372bXV9IsZGc_5iPdWUzveUtQCAD30%7cStz4V30aQMmO5BxbxvyhocZzJayhB35QxHszf_bv_lvTq9AN63ddF0VnpchTWCNIuovRJ0%7c1226720595; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 13-Nov-2018 03:43:15 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 10-Nov-2028 03:43:15 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/16/2008 6:48 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=04:48:11 Nov 16, 2008 PST, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, password=ToxeJJzsfKrpc, address_name=Test User, notify_version=2.5, subscr_id=S-62G41339X04815531, custom=19, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AZE1dvUnKfZ0e.RJSS7isjH2FlBtA47BdNLd9LEyufa8dbXdG0ihg52V, payer_email=admin_1223600278_per@thevacationcalendar.com, username=pp-toytax, txn_id=0JT75503WE699750P, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 16 Nov 2008 12:48:29 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=fag8J9rwE_5lc08M0dl3n_T7sRRloxtg2h-xjNut_xRPzruAURnd264353gs40ExQ9bZnWwsj1J8rjeCdvUSSDA4prgeFfjrDqNLys8LmbAnBBJylTjqwzBhU7muOTzQb3eS8m%7cJhiYtd133gtI1F7tmx679RGUFmPOi7H91Zpqdvau0TTnKUAxkeJiLiR-sjGGQjOKzZHeL0%7c3PMj29NvlwnaM2LvBtYGyAhJ7TuqC0OM502QKbBNmhV_oO4oF8IyzegeOtXnUZ8BegTrZ0%7c1226839709; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 14-Nov-2018 12:48:29 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 11-Nov-2028 12:48:29 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[11/16/2008 6:49 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=04:49:27 Nov 16, 2008 PST, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, password=BaN.SmZxRYLVE, address_name=Test User, notify_version=2.5, subscr_id=S-7FM95984LM2371945, custom=19, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AkL4i4YZgYddeu9k05CLiiqiER-zADZxQKZXhikoL2SGKHnJtYsIfmmp, payer_email=admin_1223600278_per@thevacationcalendar.com, username=pp-marshbing, txn_id=07V04971YP291900X, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 16 Nov 2008 12:49:41 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=nz3RsgOtq0Qx2egJvk_17L2JEAnZaW4i6GH6Z5wcrFPvui30uKAAWIFYrfUA1DVmwc8bL1rbPmdtFTlITA_0t6ThGL_ZMoLbaz9RsmKnk8VPPiMQhuYcHKVaSmYhoJsyB8rhZW%7cAHaYtVolwlQc9cwatHpSyfkSEDW6lNNLcfs0WCJBx-YCQwRgs3yTcyiMjEvglK-HzyPcwG%7cXBwpphcQkZXa8iqHyoTyinEwdbkMaW9LSVuQ042f4zfGGofCtQi3VFQIPzFwhg_SxAJhgm%7c1226839781; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 14-Nov-2018 12:49:41 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 11-Nov-2028 12:49:41 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[11/16/2008 6:50 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=04:50:27 Nov 16, 2008 PST, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-64K97833XA4618217, custom=20, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=A7wcLCPI20jMdqSj85PbUr61dmXFAkj0tzVaHfsAoBUeG6yDx3rmzD1v, payer_email=admin_1223600278_per@thevacationcalendar.com, txn_id=0AN62655N21566313, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 16 Nov 2008 12:50:34 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=yriAcjqzry72qIh4Og1L8zX7Xpgf49WFgl0OupV1zS0B0UozwXhZsQXBwjTHnN6GCVREC7PtgKne81SNOTfrercJeTSSVVsMXHbKEYEu7-KIWVBNSK1Wbv-WlgYsGWCWF-deZm%7cd4u6H8HiImsSv_X4B1rS2NZqgpmZs4AjNvSvPdvA3fWrSerwhwPD4yMqaDjcIH8udMon9G%7cTLnCqogTpYRLk8Wg-g-5hyiq3Dl4Reai3m-lUGAaVlHOFv74BzToG-uSf4wNK5BtpgBK10%7c1226839834; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 14-Nov-2018 12:50:34 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 11-Nov-2028 12:50:34 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[11/16/2008 6:51 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=04:51:11 Nov 16, 2008 PST, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-7W407959GG159273T, custom=21, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AQU0e5vuZCvSg-XJploSa.sGUDlpA06bW8CBMkOaariNhD2SBeiuvXjI, payer_email=admin_1223600278_per@thevacationcalendar.com, txn_id=2M066293614680249, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 16 Nov 2008 12:51:25 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=tWqMK8uHVSpqZOHdrM4JwkxwOKBD0Udg9yK1iLdjvK59r1Qz61uPeDSi-mVO6l06mlrFOibM32L2Hc9bEZSQqbRvejrpQAr1zLGKp7I71IPaJuR5Mr3A3cq3zM-OOoAQ9pmYiW%7cyEDJG5zGHxh8H-B4N1B3S-fGKqkDZgYn_3v_l9eHjIcbz8gktuovshyRFrvuFnileCL4Fm%7cnd2bhk7oWX8HVnKZA4SqKyRhXfxoShsSS4F8UlbmHY1aonwKhiZ3_WtB-ytdldj78xh6jW%7c1226839886; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 14-Nov-2018 12:51:26 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 11-Nov-2028 12:51:26 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[11/16/2008 6:52 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=04:51:55 Nov 16, 2008 PST, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-0S442430JC686033E, custom=22, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AqBqA1nSf.CEBj1d5rbDP.LO-woKAI-ORJ1cdsSnAYeXf2dlIOPtJhfM, payer_email=admin_1223600278_per@thevacationcalendar.com, txn_id=7K715449M0122124H, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 16 Nov 2008 12:52:08 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Or3Ni2w8daxYFtFyHTeBM5VW_8vl1zfO4BGrRvSBZEY4yTxPaL2LZUm-KRKbp6fTFRZ2Op5gC3JIHaweH9yR0K__nqLZC2L2tMe53Y1wPwoeb7MM1GYbcOOw2Q9ltkZV0m0-jm%7cPxawkYjOyikTC_DkYElDqNkg7kL7dDhQQhwgh_nHGScvO5_S_W--UnYuuLmnxxdj_T3JuW%7c4YbhtcrLHb5rvsemgGzuxpIXI-IS7sRau5D-Snc89bJmmv_T7t4d-c5jR9SeEFqFHLEdXm%7c1226839929; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 14-Nov-2018 12:52:09 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 11-Nov-2028 12:52:09 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[11/18/2008 5:03 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=03:03:03 Nov 18, 2008 PST, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-7US64532DF5675643, custom=23, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31ABtpUf8qx-o39farReL6ICcB9UOQ, payer_email=admin_1223600278_per@thevacationcalendar.com, txn_id=51G09951Y7921860S, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 18 Nov 2008 11:03:33 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=QHY2547JEf-43kbg7eMkBqB79VgEL8v9O5rUyME6iYnR5CaqLuz0NOolWvMg0c85CZP66Iz4geZH5cJV6HhhT1wMBeNMfx6QwOsBuSfME4mC_jksdtVzrJYffjneK-pSKwuhEm%7chSVJccpVQknPYUgWPcUBBxMcN0iGfDPfKOFR1tY52h8rZ8rNlb5lfH-Zrj-W4w9bUdfKrG%7ccWfL49A45dEfY1jzEa1e_KfnYLRFFSubuXKhOffE2kYd_3wJdbGRo8mY7H5oUFAg44IcJ0%7c1227006213; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 16-Nov-2018 11:03:33 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 13-Nov-2028 11:03:33 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[11/18/2008 8:42 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=18:41:54 Nov 18, 2008 PST, payer_id=HMHT7V5XPRVEG, address_street=2901 63rd Ave Ct nw, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=98335, first_name=Becky, reattempt=1, address_country_code=US, address_name=Becky Omlin, notify_version=2.6, subscr_id=S-95F27199V9647481V, custom=50, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Gig Harbor, verify_sign=AhzLwV3FZGxsdlIYB8IE.RhcuHSCA-zSD81D9ZFBv0cd-s-hhTfLVAfj, payer_email=omlins4@harbornet.com, last_name=Omlin, address_state=WA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 19 Nov 2008 02:42:01 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=Fce4lIcYDA0ZuVJPgnMnqW6x8YLjNVl5V8RpvX1_Yrd5sO8eigo7NAvDJyLPHWpzv2LHfMt7zcQ7K41tCtMasFxb_oGhBBfiPh6Nd_OrDMqzhGgAZsUVpRX5gYAffoRbXy4M0W%7c8BisBUQKLUnZWo-jO_xX5TN35fmIBUsKu_45bkU5hffulA-n4CbOL0QBLQUvhUUIAZXapW%7cE5i46CGTuTBFM8atj71FqpxaHfK3lPOMm6kzmnsP32gG3Hh4_S4dg2s7OJG0fjPTt2ohnG%7c1227062521; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 17-Nov-2018 02:42:01 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 14-Nov-2028 02:42:01 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/18/2008 9:17 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:17:24 Nov 18, 2008 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-4G873680D0827382T, custom=51, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=ALs2PjJ6eZQg1ZxtAw58GhD63xb.Al6HJnGuqP3DeST0nmoSWVML9Drk, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 19 Nov 2008 03:17:32 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=n3-RPa8tRg6pC8Y1cM82vTjwGzxjJkFxmtANrhrUY0T1vR4foShOCf27z_LPmRiMAdQheF1uY8V7BcNz-20NbGj1DruoUMrX5m8P7ypsdrpw9bHiMiF-V1JYVgiRwfGvcmHaLW%7cI80VEKBDTnfu8GDtL_FisyLn_Ei4z5RtMEslRICU8Y1baqNMA909PHrLMqtxQJCr8QECOG%7cv_taTgzo8gqb0gZ7uM_NpWtvenzO6-LOOFKSWvzcQAYU9V58uoqKSH9Od8TbNC-H40B-Hm%7c1227064652; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 17-Nov-2018 03:17:32 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 14-Nov-2028 03:17:32 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/18/2008 9:24 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:23:59 Nov 18, 2008 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-8MG310777Y613662M, custom=30, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAxdlNh.eE8nfldBFHTH2EEn5tqqO, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 19 Nov 2008 03:24:04 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=c2sxor-bh_ZChZ-WVOdGpVMAW7JH4UcAfCV5BdJ9QQCFJ2tnqUkFH1Keyk-hA9MVjUX5uKMFLdErHHf6RmaL1iPx89UvGIX2RhiVMEO7KJGNjqmXc1WtpIfECqeGpb7anCT5lm%7cx_AgZB540ZwLSDOh5RgQQDphKp25exiTFcJC2ETSiRVRunm7CQi8t1EW2ji6MSW5YMk_7m%7cXosvr3vB0LvwYVq6QR5eJnb0ALwqT0qdKfJ7o91jdcIEY2kzhRslCf_0x78XBPd-b99NlG%7c1227065044; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 17-Nov-2018 03:24:04 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 14-Nov-2028 03:24:04 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=99
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/18/2008 9:24 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:24:26 Nov 18, 2008 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-3MS52097SK1716646, custom=32, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=AtKPGSrrIoNvXzNGfFGdy0Na3XNrAtP-Cdp.azbmUiruL2-kSoTXWJhF, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 Y, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 19 Nov 2008 03:24:30 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=tgcpgUizYq84cdojj5wgnyY4N-fmNi8eWAz8XzcyZNG4CO8rRm7f9es2Jbm8Rt42T9Amcohx_uAuZvWlkjI0ElX65WLEYJV9gxBgDHCkQnwK0IX2YZLSKxPNqaq92-c8fRTS10%7cZKI3GrpqmaxZbgp_Z8KPcN6Bil1rJmhvbmqVqgA35HBylw1imkk6L1EVJenYTynLUCHftm%7cHtyqpHTLwbUq8MQZg92dj1zxoYimmKDe2pfLXCMB5_jiImtIsaE4NKUpBKFlQ-61_h3uXm%7c1227065071; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 17-Nov-2018 03:24:31 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 14-Nov-2028 03:24:31 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/18/2008 9:25 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=19:25:28 Nov 18, 2008 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-4G873680D0827382T, custom=51, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=A98ZybfvzPQsg.8i6btr2L7mvP4UAKoPTz6VWNTwlVmPvYoC-C6q2fKn, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 19 Nov 2008 03:25:37 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=gGJuWrWt3jDwEWndU0wSb7-oZ6cMa-RTynu_CcbJ-770gxg6-l8N8WEoO5ijPgl3hZgXT1a1odCr_RQTTXpMxmTsYAXXWjl75IBYUVJ_R8SSalWNW_5GtW254gP2b58AWLD1OW%7c3UNKy_iK9lh-8H2VLLDNWHQlX44pDrH3fzNgxe-Gq6dkP5FrYBzeSnk9_JDgGZvb8-Dh30%7cQ-18x-YkteA1RMVgqGJOs4Ecu7KGl7_88rBB2wJZA6aqL_TPb9108uTamYENPKMW3O7bd0%7c1227065137; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 17-Nov-2018 03:25:37 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 14-Nov-2028 03:25:37 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[11/21/2008 6:22 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+txn_type=subscr_eot, subscr_id=S-18G69988UJ387991U, last_name=User, residence_country=US, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, business=admin_1223600237_biz@thevacationcalendar.com, verify_sign=AJR6Kh3dki2OxCYF71bgW5T5SSnvAJFeKLHey2ue7qmditbED7JIbt0Y, payer_status=verified, test_ipn=1, payer_email=admin_1223600278_per@thevacationcalendar.com, first_name=Test, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payer_id=3UFPLVUA8LCV6, custom=24, charset=windows-1252, notify_version=2.5, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 21 Nov 2008 12:22:19 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=hXsn1hXnkgI1r6RA8PEETeM8w7W1-wHljbw1LENsmv5yk_cfRCtkCOoFYWzuM72vV8oxBZsZVhwSniYQWUFRgm3le3iUR8f4htrIk8_hdx-abcg_4dLn0V67QXSaxmv9-C_x30%7ciNlwjfAXxUu33PUwTZ4rt4ZfYMAsI75M2RFp5F13GWc4aoIdsRJbUpRmKMVC_qDRDf1_mm%7cpd0LbX4dEU0gKTSKdiu52dlQ1ho7_0sVwvTZxKS3I8Npp7nrmpOjG2sEHlay6fJUbXVS70%7c1227270140; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 19-Nov-2018 12:22:20 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 16-Nov-2028 12:22:20 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[11/25/2008 5:08 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=3UFPLVUA8LCV6, address_street=1 Main St, payment_date=03:08:10 Nov 25, 2008 PST, payment_status=Pending, charset=windows-1252, address_zip=95131, first_name=Test, mc_fee=0.88, address_country_code=US, address_name=Test User, notify_version=2.5, subscr_id=S-9D997159W22368746, custom=28, payer_status=verified, business=admin_1223600237_biz@thevacationcalendar.com, address_country=United States, address_city=San Jose, verify_sign=AbHqiG3.HQmjJ0LW6FHHbl6N0gVDAWMOPTbiqglNJQ9cTnFTiPesTE02, payer_email=admin_1223600278_per@thevacationcalendar.com, txn_id=7P939304RT466325Y, payment_type=instant, last_name=User, address_state=CA, receiver_email=admin_1223600237_biz@thevacationcalendar.com, payment_fee=0.88, receiver_id=TEZ6Z37MDMWNS, pending_reason=paymentreview, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, test_ipn=1, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 25 Nov 2008 11:08:31 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=lpo-hQ_WexGFGkrDeBIBsKBKTgxeA6HopO1ueSFAyhhiFWJK2r2OE53TuMUNJ-2pPpXim7ARxM1qqDkM5m4QPyDxbceR0BIlv6QZxIXaf9Z_y5QD-6Wtl6XsIjkas5VmAtbyDG%7c9b4GcuiGNpDigQdKP1C45XUgMH-TjFNuYfgRdxRZcuYHhyh5lZ-q7ascLysX3g26_50Te0%7cE6w2Z011K26UPwMpRdvIvNHtVz0BxacwZReDRgNOsMw947iXmxB84Z5zvW7SC4p8ZvdxCG%7c1227611311; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 23-Nov-2018 11:08:31 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 20-Nov-2028 11:08:31 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[12/04/2008 4:16 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_failed, subscr_id=S-14Y70806RD119010S, last_name=Adler, residence_country=US, item_name=The Vacation Calendar Annual Subscription, payment_gross=20.00, mc_currency=USD, business=payment@thevacationcalendar.com, verify_sign=AvaO79W31ArKLGeOcYbdROpqW6r.A00W09MQvJdXM1bhiJQzSqIPmiuE, payer_status=verified, payer_email=justing@sierraind.com, first_name=Nancy, receiver_email=payment@thevacationcalendar.com, payer_id=DJ8K3CT58KGTE, retry_at=02:16:20 Dec 07, 2008 PST, mc_gross=20.00, custom=39, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 04 Dec 2008 10:16:22 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=1TGLPmrOYFM7XlxVzuLMaE9BkgXyU9CyALdSsZ2tF7r0MxuM74CxsQylwFueELTEDUiKXc2yPxrQXXK7Js3hGeeXEweDdyAUfoim9Nu5tJQWesmgg5KwCKRK-f0%7cTZD5uBJXWGix1fyI35XrfOrwMirUfIWjtMzlW8bEC9Eg4RTwgcgPs-sb8aFUIDnM5VdrHm%7cEqhL-rOEHNF9yo9GCnGagYaM7HNnq8LDZ-421nHfkQEFpcO4FWm4Conpsjt_mLzOx5rWhW%7c1228385782; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 02-Dec-2018 10:16:22 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 29-Nov-2028 10:16:22 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/07/2008 5:55 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_failed, subscr_id=S-14Y70806RD119010S, last_name=Adler, residence_country=US, item_name=The Vacation Calendar Annual Subscription, payment_gross=20.00, mc_currency=USD, business=payment@thevacationcalendar.com, verify_sign=AElnl6tIRbckhQMDfshLPQ3eGM3pAUPVqeMckYzuiUciGS.MwmYU5Kwv, payer_status=verified, payer_email=justing@sierraind.com, first_name=Nancy, receiver_email=payment@thevacationcalendar.com, payer_id=DJ8K3CT58KGTE, retry_at=03:55:54 Dec 12, 2008 PST, mc_gross=20.00, custom=39, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 07 Dec 2008 11:55:57 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=vw1wu3xjIvFU6-ROIYB67G2_2nyrK0YSZotGrdKn8E2subxSKG8lpmArV94Mum8YBjid_9PJlFxYRwyEYdfyWsDeRcNuIqfTsy_LZQpAgM1lV_YyTYv8UEjzGbFBxgkq63YGr0%7cBA5CYw8jsGA3nbiLf1Q4_-BgmJuLCNt9V5fxkgkOzWnXescsi6-I4hgkF9j-Lt390lq6XW%7cl4qk9vV6Hvd25oBIsg-oE2vmki_C01i0omG_x7WBLwfOLYVxvUcwe-KK9GGFbuAvMgCmaG%7c1228650958; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 05-Dec-2018 11:55:58 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 02-Dec-2028 11:55:58 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/11/2008 4:11 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=Y8E32LVX84C3E, address_street=259 Upper Terrace #4, payment_date=02:11:20 Dec 11, 2008 PST, payment_status=Completed, charset=windows-1252, address_zip=94117, first_name=Michael, mc_fee=0.88, address_country_code=US, address_name=Michael Moser, notify_version=2.6, subscr_id=S-0SN12763TB015170A, custom=44, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=San Francisco, verify_sign=AIH2WAWW9OxL78HKosxI1i6FwpJdA7kbB6LRpZyKAb8WCEK3X36hm1vY, payer_email=mike@artbuzzsf.com, txn_id=19H811698P3357138, payment_type=instant, payer_business_name=Michael Moser, last_name=Moser, address_state=CA, receiver_email=payment@thevacationcalendar.com, payment_fee=0.88, receiver_id=HTYQEGYQ52R26, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, transaction_subject=, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Thu, 11 Dec 2008 10:11:27 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=YCi_BZx7E1lF6MD79lNoaezCep1Pd6DE6n828RJsTfI5u2VysoyTb4A0V2ZH5jl6wNhMZcs6FGFM9D8VAknlzkRbs6j4GmHA4iRzy67kzCzF59lehd5ak6QVyh5pD62TmoTuuG%7cNVW4CKgQ-i1zYhpTn3_MpmI96A9sibg08Aa2SG2Yu9CsLm7qXldmHWDTIoLWkFNd27LoAG%7cpA0FojmdmHMco9kZNh7wb44B_HIpCM05HFGQfuvEmgf8xaqLXaCXGqusNoYb2g2Z0ZsidW%7c1228990288; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sun, 09-Dec-2018 10:11:28 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Wed, 06-Dec-2028 10:11:28 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/12/2008 8:48 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=DJ8K3CT58KGTE, address_street=19900 144TH AVE NE, payment_date=06:48:35 Dec 12, 2008 PST, payment_status=Completed, charset=windows-1252, address_zip=98072, first_name=Nancy, mc_fee=0.88, address_country_code=US, address_name=Nancy Adler, notify_version=2.6, subscr_id=S-14Y70806RD119010S, custom=39, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=WOODINVILLE, verify_sign=AKy01WeojmUycWg2JAX0x8d5nCt3AJ4muZAjfmcy7i402mtQEeHHo.AG, payer_email=justing@sierraind.com, txn_id=40H77200LT151215F, payment_type=instant, last_name=Adler, address_state=WA, receiver_email=payment@thevacationcalendar.com, payment_fee=0.88, receiver_id=HTYQEGYQ52R26, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, transaction_subject=, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 12 Dec 2008 14:48:38 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=tfDlsSLr4ItA4ZMFALi2f15CYbhwpAcYd8I0yAZL3pvadJFhbDN21NrjkSbNQecA5JdiyDuM0ybuDj65FtVzS0euvoxWIatKSjtGkPEDMq5eB5C-qG8juJoP40Cg9ADKYVwq3G%7cdGFSZcZig5Uu75tu9wfRG8o5PmqOMYsO9t1Ft_e--0pVRF7sv91aUP1V16uhpsaZkeoqqW%7cUz1ZNJRsD4uLdfmfoqi9ijbdN4gNHV4Bi_TPPE3V_Ex-OdxxZb5INzUo_ogrYihwrRi7bG%7c1229093319; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 10-Dec-2018 14:48:39 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 07-Dec-2028 14:48:39 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/13/2008 4:21 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=P9ZMKJTGG8B48, address_street=3541 Herbert St, payment_date=02:21:54 Dec 13, 2008 PST, payment_status=Completed, charset=windows-1252, address_zip=92103, first_name=Kurt, mc_fee=0.88, address_country_code=US, address_name=Kurt Livermore, notify_version=2.6, subscr_id=S-9210616050202611P, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=San Diego, verify_sign=AJtUQciiDAPpzCiZOS-t4BOrh8hzAxgeoQHjd9Oo5djflZTPXi2LzPBF, payer_email=kurtlivermore@yahoo.com, txn_id=3NP03072783221536, payment_type=instant, last_name=Livermore, address_state=CA, receiver_email=payment@thevacationcalendar.com, payment_fee=0.88, receiver_id=HTYQEGYQ52R26, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, transaction_subject=, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 13 Dec 2008 10:21:57 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=1cZbChTX2BtSJhHTr6fxzXywLQbTb_8JUV7W0Sjwhx49cZqcz31tpit-Pf_4pdTVqGKlT-I6pY_AssQHjNoPhyIKynj4ej_w__DAczBVNJOJ7skTktMsFumLmawxdK8Rmg9-rW%7cQczWlhyyNXh_qeosi47w83PXdTjIkHxYAsFWpDdSzgkdrvrYiOWqV2UqB1qUP9GhjbwfEG%7cl6cdiGN9JLqNf12-W96bA8tqo8mEs8ooYl0TaCvgJg_MD5sRfGwelcJpAGag8DAiOxfdfm%7c1229163717; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 11-Dec-2018 10:21:57 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 08-Dec-2028 10:21:57 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/15/2008 4:30 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_eot, subscr_id=S-9K149935TE479490F, last_name=Storm, residence_country=US, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, business=payment@thevacationcalendar.com, verify_sign=A3fxPwmrVfccuK3BVmdL42ASJggVA5F6Esu-bOW7SDPdZyRwezbyeGZN, payer_status=verified, payer_email=mexican_storm@hotmail.com, first_name=Simon, receiver_email=payment@thevacationcalendar.com, payer_id=C6ZVZWFD7JFXW, custom=29, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 15 Dec 2008 10:30:42 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=0_RlPINliiZW0U5GoCNdGYSFKP7Y7Zd9XD2r2ErVV1ygleIo8AJW5steybyjpLgq0UKq0QKoKNTyP_70VmGl3BbxBeRNkl25tnOpJHfKM-gtHfintojnI40935cpsZo6xpE_Z0%7cVvUGfNxRPtqIPh_g3EXqoqCap4tzOfXqtRzv198AzY4epOuVkozzp5Tsz-xDWSFgHY2odm%7cFQNE3_4qiMI4OuCphqHDoAHiDrw98tsVbbEw0BryDgkyGaRi_V3hnn60GYDN0tTUCM0ed0%7c1229337042; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Thu, 13-Dec-2018 10:30:42 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sun, 10-Dec-2028 10:30:42 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/15/2008 4:50 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+transaction_subject=, payment_date=02:50:40 Dec 15, 2008 PST, txn_type=subscr_payment, subscr_id=S-4YX78316TR942101C, last_name=Adams, residence_country=US, item_name=The Vacation Calendar Annual Subscription, payment_gross=20.00, mc_currency=USD, business=payment@thevacationcalendar.com, payment_type=instant, protection_eligibility=Ineligible, verify_sign=AEPpSQecXqf2-d2B3HG62BgWv6epAgRBjPBr-1DtiMn72vInfFfKtU12, payer_status=verified, payer_email=jra@adamsj.com, txn_id=16088875EM244821H, receiver_email=payment@thevacationcalendar.com, first_name=John, payer_id=PZYRN7RNLXQX2, receiver_id=HTYQEGYQ52R26, payment_status=Completed, payment_fee=0.88, mc_fee=0.88, mc_gross=20.00, custom=49, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 15 Dec 2008 10:50:43 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=qlJPZ1_PMxTbBRRO42X_2m9Ndey_xGl_7ndDOWGU5M-fZrb0NC4JoQIwszpaCkEfNP6ZmsJOPzxU8MSD4h5E8FDd1Q1XJ3z57xHOB6eDXUSNdEPFl-g4xqJcoQuwlq9h4OrbQ0%7clXRdPNkTiRvjjUahjrbwu0sr1lbh1usvxlYJWmZodtXWItsMXfmHfiHiCRhWbZwXDNVxMG%7cHyf2kNxk_4yYMO2Mr8tEqZARJYHSpusVXzUPhZZWQ58n5A-Wiq1WZ3DQpvIVyM4-wvk2hW%7c1229338243; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Thu, 13-Dec-2018 10:50:43 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sun, 10-Dec-2028 10:50:43 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/17/2008 3:23 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_signup, subscr_id=S-9CJ79683DD1837513, last_name=Owen, residence_country=US, mc_currency=USD, item_name=The Vacation Calendar Annual Subscription, business=payment@thevacationcalendar.com, amount1=0.00, amount3=20.00, recurring=1, verify_sign=AnycuTLs1hr-tt5RA1.AKJvqiKEDA3hUCrFUxJCe0SMAF4uKk-xy8VF6, payer_status=unverified, payer_email=torinottarts@yahoo.com, first_name=Vicki, receiver_email=payment@thevacationcalendar.com, payer_id=8Y9GPMPW2HEEE, reattempt=1, subscr_date=13:23:24 Dec 17, 2008 PST, custom=61, charset=windows-1252, notify_version=2.6, period1=1 M, mc_amount1=0.00, period3=1 Y, mc_amount3=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 17 Dec 2008 21:23:30 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=3lSkcFKUFvumuXMPWaC3k0qnsG4ZYjoUxY76iH19gtosBVTxx9oHbPPxUc2pb4nUsxhAkenL2sg01BB5DBFS4f4gxxdV3lXXizxfXQgqEuyyfxjCq_Cc7Re20QNTtf-yuYRaHW%7csWMhyMph2nwaFPY1ljKTUQDDTuHXLE1bXdMhV-WXJmPQfwHNPzPurJQyEOba056He9sqR0%7cGT9h7PRxS34fCEYRX_fyS1fRiz0S8kTBst2IuYM67SrSgd2EcfLDgZZC0WFGpL0pbqHmW0%7c1229549010; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 15-Dec-2018 21:23:30 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 12-Dec-2028 21:23:30 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/19/2008 4:39 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_eot, subscr_id=S-4G873680D0827382T, last_name=Storm, residence_country=US, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, business=payment@thevacationcalendar.com, verify_sign=AWnycRERtso.a8cX2kIuvFJ0FeQSA405HmUZhdL1L4oRGkkQpfH1w3le, payer_status=verified, payer_email=mexican_storm@hotmail.com, first_name=Simon, receiver_email=payment@thevacationcalendar.com, payer_id=C6ZVZWFD7JFXW, custom=51, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 19 Dec 2008 10:39:22 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=ISoPDiyPyql2Q-FCWFF8cYeB5dX4fhAoiGqIdtYU1I2SnbwjslgOfHosfYdNkzT_mB_XEQuKIeBbLGj8JU7yX4ryXuruupKxkxYcQJOYG5wY2v4SSKqot2qYwMFr-YfmJAbPd0%7ch6VMrnczGaYyxuRDYXvMdmOKJNotfOMsqu88d0tCt_j-487MwQvKA45bdQeN7Zz8xNfNtG%7cLn3yHmr0_-I2cTRsSXXQ-R66qSrER9hLeLkasFMlCHwAJO-qyc_9ajhGFGCwJIrzBAXB8W%7c1229683162; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 17-Dec-2018 10:39:22 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 14-Dec-2028 10:39:22 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[12/19/2008 5:20 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+mc_gross=20.00, protection_eligibility=Eligible, address_status=confirmed, payer_id=HMHT7V5XPRVEG, address_street=2901 63rd Ave Ct nw, payment_date=03:20:36 Dec 19, 2008 PST, payment_status=Completed, charset=windows-1252, address_zip=98335, first_name=Becky, mc_fee=0.88, address_country_code=US, address_name=Becky Omlin, notify_version=2.6, subscr_id=S-95F27199V9647481V, custom=50, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Gig Harbor, verify_sign=A6FW4d0S9-uQw2A18nhBOBIhikVCA5gd9.qQpLkH.g0ugkFyErsFSvI., payer_email=omlins4@harbornet.com, txn_id=4Y929720HH915260H, payment_type=instant, last_name=Omlin, address_state=WA, receiver_email=payment@thevacationcalendar.com, payment_fee=0.88, receiver_id=HTYQEGYQ52R26, txn_type=subscr_payment, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, transaction_subject=, payment_gross=20.00, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 19 Dec 2008 11:20:38 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=9SlY37pO5pP0fS1eHmFK2J2BYD4MJ8M6M1O9BN9qJIdJIQTKIo9pQHU6SSi3cPgQlAzi6ECl-GObUciiVQnQu3NcuWY1YHWQp3ZiZEIxcOe717oEX86VIJpbNvdoIimkH3KPcm%7c1xHVu9RQnYmaWapeLF52ZWt3Zk735hdaJYCWDcsVX45L42V9-9VQq4a2iB1zJVoKW3g600%7cTZIM7Rgfck3dA-jUjClYArSeT12sXwUy7g39jxY6hm3vh97-rrLnPsOQ2zrY71rb-5mwrm%7c1229685639; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 17-Dec-2018 11:20:39 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 14-Dec-2028 11:20:39 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[01/14/2009 11:12 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=unconfirmed, subscr_date=09:12:02 Jan 14, 2009 PST, payer_id=92KHR2DPPY6QJ, address_street=P.o. Box 5192, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=83340, first_name=Malcolm, reattempt=1, address_country_code=US, address_name=Malcolm Beard, notify_version=2.6, subscr_id=S-4DA95830GE8103544, custom=68, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Ketchum, verify_sign=AcPcOHrYxqXbV.GTl74KXSoXWzRWAN8xYX07LJpDv-i8Pl52QIaPmwp2, payer_email=mcbinsv@msn.com, last_name=Beard, address_state=ID, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 14 Jan 2009 17:12:04 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=QGTElCbPjTJcXoWB1S24oS185TnxsM7fvZ_ympBexT9dSvbddgjyS6Mw7dyccUupMsnAsjKZ7sq73VLKapfZOdY_iHd67sEOIUP89n4AMnzEGYQC8JFa5aaGWEflmUDUfGE9Im%7cujHlowiFzjBIW5uH37CC8fS4qf5O825YUhxlktdsgO1Ik_H8lxyffmw0xkci3TNN6VdtpW%7c2Fj27CXV5mon_IfCP2ZVBMRtztA7Fc352NHUrnR_3MooFktYckQkJnSNIwuwS3qM5Ac4bG%7c1231953124; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 12-Jan-2019 17:12:04 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 09-Jan-2029 17:12:04 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[01/18/2009 4:13 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+transaction_subject=, payment_date=02:13:27 Jan 18, 2009 PST, txn_type=subscr_payment, subscr_id=S-9CJ79683DD1837513, last_name=Owen, residence_country=US, item_name=The Vacation Calendar Annual Subscription, payment_gross=20.00, mc_currency=USD, business=payment@thevacationcalendar.com, payment_type=instant, protection_eligibility=Ineligible, verify_sign=A87PkTAVsoJhJtB8ZcXutRJ8XrufAC81mutmv01E4WC79N7qKEMXy1-e, payer_status=unverified, payer_email=torinottarts@yahoo.com, txn_id=90419167Y24807133, receiver_email=payment@thevacationcalendar.com, first_name=Vicki, payer_id=8Y9GPMPW2HEEE, receiver_id=HTYQEGYQ52R26, payment_status=Completed, payment_fee=0.88, mc_fee=0.88, mc_gross=20.00, custom=61, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 18 Jan 2009 10:13:30 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=KVTw84GPMJxRP3QWr8Y_F3MdpcWTabDYNooIMICXNmVXhkz7Y5dcyNbl-h3m5FCPKFt0gnIevn82Ibko_mi0DwbNhGhUIVqVcWyDBGdx_6iLkqK1xXwsMJkMnUVHJ8UCyQ3OiG%7cb3Hpz-_Zho01am4LIHX2DeSrYV4YHFeGVGbPCMOA97nhI2JXoFBbBE7gXBstZtcCW51QbG%7c_h0LpHpX_sfASc1_6YMbYjFObeR3tyR8suEmdA3hRAqT5vb6LOf7AY2_Pp8npFsaWrdcmm%7c1232273611; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 16-Jan-2019 10:13:31 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 13-Jan-2029 10:13:31 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[01/25/2009 8:06 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=06:06:32 Jan 25, 2009 PST, payer_id=DF2366ZBMDZHU, address_street=5510 Lake Howell Road, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=32792, first_name=Lynn, reattempt=1, address_country_code=US, address_name=COCO'S Ballroom Boutique, notify_version=2.6, subscr_id=S-3G663574FA039293F, custom=72, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Winter Park, verify_sign=AZPjWURSbjtKbpuNXpkVh.cLJEGsAkh7CxbSM6k3.dB3Al8rIsl0NXKH, payer_email=cocosbb@embarqmail.com, payer_business_name=COCO'S Ballroom Boutique, last_name=Pruitt, address_state=FL, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 25 Jan 2009 14:06:37 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=rZA7_QJTuU5IsLvjh9jE2SnLB2yw7FBAgEoq_aO4m_FpdDuOB0huBbC_MwpiLD28Vf4sFjBbsVzvHpGthS93VefVrDKNCR35ZecmssBx2SXXiVzqq4FTCrcOLSphg-FkHB11Hm%7cEACAWjWMO6UiggZ7JfiW9NE4lQ8NYGcW5TzKR6JwfHyYw8QZvZrm8Pd50ZWD2hhf5oLDVW%7cuwqlUQheBhFHuWzTNPhpa8Lm6ujrFIqtzaWru4c6r7hV9VUK3t6pwFK7iBB_fxoVYBS1sW%7c1232892397; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 23-Jan-2019 14:06:37 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 20-Jan-2029 14:06:37 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/05/2009 6:33 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=16:32:52 Feb 05, 2009 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-29F30816DJ789725V, custom=77, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=A4usKDSt5SqJxpsAkh9wHUP.J4OGAuKt7duBFTPA8leZBK3Ik.DDqppj, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 06 Feb 2009 00:32:57 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=PW5J1d6C8pALSBsRycFwOLDJQW3PPBJAHdADKF2QCK_NHUHMZX9vvtf3QNj0fvSfJU0PKFB0dzpZAqkAbW_MeTTAGUglLLFzS7utaSy0HFVb-84bVg2MXGeJq9GcQCLRDqSIj0%7cYxF-Bq83Tm5iySAGCrKchtGzEaYYZ37QiEAokoF5boQWumFD_JulnGwAvxcK9kJwE7CjT0%7cDgFP9tdYlYQb2texXN5SLjGUZH2wV_d5FBzjri1tlB0NEjwHpOqHSRIFum-HOJRlutjK5G%7c1233880377; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 04-Feb-2019 00:32:57 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 01-Feb-2029 00:32:57 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/05/2009 6:38 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=16:38:33 Feb 05, 2009 PST, payer_id=C6ZVZWFD7JFXW, address_street=1625 Stowe Rd, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20194, first_name=Simon, reattempt=1, address_country_code=US, address_name=Simon Storm, notify_version=2.6, subscr_id=S-29F30816DJ789725V, custom=77, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Reston, verify_sign=AQU0e5vuZCvSg-XJploSa.sGUDlpApGPc1fF.DBCWtHZEAU.n4TyEZkl, payer_email=mexican_storm@hotmail.com, last_name=Storm, address_state=VA, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 06 Feb 2009 00:38:34 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=m0wEv1B4RplJvLZzlZ4spJObzaj7j1h_1ed974JfnDc6wFpmTDYKcVnm4pDdG_4xBOSMDzMy1DSIUA-ZX2U5v12NbHlRF3PH9kRmYl95fsdoWWm5P16uOOISbNrysStV4521TG%7cX1a5-JDwMHgKzQl_O324h-L0CI-HO337qKtoNzJjCy6d9IndSEAihJFkC05gbH-P6RtmGm%7ckfFGDr2roo2V20lQWB8FXlrNvk0ImizLrTGb4GJWJ8U1Pla4YecKGNwiycmAx7X00_DSa0%7c1233880714; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 04-Feb-2019 00:38:34 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 01-Feb-2029 00:38:34 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/09/2009 10:08 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=20:08:44 Feb 09, 2009 PST, payer_id=2YK7KHMZ42FUS, address_street=10 Spinning Wheel Ct., mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20874, first_name=Melissa, reattempt=1, address_country_code=US, address_name=Melissa Blount, notify_version=2.6, subscr_id=S-5A914543XR079890X, custom=78, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Germantown, verify_sign=AZrLFfX3l-iv-dFDA0mEId61RBdkAUPQHg-WEWNQKrlJWCveah0WX4Zj, payer_email=fraxmom@gmail.com, last_name=Blount, address_state=MD, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 10 Feb 2009 04:08:46 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=xhdGhisWGcrFtrq6-ULIj9QeYvtgCPP6OJ7mQY764jJOrkiXATlGd5rUUWyV-19n-X-DscKIiJP8JWIy9thII_PP7CKYurkZEJF1ocVjK3eQk2VNavfPidErgj7abusqlzLt4m%7ca-QGreHyZ8uR49lZmTuvxJK7aHAt3PMsxu9zK3nU6bJiqT_p6sF_h6UujL-XApOp1tVu4m%7ca4cqP1RM9iedoC9gVqVlWn-DZxtJIcdi1hpGnlUR8VFPtC_qipp3VRRsfOPXdVl2koQfKG%7c1234238927; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 08-Feb-2019 04:08:47 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 05-Feb-2029 04:08:47 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=84
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/10/2009 6:45 AM] - FAIL: IPN Validation Failed.
+IPN POST Vars from Paypal:
+
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Tue, 10 Feb 2009 12:45:33 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=cllVN2NBPZ7bx5N6PhtikzAm0R8XwPuxyN3O_RRfryhiTIWaeEOOVnRhMgaUWm6bZKDNND1sXGhiXdsGRCXLmq64MBE6G2CExg8IFvnsRwaGh71O6EUP5NQmKFjns4h8DDlbKW%7cWCg1mSGalF1HhmNVY7TbN7Cekjhv4I8eP3b0auYlPYT-3OMCYYvxKmoFcd6P5JHU5NefCG%7cfR-fMPKhnlfRaIE6jvNuxym4wREw854UK2D8ZkiX6K3gUHNgTEXptrGtEeT5yinMnKir9m%7c1234269934; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Fri, 08-Feb-2019 12:45:34 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Mon, 05-Feb-2029 12:45:34 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+7
+INVALID
+0
+
+
+
+[02/12/2009 8:29 PM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=18:29:23 Feb 12, 2009 PST, payer_id=2YK7KHMZ42FUS, address_street=10 Spinning Wheel Ct., mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=20874, first_name=Melissa, reattempt=1, address_country_code=US, address_name=Melissa Blount, notify_version=2.6, subscr_id=S-5A914543XR079890X, custom=78, payer_status=verified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Germantown, verify_sign=A27raixgmzvPluspljJavpkvqltBA3z5SZz.PRUGqCGa9ZjEAAt72Pf9, payer_email=fraxmom@gmail.com, last_name=Blount, address_state=MD, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Fri, 13 Feb 2009 02:29:24 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=lQiOK_cdF8raW_0n7bCC-X17V6UQJNSa3cpOrVRcLO-Wih9aVPzzAiCzcr5TOOiRcq6_YKUvF3PlJoqN8dGlZnqXDfEQzAdUE3qlYrmkAzrpL7dUfDvN0nrPXGtjaFB8b5YaGW%7cchnaWAjNgiS8CkeXGRmnXaV5pd8XbdKgfZ8G9qe9XSyUbbCq81KxnhCddMWfbsIuQsTz_W%7cK2DVbvdPgVlquLsDFZfXc9b68IBXfadoYhLsL9KHdfO28OE5Mgh873TMIcJyg6GheQ5CyG%7c1234492164; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Mon, 11-Feb-2019 02:29:24 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Thu, 08-Feb-2029 02:29:24 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/15/2009 4:58 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_failed, subscr_id=S-4DA95830GE8103544, last_name=Beard, residence_country=US, item_name=The Vacation Calendar Annual Subscription, payment_gross=20.00, mc_currency=USD, business=payment@thevacationcalendar.com, verify_sign=ADvIonPUd.cNUF1h9H9BzUpE.44oA.BtaE18TykVufYXmiOqugVHHKqJ, payer_status=unverified, payer_email=mcbinsv@msn.com, first_name=Malcolm, receiver_email=payment@thevacationcalendar.com, payer_id=92KHR2DPPY6QJ, retry_at=02:58:07 Feb 18, 2009 PST, mc_gross=20.00, custom=68, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sun, 15 Feb 2009 10:58:09 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=2r-Ku2qn2lRR1_Q4Rj9kp2fbi769zkpvGOcJwquFg_X820WakRguKw-U-GamjlvKuLTrCdvoBCpaV-5VCPp9SYW2OMOXfzOSQDJeUsEIvIS_pOj4nJkpcYkP7SRjhdYJKVwpfm%7cP9ampFTqFeSdjpuxsPWl9xMl6ZRthJ3q3Ll5sShvEgjS6BHDW9niSb2LhnB36hiARrc9WW%7cHV_j39G3_trtiTzzhvq1hjozKrZm2uLAgvRbw8deXxa5DUQJtCy-sMCam79pCq0vU_vCsG%7c1234695490; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Wed, 13-Feb-2019 10:58:10 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sat, 10-Feb-2029 10:58:10 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/18/2009 6:39 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_failed, subscr_id=S-4DA95830GE8103544, last_name=Beard, residence_country=US, item_name=The Vacation Calendar Annual Subscription, payment_gross=20.00, mc_currency=USD, business=payment@thevacationcalendar.com, verify_sign=AwaZYiXXJ9iWfpDz71mZD.mv22brANs3eOg6rB0rz71sNUIpMES4Vpsq, payer_status=unverified, payer_email=mcbinsv@msn.com, first_name=Malcolm, receiver_email=payment@thevacationcalendar.com, payer_id=92KHR2DPPY6QJ, retry_at=04:39:22 Feb 23, 2009 PST, mc_gross=20.00, custom=68, charset=windows-1252, notify_version=2.6, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Wed, 18 Feb 2009 12:39:25 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=DumucC_9iL5FVfEcHsVMzscKnVyV7L-BzrSAHL5IoDV9A04IebAt8QsMAauWQ2zNdTwLzS206SEtTDI2hR0FqWuQvHivv_R0izt93FUtAq9c-0IB0fRrSGR7haG9-drJry40P0%7cUCTezbCLDUHzpQW8gIfAfAxW6lkzn9l5R5zE8T8CPzL_0QmX_NDO-jwcYXMBefflr9kjQm%7cs29aSiV8Ald1FfklvdMVngig5_UOhR3cxjgiLgZPDNYq-E0vI7v2sYLIeuJNeb1HC3GB2G%7c1234960765; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Sat, 16-Feb-2019 12:39:25 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Tue, 13-Feb-2029 12:39:25 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/21/2009 10:42 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=08:42:25 Feb 21, 2009 PST, payer_id=QLPHWTHYDE6ZL, address_street=82 Grandview Drive, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=10549, first_name=Susan, reattempt=1, address_country_code=US, address_name=Susan OBrien, notify_version=2.7, subscr_id=S-2D862899U0748615F, custom=79, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Mount Kisco, verify_sign=A1ZZixcfP-mfq4nb14mDJzZkLot7AuDKa7p-iafdkwEfia7ocwLO8Lk0, payer_email=smobrien@computer.net, last_name=OBrien, address_state=NY, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_signup, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 21 Feb 2009 16:42:26 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=SVpXluJW-m_LaU5S7vmLza7XpXUBbfZgqay5g3CQ-KknXKFbv0s7uoMMQ-79XeqthcgIZZSa3P-JuYaU8xUCLqhzTbk6ddei4aV-LqOqD7NJRGTVPH1WxJfYDuRReEQIpfUgRG%7cRj9sJMVTdPWZA2GCEn45oFQn_Lfm7ATatSfo52y-bLICZLoohs3Bl0kFtUAmdD25frFeCG%7cAT4YX2Pug3RokmszAL3RCuhXQnMBE0tCchOgAct4HqzrurTbujCcLLsSPw1WVRArZmcoAW%7c1235234547; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 19-Feb-2019 16:42:27 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 16-Feb-2029 16:42:27 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/21/2009 11:49 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=confirmed, subscr_date=09:49:16 Feb 21, 2009 PST, payer_id=QLPHWTHYDE6ZL, address_street=82 Grandview Drive, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=10549, first_name=Susan, reattempt=1, address_country_code=US, address_name=Susan OBrien, notify_version=2.7, subscr_id=S-2D862899U0748615F, custom=79, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Mount Kisco, verify_sign=A7JRcUHE2qlMT1VQOD3vEJF0JfS4A4usV.3FjTcczVO2u6ZwtlTIfUH7, payer_email=smobrien@computer.net, last_name=OBrien, address_state=NY, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Sat, 21 Feb 2009 17:49:18 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=DxZAr5IdrdJM6jX8TmlZoFAItlFp1Gh5-Bzn2GIWbmGCkSwD2vrncYaX_bL3ogg9sDd7qfZU-jtZ3rmv1nJuNOAyucRj3BtDdZNPfNbQQjTZFLRfmtAUan2gyaAHg0oBNybmEW%7crQaTtGUfqUy8L5NRA4FqBP8TFGBvotjYWbGJPHUIphGDEZp-vJSjSzcqHDY9P0A3Wx4_0m%7clFvAu_dV830IYwuG8U96g8UeWZVsSM4X-oMWyUA5IqJPqUasHfTmA76RGzTcfLQXgxtOMG%7c1235238558; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Tue, 19-Feb-2019 17:49:18 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Fri, 16-Feb-2029 17:49:18 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/23/2009 8:06 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+amount1=0.00, amount3=20.00, address_status=unconfirmed, subscr_date=06:06:46 Feb 23, 2009 PST, payer_id=92KHR2DPPY6QJ, address_street=P.o. Box 5192, mc_amount1=0.00, mc_amount3=20.00, charset=windows-1252, address_zip=83340, first_name=Malcolm, reattempt=1, address_country_code=US, address_name=Malcolm Beard, notify_version=2.7, subscr_id=S-4DA95830GE8103544, custom=68, payer_status=unverified, business=payment@thevacationcalendar.com, address_country=United States, address_city=Ketchum, verify_sign=AQiqOIJ8PQLqdvGIpr3zsPpR4TQ6AHAf1RdlnXbMLYCRQ0-fpbGxk4bp, payer_email=mcbinsv@msn.com, last_name=Beard, address_state=ID, receiver_email=payment@thevacationcalendar.com, recurring=1, txn_type=subscr_cancel, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, residence_country=US, period1=1 M, period3=1 Y, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 23 Feb 2009 14:06:48 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=shY3x0DwGnf2oZbIEmbR1WGepeuAyuCxg34c4wUYtAoie-QYm0XOWBNFYU86rKIxBeQtJeus8p81lgeDvyqQ43BSeA9cx07xIuPT6izsmMuf3aZ2Lekq4NeuocF4euQZaOtt4G%7cGO_OFtLfRDJPL4WVeXWHTfwWE4l5rlnWxnZUW55VY-bR58FuP8UFrUSPCu6g1FTYNqQJMW%7coNw1Ec7z47BBcZsAL1J_sgheuohg34mzC0-ixwEM50sIVj7dmoY4bi3o0yOxd3J1pmshJ0%7c1235398008; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Thu, 21-Feb-2019 14:06:48 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sun, 18-Feb-2029 14:06:48 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+
+[02/23/2009 8:13 AM] - SUCCESS!
+IPN POST Vars from Paypal:
+txn_type=subscr_eot, subscr_id=S-4DA95830GE8103544, last_name=Beard, residence_country=US, item_name=The Vacation Calendar Annual Subscription, mc_currency=USD, business=payment@thevacationcalendar.com, verify_sign=AFcWxV21C7fd0v3bYYYRCpSSRl31AqJwUtUsovB1ioTCwNUg.kZE8fB3, payer_status=unverified, payer_email=mcbinsv@msn.com, first_name=Malcolm, receiver_email=payment@thevacationcalendar.com, payer_id=92KHR2DPPY6QJ, custom=68, charset=windows-1252, notify_version=2.7, 
+IPN Response from Paypal Server:
+ HTTP/1.1 200 OK
+Date: Mon, 23 Feb 2009 14:13:46 GMT
+Server: Apache
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=BGKPXxI-ietUqH2dDFz-RvoY_mURTG4ySAg26mJcVBj3FACXrthbdHFM7E6vn0ld71KuUNWO2xFDlkmjowYRcVxVEGrbaCSV6RHDDnW6VQ5ayD1kXBSJKJpammOR3mENiXU7H0%7cb1cIjrvXfemaycYB9F_D6C_zRnRQZCDNch6xuSkQVQOcgtkBq9mBpOEPU--NqFpSjB9p8W%7cI1xjj3cFHG1h6JNVC4iobzdF__ryzgiIoKgGYaA0P-5rWRlqG3tlN9X1yO2Zn2N3uxYLi0%7c1235398426; domain=.paypal.com; path=/
+Set-Cookie: cookie_check=yes; expires=Thu, 21-Feb-2019 14:13:46 GMT; domain=.paypal.com; path=/
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/
+Set-Cookie: navlns=0; expires=Sun, 18-Feb-2029 14:13:46 GMT; domain=.paypal.com; path=/
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+8
+VERIFIED
+0
+
+
+

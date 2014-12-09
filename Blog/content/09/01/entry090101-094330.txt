@@ -1,0 +1,27 @@
+VERSION|0.5.1|SUBJECT|Enhancement List|CONTENT|[b]Some of you have asked what is next. To request an enhancement, please either use the contact us email or add a comment below. Below is the list of tasks (in order) for TheVacationCalendar Development Team:[/b]
+
+Add functionality to remember the last house a user logged into in order to remove the need to always search for their vacation home.
+
+Set a maximum of 50 rows to come back in house search
+
+Create functionality to allow for a guest to request open time on the calendar. The Admin will need a control to have the email go to the Admin or to all owners
+
+Build functionality to delete all house data for incomplete houses or houses that no longer have a subscription
+
+Rework the schedule guests screen to improve the formatting and usability
+
+Improve the sign-up process and ensure that a user can go back without disrupting the process. Additionally, add functionality to allow a partially created house to be finished.
+
+Create subscription management screen 
+
+Add the ability to delete a comment from the Blog
+
+Create email for support links that pops a new window and allows for user to submit issues
+
+Timeout should automatically redirect to home page
+
+Functionality to rent unused vacation time 
+
+More robust Photo Album functionality including categories
+
+Section for recommended things to do like restaurants, activities, shopping, etc.|CATEGORIES|5|TB_PING||relatedlink|http://www.thevacationcalendar.com/Blog/index.php?entry=entry090101-094330|IP-ADDRESS|65.246.5.254|CREATEDBY|admin|DATE|1230821010

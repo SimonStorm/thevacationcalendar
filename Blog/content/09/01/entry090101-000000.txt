@@ -1,0 +1,3 @@
+VERSION|0.5.1|SUBJECT|News|CONTENT|We are pleased to announce a new section available to the public called news. This is a place where TheVacationCalendar.com Team can provide news and updates about the site, answer questions, and show the user community what we are working on. We hope you like it!
+
+[img=images/News.jpg popup=false]|CATEGORIES|1|IP-ADDRESS|::1|CREATEDBY|admin|DATE|1230786000
