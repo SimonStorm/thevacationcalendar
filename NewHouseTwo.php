@@ -3,9 +3,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">		
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
 <script type="text/javascript">
 
 function Validate(inForm) {
@@ -81,6 +94,10 @@ function Validate(inForm) {
 <?php include("Navigation.php") ?>
 <?php ActivityLog('Info', curPageURL(), 'New House Setup Page 2',  NULL, NULL); ?>
 <?php include("register_funcs.inc") ?>
+
+<div class="container vacation">	
+  <h1>Create your Vacation House</h1>&nbsp;<h2>Page 2</h2>
+
 <?php
 
 //echo "<pre>";
@@ -97,43 +114,41 @@ function Validate(inForm) {
 if (isset($_POST['HouseName']))
 {
 	
-	$IsNewHouseQuery = "SELECT * FROM House WHERE HouseName = '".mysql_real_escape_string($_POST['HouseName'])."'";
+	$IsNewHouseQuery = "SELECT * FROM House WHERE HouseName = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['HouseName'])."'";
 
-	if (!mysql_query( $IsNewHouseQuery ))
+	if (!mysqli_query( $GLOBALS['link'],  $IsNewHouseQuery ))
 	{
-		ActivityLog('Error', curPageURL(), 'Select House Info for House Setup',  $IsNewHouseQuery, mysql_error());
-		die ("Could not execute house search: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select House Info for House Setup',  $IsNewHouseQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not execute house search: <br />". mysqli_error($GLOBALS['link']));
 	}
-    $result = mysql_query($IsNewHouseQuery);
+    $result = mysqli_query( $GLOBALS['link'], $IsNewHouseQuery);
 
 // If the house name exists, then prompt for a new name and pass the other values as hidden variables
 
 
-    if (!$result || mysql_num_rows($result) > 0)
+    if (!$result || mysqli_num_rows($result) > 0)
     {
 		$feedback = 'A house with this name already exists in the system, please select another name';
 		
 		echo $feedback."<br/><br/>";
 
-		$Address1 = mysql_real_escape_string($_POST['Address1']);
-		$Address2 = mysql_real_escape_string($_POST['Address2']);
-		$City = mysql_real_escape_string($_POST['City']);
-		$State = mysql_real_escape_string($_POST['State']);
-		$ZipCode = mysql_real_escape_string($_POST['ZipCode']);
-		$HomePhone = mysql_real_escape_string($_POST['HomePhone']);
-		$Fax = mysql_real_escape_string($_POST['Fax']);
-		$EmergencyPhone = mysql_real_escape_string($_POST['EmergencyPhone']);
-		$ReferredBy = mysql_real_escape_string($_POST['ReferredBy']);
+		$Address1 = mysqli_real_escape_string($GLOBALS['link'], $_POST['Address1']);
+		$Address2 = mysqli_real_escape_string($GLOBALS['link'], $_POST['Address2']);
+		$City = mysqli_real_escape_string($GLOBALS['link'], $_POST['City']);
+		$State = mysqli_real_escape_string($GLOBALS['link'], $_POST['State']);
+		$ZipCode = mysqli_real_escape_string($GLOBALS['link'], $_POST['ZipCode']);
+		$HomePhone = mysqli_real_escape_string($GLOBALS['link'], $_POST['HomePhone']);
+		$Fax = mysqli_real_escape_string($GLOBALS['link'], $_POST['Fax']);
+		$EmergencyPhone = mysqli_real_escape_string($GLOBALS['link'], $_POST['EmergencyPhone']);
+		$ReferredBy = mysqli_real_escape_string($GLOBALS['link'], $_POST['ReferredBy']);
 		
 
 $house_form = <<< EOHOUSEFORM
 
-<form id="inForm" action="NewHouseTwo.php" method="post" >
-<table border="0" align="center" width="55%">
-	<tr align="center">
-		<td colspan="4"><h1>Create your Vacation House</h1>&nbsp;<h2>Page 2</h2></td>
-	</tr>
 
+
+<form class="form-signin" role="form" enctype="multipart/form-data" id="inForm" action="NewHouseTwo.php" method="post">
+<table border="0" align="center" width="55%">
 	<tr align="center">
 		<td colspan="4">
 			<table border="0" class="FocusTable" align="center" cellpadding="5" width="100%">
@@ -180,73 +195,64 @@ echo $house_form;
 	else      
 	{
 		$AddHouseQuery = "INSERT INTO House (HouseName, Address1, Address2, City, State, ZipCode, HomePhone, Fax, EmergencyPhone, ReferredBy, Status,  Audit_user_name, Audit_Role, Audit_FirstName, Audit_LastName, Audit_Email) 
-					VALUES ('".mysql_real_escape_string($_POST['HouseName'])."', '".mysql_real_escape_string($_POST['Address1'])."', '".mysql_real_escape_string($_POST['Address2'])."', 
-					'".mysql_real_escape_string($_POST['City'])."', '".mysql_real_escape_string($_POST['State'])."', '".mysql_real_escape_string($_POST['ZipCode'])."', 
-					'".mysql_real_escape_string($_POST['HomePhone'])."', '".mysql_real_escape_string($_POST['Fax'])."', '".mysql_real_escape_string($_POST['EmergencyPhone'])."', '".mysql_real_escape_string($_POST['ReferredBy'])."', 'P',
+					VALUES ('".mysqli_real_escape_string($GLOBALS['link'], $_POST['HouseName'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Address1'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Address2'])."', 
+					'".mysqli_real_escape_string($GLOBALS['link'], $_POST['City'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['State'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['ZipCode'])."', 
+					'".mysqli_real_escape_string($GLOBALS['link'], $_POST['HomePhone'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Fax'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['EmergencyPhone'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['ReferredBy'])."', 'P',
 					'New House', NULL, NULL, NULL, NULL)";
 
-		if (!mysql_query( $AddHouseQuery ))
+		if (!mysqli_query( $GLOBALS['link'],  $AddHouseQuery ))
 		{
-			ActivityLog('Error', curPageURL(), 'Insert House Info for House Setup',  $AddHouseQuery, mysql_error());
-			die ("Could not insert new house info 1 into the database: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Insert House Info for House Setup',  $AddHouseQuery, mysqli_error($GLOBALS['link']));
+			die ("Could not insert new house info 1 into the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 		
-//		echo "<br/><br/>Last inserted record has id ".mysql_insert_id();
+//		echo "<br/><br/>Last inserted record has id ".mysqli_insert_id($GLOBALS['link']);
 		
-		$NewHouseId = mysql_insert_id();
+		$NewHouseId = mysqli_insert_id($GLOBALS['link']);
 
 $admin_form = <<< EOADMINFORM
-
-<form id="inForm" action="NewHouseThree.php" method="post" >
-<table border="0" align="center" width="55%">
-	<tr align="center">
-		<td colspan="4"><h1>Create your Vacation House</h1>&nbsp;<h2>Page 2</h2></td>
-	</tr>
-
-	<tr align="center">
-		<td colspan="4">
-			<table border="0" class="FocusTable" align="center" cellpadding="5" width="100%">
-				<tr>
-					<td colspan="4"><h3>Administrator Information</h3></td>
-				</tr>
-				<tr>
-					<td class="TextItem">Admin Username*:</td><td colspan="1"><input maxlength="20" type="text" name="user_name"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Admin Password*:</td><td colspan="1"><input maxlength="20" type="password" name="password1"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Admin Password (confirm)*:</td><td colspan="1"><input maxlength="20" type="password" name="password2"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Admin Email*:</td><td colspan="1"><input maxlength="40" type="text" name="email"></input>
-					<input type="hidden" name="houseid" value=$NewHouseId></input>
-				</tr>
-				<tr>
-					<TD CLASS=TextItem>Allow Administrator to have Owner permissions:</td><td colspan="1"><input name="AdminOwner" type="checkbox"></td>
-				</tr>				
-				<tr>
-					<td class="TextItem">First Name:</td><td colspan="1"><input maxlength="40" type="text" name="first_name"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Last Name:</td><td colspan="1"><input maxlength="40" type="text" name="last_name"></input>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
-<table border="0" align="center" width="55%">
-	<tr>
-		<td align="left" colspan="3">* Required Field</td>
-		<td align="right"><input type="submit" value="Next" onclick="return Validate(this.form);"></td>
-	</tr>
-	<tr>
-		<td colspan="4">&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="4">&nbsp;</td>
-	</tr>
-</table>
+<form class="form-signin" role="form" enctype="multipart/form-data" id="inForm" action="NewHouseThree.php" method="post">
+		<div class="form-group">
+		  <h3>House Details</h3>
+		</div>
+		<div class="form-group">
+		  <input type="text" placeholder="Admin Username*" class="form-control" name="user_name">
+		</div>		
+		<div class="form-group">
+		  <input type="password" placeholder="Admin Password*" class="form-control" name="password1">
+		</div>	
+		<div class="form-group">
+		  <input type="password" placeholder="Admin Password (confirm)*" class="form-control" name="password2">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Admin Email*" class="form-control" name="email">
+		  <input type="hidden" name="houseid" value=$NewHouseId></input>
+		</div>	
+		<div class="form-group">
+		  Allow Administrator to have Owner permissions
+		  <input type="checkbox" name="AdminOwner">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="First Name" class="form-control" name="first_name">
+		</div>		
+		<div class="form-group">
+		  <input type="text" placeholder="Last Name" class="form-control" name="last_name">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Zip Code" class="form-control" name="ZipCode">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Home Phone" class="form-control" name="HomePhone">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Fax" class="form-control" name="Fax">
+		</div>		
+		<div class="form-group">					
+		  <h3>* Required Field</h3>
+	    </div>				
+		<div class="form-group">					
+		  <button type="submit" name="Submit" class="btn btn-success" onclick="return Validate(this.form);">Next</button>
+	    </div>	
 </form>
 EOADMINFORM;
 
@@ -282,6 +288,7 @@ if (isset($_FILES['HousePicture']))
 		$height = ImageSy($WorkingPicture);
 		$Ratio = $height/$width;
 
+
 		$IconCompress = 100;
 		
 		//
@@ -289,7 +296,7 @@ if (isset($_FILES['HousePicture']))
 		//
 		
 		// Creating the Icon Canvas
-		$NewHeight = 120;
+		$NewHeight = 300;
 		$NewWidth = $NewHeight/$Ratio;
 		
 		$IconPicture = imagecreatetruecolor($NewWidth, $NewHeight);
@@ -324,6 +331,7 @@ else
 
 <?php include("Footer.php") ?>
 
+</div>
 
 </body>
 </html>

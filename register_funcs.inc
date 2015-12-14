@@ -27,12 +27,12 @@ function user_register() {
                 WHERE (user_name = '$user_name'
                 OR email = '$email')
                 AND HouseId = $houseid";
-      $result = mysql_query($query);
+      $result = mysqli_query( $GLOBALS['link'], $query);
       if (!$result)
       {
-      	ActivityLog('Error', curPageURL(), 'Select for duplicate username or email',  $query, mysql_error());
+      	ActivityLog('Error', curPageURL(), 'Select for duplicate username or email',  $query, mysqli_error($GLOBALS['link']));
       }
-      elseif (mysql_num_rows($result) > 0) {
+      elseif (mysqli_num_rows($result) > 0) {
 		 $feedback = 'ERROR - Username or email address already exists';
         return $feedback;
       } else {
@@ -67,9 +67,9 @@ function user_register() {
         $query = "INSERT INTO user (user_id, user_name, first_name, last_name, password, email, remote_addr, confirm_hash, is_confirmed, role, date_created, houseid, AdminOwner,  Audit_user_name)
                   VALUES (NULL, '$user_name', '$first_name', '$last_name', '$password', '$email', '$user_ip', '$hash', $confirmed, 'Administrator', NOW(), '$houseid', '$OwnerAdmin', 'Register Admin')";
 
-        $result = mysql_query($query);
+        $result = mysqli_query( $GLOBALS['link'], $query);
         if (!$result) {
-          ActivityLog('Error', curPageURL(), 'Insert new Admin user',  $query, mysql_error());
+          ActivityLog('Error', curPageURL(), 'Insert new Admin user',  $query, mysqli_error($GLOBALS['link']));
           $feedback = 'ERROR - Database error';
           return $feedback;
         } else {
@@ -136,12 +136,12 @@ function owner_register() {
                 WHERE (user_name = '$user_name'
                 OR email = '$email')
                 AND houseid = ".$_SESSION["HouseId"];
-      $result = mysql_query($query);
+      $result = mysqli_query( $GLOBALS['link'], $query);
       if (!$result)
       {
-      	ActivityLog('Error', curPageURL(), 'Select for duplicate Owner username or email',  $query, mysql_error());
+      	ActivityLog('Error', curPageURL(), 'Select for duplicate Owner username or email',  $query, mysqli_error($GLOBALS['link']));
       }
-      elseif (mysql_num_rows($result) > 0) {
+      elseif (mysqli_num_rows($result) > 0) {
 		 $feedback = 'ERROR - Username or email address already exists';
         return $feedback;
       } else {
@@ -189,9 +189,9 @@ function owner_register() {
                   VALUES (NULL, '$user_name', '$first_name', '$last_name', '$password', '$email', '$user_ip', '$hash', $confirmed, 'Owner', NOW(), ".$_SESSION["HouseId"].", '".$_SESSION['user_name']."', '".$_SESSION['Role']."', '".$_SESSION['FirstName']."', '".$_SESSION['LastName']."', '".$_SESSION['Email']."')";
 
 
-        $result = mysql_query($query);
+        $result = mysqli_query( $GLOBALS['link'], $query);
         if (!$result) {
-          ActivityLog('Error', curPageURL(), 'Insert new Owner user',  $query, mysql_error());
+          ActivityLog('Error', curPageURL(), 'Insert new Owner user',  $query, mysqli_error($GLOBALS['link']));
           $feedback = 'ERROR - Unable to insert new owner into user table';
           return $feedback;
         } else {
@@ -252,10 +252,10 @@ function guest_register($HouseId) {
                 FROM user
                 WHERE role = 'Guest'
                 AND houseid = ".$HouseId;
-      $result = mysql_query($query);
+      $result = mysqli_query( $GLOBALS['link'], $query);
 
       if (!$result) {
-        ActivityLog('Error', curPageURL(), 'Delete existing Guest user',  $query, mysql_error());
+        ActivityLog('Error', curPageURL(), 'Delete existing Guest user',  $query, mysqli_error($GLOBALS['link']));
         $feedback = 'ERROR - Ubable to delete user';
         return $feedback;
       } else {
@@ -272,9 +272,9 @@ function guest_register($HouseId) {
 
         $query = "INSERT INTO user (user_id, user_name, first_name, last_name, password, email, remote_addr, confirm_hash, is_confirmed, role, date_created, HouseId,  Audit_user_name)
                   VALUES (NULL, '$user_name', 'Guest', 'User', '$password', NULL, '$user_ip', NULL, 1, 'Guest', NOW(), ".$HouseId.",  'Add Guest')";
-        $result = mysql_query($query);
+        $result = mysqli_query( $GLOBALS['link'], $query);
         if (!$result) {
-          ActivityLog('Error', curPageURL(), 'Insert new Guest user',  $query, mysql_error());
+          ActivityLog('Error', curPageURL(), 'Insert new Guest user',  $query, mysqli_error($GLOBALS['link']));
           $feedback = 'ERROR - Unable to create your guest account. Please email support@thevacationcalendar.com for support.';
           return $feedback;
         } else {
@@ -287,9 +287,9 @@ function guest_register($HouseId) {
 							Audit_Email = NULL
 						WHERE HouseId = ".$HouseId;
 
-			$result = mysql_query($query);
+			$result = mysqli_query( $GLOBALS['link'], $query);
 			if (!$result) {
-		        ActivityLog('Error', curPageURL(), 'Update house info with new guest password',  $query, mysql_error());
+		        ActivityLog('Error', curPageURL(), 'Update house info with new guest password',  $query, mysqli_error($GLOBALS['link']));
 			  $feedback = 'ERROR - Unable to update house password. Please email support@thevacationcalendar.com for support.';
 			  return $feedback;
 			} else {
@@ -327,12 +327,12 @@ if (isset($_POST['user_id']))
 		// Handle submission.  This is a one-time only form
 		// so there will be no problems with handling errors.
 		$query = "select 1 from user where user_id = ".$_POST['user_id'];
-		$result = mysql_query($query);
+		$result = mysqli_query( $GLOBALS['link'], $query);
 		  if (!$result)
 		  {
-			ActivityLog('Error', curPageURL(), 'Select for duplicate Owner username or email',  $query, mysql_error());
+			ActivityLog('Error', curPageURL(), 'Select for duplicate Owner username or email',  $query, mysqli_error($GLOBALS['link']));
 		  }
-		  elseif (mysql_num_rows($result) < 1) {
+		  elseif (mysqli_num_rows($result) < 1) {
 			$feedback = 'ERROR - Unable to find user';
 			return $feedback;
 		} 
@@ -342,7 +342,7 @@ if (isset($_POST['user_id']))
 			$password = $_POST['password1'];
 			$as_username = $_POST['user_name'];
 			$as_email = addslashes($as_email);
-			$is_user = mysql_num_rows($result);
+			$is_user = mysqli_num_rows($result);
 		}	
 		
 		$server = $_SERVER['HTTP_HOST'];
@@ -369,10 +369,10 @@ if (isset($_POST['user_id']))
 							 where user_id = ".$_POST['user_id'];
 	
 			   // Put password in the db
-				$result = mysql_query($query);
+				$result = mysqli_query( $GLOBALS['link'], $query);
 			  if (!$result)
 			  {
-				ActivityLog('Error', curPageURL(), 'Update user with new password',  $query, mysql_error());
+				ActivityLog('Error', curPageURL(), 'Update user with new password',  $query, mysqli_error($GLOBALS['link']));
 				die('Cannot complete update'); 
 			  }
 			}
@@ -479,12 +479,12 @@ function user_confirm() {
     $query = "SELECT user_name
               FROM user
               WHERE confirm_hash = '$new_hash'";
-    $result = mysql_query($query);
+    $result = mysqli_query( $GLOBALS['link'], $query);
       if (!$result)
       {
-      	ActivityLog('Error', curPageURL(), 'Select hash for user confirm',  $query, mysql_error());
+      	ActivityLog('Error', curPageURL(), 'Select hash for user confirm',  $query, mysqli_error($GLOBALS['link']));
       }
-      elseif (mysql_num_rows($result) < 1) {
+      elseif (mysqli_num_rows($result) < 1) {
 	      $feedback = 'ERROR - Hash not found';
     	  return $feedback;
     } else {
@@ -494,10 +494,10 @@ function user_confirm() {
       $query = "UPDATE user SET email='$email', is_confirmed=1,
 							Audit_user_name = 'CONFIRM USER',
 					 WHERE confirm_hash='$hash'";
-      $result = mysql_query($query);
+      $result = mysqli_query( $GLOBALS['link'], $query);
       if (!$result)
       {
-      	ActivityLog('Error', curPageURL(), 'Update to confirm user',  $query, mysql_error());
+      	ActivityLog('Error', curPageURL(), 'Update to confirm user',  $query, mysqli_error($GLOBALS['link']));
       }
       return 1;
     }

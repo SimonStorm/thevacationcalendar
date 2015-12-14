@@ -32,7 +32,7 @@ echo "</pre>";
 // Calls a function to get the array of room usage for the month
 // Used in CreateCalendar.php
 /**
-function GetAvailableBunks($Month, $Year, &$AvailableBunksArray)
+function GetAvailableBunks($Month, $Year, $AvailableBunksArray)
 {
 	$UsedRoomsQuery = "SELECT COUNT(R.RoomId) 'UsedRooms', C.Day
     			FROM Calendar C
@@ -43,10 +43,10 @@ function GetAvailableBunks($Month, $Year, &$AvailableBunksArray)
 				GROUP BY C.Day
     			ORDER BY C.Day";
 
-	$UsedRoomsResults = mysql_query( $UsedRoomsQuery );
+	$UsedRoomsResults = mysqli_query( $GLOBALS['link'],  $UsedRoomsQuery );
 	if (!$UsedRoomsResults)
 	{
-		die ("Could not query the database: <br />". mysql_error());
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 }
 */
@@ -97,11 +97,11 @@ function ActivityLog($LogLevel, $WebPage, $Comment, $Query, $ErrorMsg)
 	if ($LogLevelPref == 'Debug' || ($LogLevelPref == 'Info' && ($LogLevel == 'Info' || $LogLevel == 'Warn' || $LogLevel == 'Error')) || ($LogLevelPref == 'Warn' && ($LogLevel == 'Warn' || $LogLevel == 'Error')) || ($LogLevelPref == 'Error' && $LogLevel == 'Error'))
 	{
 		$InsertActivityLog = "INSERT INTO audit_Log (Audit_LogLevel,  Audit_WebPage, Audit_Comment, Audit_Timestamp, Audit_HouseId, Audit_user_name, Audit_Role, Audit_Query, Audit_MySQL_Error) 
-		VALUES ('".$LogLevel."', '".$WebPage."', '".$Comment."', SYSDATE(), '".$HouseId."', '".$UserName."', '".$Role."', '".mysql_real_escape_string($Query)."', '".mysql_real_escape_string($ErrorMsg)."')";
-//echo $InsertActivityLog;
-		if (!mysql_query( $InsertActivityLog ))
+		VALUES ('".$LogLevel."', '".$WebPage."', '".$Comment."', SYSDATE(), '".$HouseId."', '".$UserName."', '".$Role."', '".mysqli_real_escape_string($GLOBALS['link'], $Query)."', '".mysqli_real_escape_string($GLOBALS['link'], $ErrorMsg)."')";
+
+		if (!mysqli_query( $GLOBALS['link'], $InsertActivityLog ))
 		{
-			die ("Could not insert logging into the database: <br />". mysql_error());
+			die ("Could not insert logging into the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 	}
 
@@ -117,16 +117,16 @@ function ShowOldSave()
     			FROM user
 				WHERE user_id = ".$_SESSION['OwnerId'];
 
-	$ShowOldSaveResults = mysql_query( $ShowOldSaveQuery );
+	$ShowOldSaveResults = mysqli_query( $GLOBALS['link'],  $ShowOldSaveQuery );
 	if (!$ShowOldSaveResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select to find if User wants to use the old save vacation',  $ShowOldSaveQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select to find if User wants to use the old save vacation',  $ShowOldSaveQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
-	if (mysql_num_rows($ShowOldSaveResults) > 0)
+	if (mysqli_num_rows($ShowOldSaveResults) > 0)
 	{
-		while ($ShowOldSaveRow = mysql_fetch_array($ShowOldSaveResults, MYSQL_ASSOC)) 
+		while ($ShowOldSaveRow = mysqli_fetch_array($ShowOldSaveResults, MYSQL_ASSOC)) 
 		{
 			if ($ShowOldSaveRow['ShowOldSave'] == 'Y')
 			{
@@ -140,8 +140,8 @@ function ShowOldSave()
 	}
 	else
 	{
-		ActivityLog('Error', curPageURL(), 'Multiple users found for User wants to use the old save vacation',  $ShowOldSaveQuery, mysql_error());
-		die ("Too many records returned: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Multiple users found for User wants to use the old save vacation',  $ShowOldSaveQuery, mysqli_error($GLOBALS['link']));
+		die ("Too many records returned: <br />". mysqli_error($GLOBALS['link']));
 		return "";
 	}
 	
@@ -154,12 +154,12 @@ function SendNotification($Change, $VacationId)
 
 	if (strlen(CalEmailList()) > 0)
 	{	
-		GetVacationDates(&$VacationResult, $VacationId, &$StartRange, &$StartDate, &$EndRange, &$EndDate, &$VacationName, &$AllowGuests, &$AllowOwners, &$FirstName, &$LastName, &$OwnerIdVal, &$BkgrndColor, &$FontColor);	
+		$VacationResult = GetVacationDates($VacationResult, $VacationId, $StartRange, $StartDate, $EndRange, $EndDate, $VacationName, $AllowGuests, $AllowOwners, $FirstName, $LastName, $OwnerIdVal, $BkgrndColor, $FontColor);	
 		
 		$EmailContent = "";
-		while ($VacationInfoRow = mysql_fetch_array($VacationResult, MYSQL_ASSOC)) 
+		while ($VacationInfoRow = mysqli_fetch_array($VacationResult, MYSQL_ASSOC)) 
 		{
-			 $EmailContent .= $VacationInfoRow['VacationName']." has been ".$Change." from ".$StartDate." to ".$EndDate;
+			 $EmailContent .= $VacationInfoRow['VacationName']." has been ".$Change." from ".$VacationInfoRow['StartDate']." to ".$VacationInfoRow['EndDate'];
 		}
 			
 		$mail_body = <<< EOMAILBODY
@@ -192,10 +192,10 @@ function SendBlogNotification($Change, $BlogId)
 	
 	if (strlen(BlogEmailList()) > 0)
 	{	
-		GetBlog(&$BlogResult, $BlogId, 'B');
+		$BlogResult = GetBlog($BlogId, 'B');
 		
 		$EmailContent = "";
-		while ($BlogRow = mysql_fetch_array($BlogResult, MYSQL_ASSOC)) 
+		while ($BlogRow = mysqli_fetch_array($BlogResult, MYSQL_ASSOC)) 
 		{
 			 $EmailContent .= $BlogRow['Subject']."-- Posted by ".$BlogRow['Author'].":  ".$BlogRow['Content'];
 		}
@@ -232,24 +232,24 @@ function CalEmailList()
     			FROM House
 				WHERE HouseId = ".$_SESSION['HouseId'];
 
-	$CalEmailListResults = mysql_query( $CalEmailListQuery );
+	$CalEmailListResults = mysqli_query( $GLOBALS['link'],  $CalEmailListQuery );
 	if (!$CalEmailListResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select to find cal changes email list',  $CalEmailListQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select to find cal changes email list',  $CalEmailListQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
-	if (mysql_num_rows($CalEmailListResults) > 0)
+	if (mysqli_num_rows($CalEmailListResults) > 0)
 	{
-		while ($CalEmailListRow = mysql_fetch_array($CalEmailListResults, MYSQL_ASSOC)) 
+		while ($CalEmailListRow = mysqli_fetch_array($CalEmailListResults, MYSQL_ASSOC)) 
 		{
 			return $CalEmailListRow['CalEmailList'];	
 		}
 	}
 	else
 	{
-		ActivityLog('Error', curPageURL(), 'Multiple email lists found for house',  $CalEmailListQuery, mysql_error());
-		die ("Too many records returned: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Multiple email lists found for house',  $CalEmailListQuery, mysqli_error($GLOBALS['link']));
+		die ("Too many records returned: <br />". mysqli_error($GLOBALS['link']));
 		return "";
 	}
 	
@@ -264,24 +264,24 @@ function BlogEmailList()
     			FROM House
 				WHERE HouseId = ".$_SESSION['HouseId'];
 
-	$BlogEmailListResults = mysql_query( $BlogEmailListQuery );
+	$BlogEmailListResults = mysqli_query( $GLOBALS['link'],  $BlogEmailListQuery );
 	if (!$BlogEmailListResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select to find blog email list',  $BlogEmailListQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select to find blog email list',  $BlogEmailListQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
-	if (mysql_num_rows($BlogEmailListResults) > 0)
+	if (mysqli_num_rows($BlogEmailListResults) > 0)
 	{
-		while ($BlogEmailListRow = mysql_fetch_array($BlogEmailListResults, MYSQL_ASSOC)) 
+		while ($BlogEmailListRow = mysqli_fetch_array($BlogEmailListResults, MYSQL_ASSOC)) 
 		{
 			return $BlogEmailListRow['BlogEmailList'];	
 		}
 	}
 	else
 	{
-		ActivityLog('Error', curPageURL(), 'Multiple blog email lists found for house',  $BlogEmailListQuery, mysql_error());
-		die ("Too many records returned: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Multiple blog email lists found for house',  $BlogEmailListQuery, mysqli_error($GLOBALS['link']));
+		die ("Too many records returned: <br />". mysqli_error($GLOBALS['link']));
 		return "";
 	}
 	
@@ -295,14 +295,14 @@ function HasRooms()
     			FROM Room R
 				WHERE HouseId = ".$_SESSION['HouseId'];
 
-	$HasRoomsResults = mysql_query( $HasRoomsQuery );
+	$HasRoomsResults = mysqli_query( $GLOBALS['link'],  $HasRoomsQuery );
 	if (!$HasRoomsResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select to find if House has Rooms Defined',  $HasRoomsQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select to find if House has Rooms Defined',  $HasRoomsQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
-	if (mysql_num_rows($HasRoomsResults) > 0)
+	if (mysqli_num_rows($HasRoomsResults) > 0)
 	{
 		return true;	
 	}
@@ -320,16 +320,16 @@ function IsAdminOwner()
     			FROM user
 				WHERE user_id = ".$_SESSION['OwnerId'];
 
-	$IsAdminResults = mysql_query( $IsAdminQuery );
+	$IsAdminResults = mysqli_query( $GLOBALS['link'], $IsAdminQuery );
 	if (!$IsAdminResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select to find if Admin is Owner',  $IsAdminQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select to find if Admin is Owner',  $IsAdminQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
-	if (mysql_num_rows($IsAdminResults) > 0)
+	if (mysqli_num_rows($IsAdminResults) > 0)
 	{
-		while ($IsAdminRow = mysql_fetch_array($IsAdminResults, MYSQL_ASSOC)) 
+		while ($IsAdminRow = mysqli_fetch_array($IsAdminResults, MYSQL_ASSOC)) 
 		{
 			if ($IsAdminRow['AdminOwner'] == 'Y')
 			{
@@ -355,16 +355,16 @@ function IsHouseAdminOwner()
 				WHERE HouseId = ".$_SESSION['HouseId']."
 				AND role = 'Administrator'";
 
-	$IsAdminResults = mysql_query( $IsAdminQuery );
+	$IsAdminResults = mysqli_query( $GLOBALS['link'],  $IsAdminQuery );
 	if (!$IsAdminResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select to find if Admin of the House is Owner',  $IsAdminQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select to find if Admin of the House is Owner',  $IsAdminQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
-	if (mysql_num_rows($IsAdminResults) > 0)
+	if (mysqli_num_rows($IsAdminResults) > 0)
 	{
-		while ($IsAdminRow = mysql_fetch_array($IsAdminResults, MYSQL_ASSOC)) 
+		while ($IsAdminRow = mysqli_fetch_array($IsAdminResults, MYSQL_ASSOC)) 
 		{
 			if ($IsAdminRow['AdminOwner'] == 'Y')
 			{
@@ -391,16 +391,16 @@ function WantsIntro()
     			FROM user
 				WHERE user_id = ".$_SESSION['OwnerId'];
 
-	$WantsIntroResults = mysql_query( $WantsIntroQuery );
+	$WantsIntroResults = mysqli_query( $GLOBALS['link'],  $WantsIntroQuery );
 	if (!$WantsIntroResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select to find if User wants intro',  $WantsIntroQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select to find if User wants intro',  $WantsIntroQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
-	if (mysql_num_rows($WantsIntroResults) > 0)
+	if (mysqli_num_rows($WantsIntroResults) > 0)
 	{
-		while ($WantsIntroRow = mysql_fetch_array($WantsIntroResults, MYSQL_ASSOC)) 
+		while ($WantsIntroRow = mysqli_fetch_array($WantsIntroResults, MYSQL_ASSOC)) 
 		{
 			if ($WantsIntroRow['Intro'] == 'Y')
 			{
@@ -422,7 +422,7 @@ function WantsIntro()
 
 // Calls a function to get the array of room usage for the month
 // Used in CreateCalendar.php
-function GetUsedRooms($Month, $Year, &$UsedRoomsResults)
+function GetUsedRooms($Month, $Year, $UsedRoomsResults)
 {
 	$UsedRoomsQuery = "SELECT COUNT(DISTINCT(R.RoomId)) 'UsedRooms', C.Day
     			FROM Calendar C
@@ -433,28 +433,28 @@ function GetUsedRooms($Month, $Year, &$UsedRoomsResults)
 				GROUP BY C.Day
     			ORDER BY C.Day";
 
-	$UsedRoomsResults = mysql_query( $UsedRoomsQuery );
+	$UsedRoomsResults = mysqli_query( $GLOBALS['link'],  $UsedRoomsQuery );
 	if (!$UsedRoomsResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select array of room usage for the month',  $UsedRoomsQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select array of room usage for the month',  $UsedRoomsQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 }
 
 // Calls a function to get the available rooms in the house
 // Used in CreateCalendar.php
-function GetAvailableRooms($Month, $Year, &$Avail)
+function GetAvailableRooms($Month, $Year, $Avail)
 {
 	$AvailRoomsQuery = "SELECT COUNT(R.RoomId) AvailRooms FROM Room R WHERE HouseId = ".$_SESSION['HouseId'];
 
-	$AvailRoomsResults = mysql_query( $AvailRoomsQuery );
+	$AvailRoomsResults = mysqli_query( $GLOBALS['link'],  $AvailRoomsQuery );
 	if (!$AvailRoomsResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select the available rooms in the house',  $AvailRoomsQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select the available rooms in the house',  $AvailRoomsQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
-	while ($AvailRoomRow = mysql_fetch_array($AvailRoomsResults, MYSQL_ASSOC)) 
+	while ($AvailRoomRow = mysqli_fetch_array($AvailRoomsResults, MYSQL_ASSOC)) 
 	{
 		$Avail = $AvailRoomRow['AvailRooms'];
 	}
@@ -462,28 +462,38 @@ function GetAvailableRooms($Month, $Year, &$Avail)
 
 // Calls a function to get the vacation for the current date
 // Used in CreateCalendar.php
-function GetVacation($Month, $Year, &$VacationResults)
+function GetVacation($startDt, $EndDt)
 {
-   $VacationQuery = "SELECT DISTINCT V.VacationName, V.VacationId, V.AllowGuests, C.Day, V.BackGrndColor, V.FontColor, V.OwnerId
-	FROM Calendar C
-		LEFT OUTER JOIN Vacations V ON V.StartDateId <= C.DateId and V.EndDateId >= C.DateId and V.HouseId = ".$_SESSION['HouseId']."
-	WHERE DATE_FORMAT(C.RealDate, '%m') =".$Month."  
-	AND DATE_FORMAT(C.RealDate, '%Y') =".$Year." 
-	GROUP BY C.Day
-	ORDER BY C.Day";
-   
-	$VacationResults = mysql_query( $VacationQuery );
+   $VacationQuery = "SELECT DISTINCT V.VacationName, V.VacationId, V.AllowGuests, C.Day, CE.Day, V.BackGrndColor, 
+	V.FontColor, V.OwnerId, CONCAT_WS(' ', C.RealDate,T.time) as StartDate, CONCAT_WS(' ', CE.RealDate,TE.time) as EndDate
+	FROM Vacations V 
+    JOIN Calendar C ON C.DateId = V.StartDateId and V.HouseId = ".$_SESSION['HouseId']."
+    JOIN Calendar CE ON CE.DateId = V.EndDateId and V.HouseId = ".$_SESSION['HouseId']."
+    JOIN Time T ON T.timeid = V.StartTimeId and V.HouseId = ".$_SESSION['HouseId']."
+    JOIN Time TE ON TE.timeid = V.EndtimeId and V.HouseId = ".$_SESSION['HouseId']."  	
+    Where V.HouseId = ".$_SESSION['HouseId']."
+    AND (C.RealDate > STR_TO_DATE('".$startDt."','%Y-%m-%d')
+    AND C.RealDate < STR_TO_DATE('".$EndDt."','%Y-%m-%d'))
+    OR
+    (CE.RealDate > STR_TO_DATE('".$startDt."','%Y-%m-%d')
+    AND CE.RealDate < STR_TO_DATE('".$EndDt."','%Y-%m-%d'))
+	order by V.StartDateId asc";
+
+	$VacationResults = mysqli_query( $GLOBALS['link'],  $VacationQuery );
+
 	if (!$VacationResults)
 	{
-		ActivityLog('Error', curPageURL(), 'Select vacation for the current date',  $VacationQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select vacation for the current date',  $VacationQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
+	return $VacationResults;
+	
 }
 
 // This function gets a list of all the rooms and their amenities
 // Used by GetRoomInfo.php
-function GetRoomData(&$RoomDataResult)
+function GetRoomData($RoomDataResult)
 {
 	$RoomDataQuery = "SELECT R.RoomId, R.RoomName, A.AmenityName, R.Beds
 				  FROM Room R 
@@ -492,11 +502,11 @@ function GetRoomData(&$RoomDataResult)
 				  WHERE HouseID = ".$_SESSION['HouseId']."
 				  ORDER BY R.RoomName";
 
-	$RoomDataResult = mysql_query( $RoomDataQuery );
+	$RoomDataResult = mysqli_query( $GLOBALS['link'],  $RoomDataQuery );
 	if (!$RoomDataResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select a list of all the rooms and their amenities',  $RoomDataQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select a list of all the rooms and their amenities',  $RoomDataQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 }
@@ -507,18 +517,18 @@ function GetRoomData(&$RoomDataResult)
 // Used by SaveScheduledGuests.php
 // Used by SaveScheduledOwner.php
 
-function GetRooms(&$RoomResult)
+function GetRooms($RoomResult)
 {
 	$RoomQuery = "SELECT R.RoomId, R.RoomName, R.Beds
 	  FROM Room R 
 	  WHERE HouseID = ".$_SESSION['HouseId']."
 	  ORDER BY R.RoomName";
 	  
-	$RoomResult = mysql_query( $RoomQuery );
+	$RoomResult = mysqli_query( $GLOBALS['link'],  $RoomQuery );
 	if (!$RoomResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select a list of all the rooms',  $RoomQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select a list of all the rooms',  $RoomQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 }
@@ -526,7 +536,7 @@ function GetRooms(&$RoomResult)
 
 // Used by GetVacationInfo.php
 // Used by GetAllScheduledVacations
-function GetAllVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDate, &$EndRange, &$EndDate, &$VacationName, &$VacationOwnerId)
+function GetAllVacationDates($VacationResult, $GetType, $StartRange, $StartDate, $EndRange, $EndDate, $VacationName, $VacationOwnerId)
 {
 
 // GetType: 0 = All, Integer = That specific record
@@ -553,16 +563,16 @@ function GetAllVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDa
 	}
 
 
-	$VacationResult = mysql_query( $VacationQuery );
+	$VacationResult = mysqli_query( $GLOBALS['link'],  $VacationQuery );
 	if (!$VacationResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select a list of all the vacations',  $VacationQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select a list of all the vacations',  $VacationQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
-	if (mysql_num_rows($VacationResult) > 0)
+	if (mysqli_num_rows($VacationResult) > 0)
 	{
-		while ($VacationRow = mysql_fetch_array($VacationResult, MYSQL_ASSOC)) 
+		while ($VacationRow = mysqli_fetch_array($VacationResult, MYSQL_ASSOC)) 
 		{
 			$StartRange = $VacationRow['StartDateId'];
 			$StartDate = $VacationRow['StartDate'];
@@ -572,7 +582,7 @@ function GetAllVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDa
 			$VacationOwnerId = $VacationRow['OwnerId'];
 		}
 
-		mysql_data_seek($VacationResult, 0);
+		mysqli_data_seek($VacationResult, 0);
 	}
 
 	$df_src = 'Y-m-d';
@@ -581,6 +591,7 @@ function GetAllVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDa
 	$StartDate = dates_interconv( $df_src, $df_des, $StartDate);
 	$EndDate = dates_interconv( $df_src, $df_des, $EndDate);
 		
+	return $VacationResult;	
 }
 
 // This function gets a list of the vacation dates
@@ -588,17 +599,18 @@ function GetAllVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDa
 // Used by InputGuestSchedule.php
 // Used by InputOwnerSchedule.php
 // Used by SaveVacations.php
-function GetVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDate, &$EndRange, &$EndDate, &$VacationName, &$AllowGuests, &$AllowOwners, &$FirstName, &$LastName, &$OwnerIdVal, &$BkgrndColor, &$FontColor)
+function GetVacationDates($VacationResult, $GetType, $StartRange, $StartDate, $EndRange, $EndDate, $VacationName, $AllowGuests, $AllowOwners, $FirstName, $LastName, $OwnerIdVal, $BkgrndColor, $FontColor)
 {
 
 // GetType: 0 = All, Integer = That specific record
-
 	if ($GetType == 0)
 	{
-		$VacationQuery = "SELECT V.VacationName, V.VacationId, V.StartDateId, V.EndDateId, C1.RealDate StartDate, C2.RealDate EndDate, V.AllowGuests, V.AllowOwners, U.first_name FirstName, U.last_name LastName, V.OwnerId, V.BackGrndColor, V.FontColor
-		  FROM Vacations V, Calendar C1, Calendar C2, user U
+		$VacationQuery = "SELECT V.VacationName, V.VacationId, V.StartDateId, V.EndDateId, T.time StartTime, TE.time EndTime, C1.RealDate StartDate, C2.RealDate EndDate, V.AllowGuests, V.AllowOwners, U.first_name FirstName, U.last_name LastName, V.OwnerId, V.BackGrndColor, V.FontColor
+		  FROM Vacations V, Calendar C1, Calendar C2, user U, Time T, Time TE 
 		  WHERE V.StartDateId = C1.DateId
 		  AND V.EndDateId = C2.DateId
+		  AND V.EndTimeId = TE.timeid
+		  AND V.StartTimeId = T.timeid
 		  AND V.OwnerId = U.user_id
 		  AND V.HouseId = ".$_SESSION["HouseId"]."
 		  AND (V.OwnerId = ".$_SESSION["OwnerId"]." OR V.AllowOwners = 'Y')
@@ -608,10 +620,12 @@ function GetVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDate,
 	}
 	else
 	{
-		$VacationQuery = "SELECT V.VacationName, V.VacationId, V.StartDateId, V.EndDateId, C1.RealDate StartDate, C2.RealDate EndDate, V.AllowGuests, V.AllowOwners, U.first_name FirstName, U.last_name LastName, V.OwnerId, V.BackGrndColor, V.FontColor
-		  FROM Vacations V, Calendar C1, Calendar C2, user U
+		$VacationQuery = "SELECT V.VacationName, V.VacationId, V.StartDateId, V.EndDateId, T.time StartTime, TE.time EndTime, C1.RealDate StartDate, C2.RealDate EndDate, V.AllowGuests, V.AllowOwners, U.first_name FirstName, U.last_name LastName, V.OwnerId, V.BackGrndColor, V.FontColor
+		  FROM Vacations V, Calendar C1, Calendar C2, user U, Time T, Time TE 
 		  WHERE V.StartDateId = C1.DateId
 		  AND V.EndDateId = C2.DateId
+		  AND V.EndTimeId = TE.timeid
+		  AND V.StartTimeId = T.timeid		  
 		  AND V.OwnerId = U.user_id
 		  AND V.HouseId = ".$_SESSION["HouseId"]." 
 		  AND (V.OwnerId = ".$_SESSION["OwnerId"]." OR V.AllowOwners = 'Y')
@@ -623,21 +637,23 @@ function GetVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDate,
 	
 	}
 //echo $VacationQuery;
-	$VacationResult = mysql_query( $VacationQuery );
+	$VacationResult = mysqli_query( $GLOBALS['link'],  $VacationQuery );
 	if (!$VacationResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select a list of all the vacations within range',  $VacationQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select a list of all the vacations within range',  $VacationQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
-	if (mysql_num_rows($VacationResult) > 0)
+	if (mysqli_num_rows($VacationResult) > 0)
 	{
-		while ($VacationRow = mysql_fetch_array($VacationResult, MYSQL_ASSOC)) 
+		while ($VacationRow = mysqli_fetch_array($VacationResult, MYSQL_ASSOC)) 
 		{
 			$StartRange = $VacationRow['StartDateId'];
 			$StartDate = $VacationRow['StartDate'];
+			$StartTime = $VacationRow['StartTime'];			
 			$EndRange = $VacationRow['EndDateId'];
 			$EndDate = $VacationRow['EndDate'];
+			$EndTime = $VacationRow['EndTime'];
 			$VacationName = $VacationRow['VacationName'];
 			$AllowGuests = $VacationRow['AllowGuests'];
 			$AllowOwners = $VacationRow['AllowOwners'];
@@ -648,7 +664,7 @@ function GetVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDate,
 			$FontColor = $VacationRow['FontColor'];
 		}
 
-		mysql_data_seek($VacationResult, 0);
+		mysqli_data_seek($VacationResult, 0);
 	}
 
 	$df_src = 'Y-m-d';
@@ -657,12 +673,13 @@ function GetVacationDates(&$VacationResult, $GetType, &$StartRange, &$StartDate,
 	$StartDate = dates_interconv( $df_src, $df_des, $StartDate);
 	$EndDate = dates_interconv( $df_src, $df_des, $EndDate);
 	
+	return $VacationResult;
 }
 
 // Function to get a list of available guests for the owner
 // Used by InputGuestSchedules
 
-function GetGuests(&$GuestResult, $ShowGuest)
+function GetGuests($GuestResult, $ShowGuest)
 {
 
 	if ($ShowGuest == 'Y')
@@ -691,11 +708,11 @@ function GetGuests(&$GuestResult, $ShowGuest)
 		$GuestQuery = str_replace('\'Owner\'', '\'Owner\', \'Administrator\'', $GuestQuery); 
 	}
 
-	$GuestResult = mysql_query( $GuestQuery );
+	$GuestResult = mysqli_query( $GLOBALS['link'],  $GuestQuery );
 	if (!$GuestResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select a list of the guests for an owner',  $GuestQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select a list of the guests for an owner',  $GuestQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 }
@@ -703,7 +720,7 @@ function GetGuests(&$GuestResult, $ShowGuest)
 // Function to get a list of available guests for the owner
 // Used by InputGuestSchedules
 
-function GetAllGuests(&$GuestResult)
+function GetAllGuests($GuestResult)
 {
 
 	$GuestQuery = "(SELECT CONCAT(FirstName, ' ', LastName) Name, GuestId 
@@ -721,11 +738,11 @@ function GetAllGuests(&$GuestResult)
 		$GuestQuery = str_replace('\'Owner\'', '\'Owner\', \'Administrator\'', $GuestQuery); 
 	}
 
-	$GuestResult = mysql_query( $GuestQuery );
+	$GuestResult = mysqli_query( $GLOBALS['link'],  $GuestQuery );
 	if (!$GuestResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select a list of all the guests for an owner',  $GuestQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select a list of all the guests for an owner',  $GuestQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 }
@@ -763,10 +780,10 @@ function AddRemoveDays($VacationId, $InitialRange, $NewRange, $FrontOrEnd)
 				AND DateId > ".$NewRange;
 		}
 		
-		if (!mysql_query( $DeleteDaysQuery ))
+		if (!mysqli_query( $GLOBALS['link'],  $DeleteDaysQuery ))
 		{
-			ActivityLog('Error', curPageURL(), 'Deletes vacation days from range',  $DeleteDaysQuery, mysql_error());
-			die ("Could not Delete into the database: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Deletes vacation days from range',  $DeleteDaysQuery, mysqli_error($GLOBALS['link']));
+			die ("Could not Delete into the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 		
 	}
@@ -784,38 +801,42 @@ function AddRemoveDays($VacationId, $InitialRange, $NewRange, $FrontOrEnd)
 			$End = $NewRange;
 		}
 			
+		/*	
 		for ($Counter = $Start ; $Counter <= $End; $Counter++) 
 		{
 		
 			if ($_POST['OwnerRoom'] != 0)
 			{
 				$InsertOwnerQuery = "INSERT INTO Schedule (OwnerId, DateId, HouseId, RoomID, GuestId, VacationId, Audit_user_name, Audit_Role, Audit_FirstName, Audit_LastName, Audit_Email) 
-					VALUES (".$_SESSION['OwnerId'].", ".$Counter.", ".$_SESSION['HouseId'].", ".$_POST['OwnerRoom'].", ".$_SESSION['OwnerId'].", ".$VacationId.", '".$_SESSION['user_name']."', '".$_SESSION['Role']."', '".$_SESSION['FirstName']."', '".$_SESSION['LastName']."', '".$_SESSION['Email']."')";
+					VALUES (".$_SESSION['OwnerId'].", ".$Counter.", ".$_SESSION['HouseId'].", , ".$_SESSION['OwnerId'].", ".$VacationId.", '".$_SESSION['user_name']."', '".$_SESSION['Role']."', '".$_SESSION['FirstName']."', '".$_SESSION['LastName']."', '".$_SESSION['Email']."')";
 		
-				if (!mysql_query( $InsertOwnerQuery ))
+				if (!mysqli_query( $GLOBALS['link'],  $InsertOwnerQuery ))
 				{
-					ActivityLog('Error', curPageURL(), 'Inserts Owner into Schedule',  $InsertOwnerQuery, mysql_error());
-					die ("Could not insert into the database: <br />". mysql_error());
+					ActivityLog('Error', curPageURL(), 'Inserts Owner into Schedule',  $InsertOwnerQuery, mysqli_error($GLOBALS['link']));
+					die ("Could not insert into the database: <br />". mysqli_error($GLOBALS['link']));
 				}
 			}
 			
+
 			GetRooms($RoomResult);
 			
-			while ($RoomRow = mysql_fetch_array($RoomResult, MYSQL_ASSOC)) 
+			while ($RoomRow = mysqli_fetch_array($RoomResult, MYSQL_ASSOC)) 
 			{
 				if ($_POST['OwnerRoom'] != $RoomRow['RoomId'])
 				{
 					$InsertDefaultGuests = "INSERT INTO Schedule (OwnerId, DateId, HouseId, RoomID, GuestId, VacationId,  Audit_user_name, Audit_Role, Audit_FirstName, Audit_LastName, Audit_Email) 
 					VALUES (".$_SESSION['OwnerId'].", ".$Counter.", ".$_SESSION['HouseId'].", ".$RoomRow['RoomId'].", 0, ".$VacationId.", '".$_SESSION['user_name']."', '".$_SESSION['Role']."', '".$_SESSION['FirstName']."', '".$_SESSION['LastName']."', '".$_SESSION['Email']."')";
 	
-					if (!mysql_query( $InsertDefaultGuests ))
+					if (!mysqli_query( $GLOBALS['link'],  $InsertDefaultGuests ))
 					{
-						ActivityLog('Error', curPageURL(), 'Inserts Guests into Schedule',  $InsertDefaultGuests, mysql_error());
-						die ("Could not insert into the database: <br />". mysql_error());
+						ActivityLog('Error', curPageURL(), 'Inserts Guests into Schedule',  $InsertDefaultGuests, mysqli_error($GLOBALS['link']));
+						die ("Could not insert into the database: <br />". mysqli_error($GLOBALS['link']));
 					}
 				}
 			}
+			
 		}
+		*/
 	}
 }
 ?>
@@ -859,16 +880,16 @@ function dates_interconv( $date_format1, $date_format2, $date_str )
 
 // Used by OwnerAdministration.php
 
-function GetOwners(&$GetOwnersResult)
+function GetOwners($GetOwnersResult)
 {
 	$GetOwnersQuery = "SELECT U.first_name, U.last_name, U.email, U.user_id
 	  FROM user U where role = 'Owner'";
 
-	$GetOwnersResult = mysql_query( $GetOwnersQuery );
+	$GetOwnersResult = mysqli_query( $GLOBALS['link'],  $GetOwnersQuery );
 	if (!$GetOwnersResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select list of owners',  $GetOwnersQuery, mysql_error());
-		die ("Could not query the database for users: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select list of owners',  $GetOwnersQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database for users: <br />". mysqli_error($GLOBALS['link']));
 	}
 }
 

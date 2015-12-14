@@ -2,10 +2,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">		
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+	<link href="css/BeachStyle.css" rel="stylesheet" type="text/css" />		
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
+	<link href="css/lightbox.css" rel="stylesheet" />
 </HEAD>
 <body>
 
@@ -14,32 +28,21 @@
 <?php include("Navigation.php") ?>
 <?php ActivityLog('Info', curPageURL(), 'Administrator Instructions',  NULL, NULL); ?>
 
+<div class="container vacation">	
+  <div>
+	  <h2 class="featurette-heading">Welcome New Administrator!</h2>
+	  <form class="form-signin" role="form" enctype="multipart/form-data" method="post" action="Calendar.php">
+		<button type="submit" name="NoIntro" value="Don't show welcome again" class="btn btn-success">Don't show welcome again</button>
+	  </form>
+ </div>
+
 <table border="0" align="center" width="100%">
-	<tr valign="bottom" align="center" height="45">
-		<td colspan="3" width="75%">
-			<table cellpadding="0" cellspacing="0" width="95%">
-				<tr>
-					<td class="Heading">Welcome New Administrator!</td>
-				</tr>
-			</table>
-		</td>
-		<td colspan="1">
-			<table cellpadding="0" cellspacing="0" width="95%">
-				<tr>
-					<td><form enctype="multipart/form-data" method="post" action="Calendar.php"><input type="submit" name="NoIntro" value="Don't show welcome again"/></form></td>
-				</tr>
-			</table>
-		</td>		
-	</tr>
 	<tr align="center">
 		<td colspan="4">
 			<table border="0" class="FocusTable" align="center" width="70%" cellpadding="5">
 				<tr>
-					<td align="left">
-						<h2 id="QuickAdmins">Quick Start Guide for Administrators</h2>
-					</td>
-					<td align="right">
-						<a href="TutorialQuickStartAdmin.php" target="_new" onclick="window.open(this.href, '','height=960,width=960');return false;"><img src="images/WatchVideo.jpg" alt="WatchVideo.jpg" width="150" height="45" border="0" align="middle" /></a>
+					<td align="left" colspan="2">
+						<h2 style="float:left" id="QuickAdmins">Quick Start Guide for Administrators</h2>
 					</td>
 				</tr>
 				<tr>
@@ -49,33 +52,24 @@
 						<p>Use the manage account screen to decide whether you, as an administrator, also want to be able to schedule vacations as an owner. If you do, simply check the "Allow Administrator to have Owner permissions" checkbox and click the update button.</p>
 						<h3>2 - Create owners</h3>
 						<p>Use the administer users screen to create usernames and passwords for the people that need to be able to schedule vacations.</p>
-						<h3>3 - Define the rooms</h3>
-						<p>Use the manage rooms to specify how many bedrooms your vacation home has. Don't forget, you can skip this step if you want to really simplify TheVacationCalendar.com for your friends and family. Without rooms defined your Owners will simply schedule when they are using the vacation home.</p>
-						<h3>4 - Have fun and tell your friends</h3>
+						<h3>3 - Have fun and tell your friends</h3>
 						<p>Feel free to share the name of your vacation home and the guest password to as many people as you like. This will give them basic access to see the activity in your vacation home.</p>
 					</td>
 				</tr>
 				<tr>
-					<td align="left">
-						<h2 id="Admins">Instructions for Administrators</h2>
-					</td>
-					<td align="right">
-						<a href="TutorialInstrForAdmins.php" target="_new" onclick="window.open(this.href, '','height=960,width=960');return false;"><img src="images/WatchVideo.jpg" alt="WatchVideo.jpg" width="150" height="45" border="0" align="middle" /></a>
+					<td align="left" colspan="2">
+						<h2 style="float:left" id="Admins">Instructions for Administrators</h2>
 					</td>
 				</tr>
 				<tr>
 					<td align="left" colspan="2">
 						<p>As an Administrator on TheVacationCalendar.com website, your responsibility is to set up the house, set up users, and monitor the content.</p>
 						<h3>calendar</h3>
-		   				<p>Use the calendar to schedule, edit and delete vacations. Simply click on the first date that you are interested in and then specify the end date within the edit box that will appear. Additionally, you will be prompted to add more information such as the vacation name, the room that you want to stay in, and two other scheduling options.</p><p>These two options control how others view your vacation. If you uncheck the "Allow Visitors?" checkbox, your vacation will be displayed on the calendar without giving others the option of requesting to join. Additionally, the vacation will show zero rooms available so it will appear that the entire house is spoken for. This is the simplest way to schedule a vacation at your vacation home. The second checkbox, "Allow other Owners to book rooms?", will allow or prevent other Owners of the house from simply scheduling themselves in one of the available rooms of your vacation. This is useful when a house is shared and no single person has the ability to claim the full use of the house for any period of time. Lastly, you have the option to select various colors to easily identify your vacations.</p>
+		   				<p>Use the calendar to schedule, edit and delete vacations. Simply click on the first date that you are interested in and then specify the end date within the edit box that will appear. Additionally, you will be prompted to add the vacation name.</p><p>Lastly, you have the option to select various colors to easily identify your vacations.</p>
 						<p>To edit your vacation, simply click on any of the calendar days of your vacation and the edit box will appear so you can make any necessary changes.</p>
 						<p>The calendar screen also allows you to view the vacations that are already scheduled for your vacation home. You can navigate month by month by clicking on the month links at the top of the calendar, or you can jump quickly to a specific month by specifying the date you want to jump to and then clicking the jump button. In addition to viewing vacations scheduled, you have the ability to request to join a vacation. Simply click on a vacation name that is a link and then fill out the information at the bottom of the next page to have TheVacationCalendar.com email the Owner who scheduled the vacation that you would like to join him for all or part of the vacation.</p>
 						<h3>blog</h3>
 						<p>The house blog is the location where conversations between all the different users of TheVacationCalendar.com website for your individual vacation home can take place. When you first access the screen the initial blogs are shown. By clicking the "Read Comments" link you can see what comments have been added to that thread. Additionally, you can add a comment to any thread by clicking the "Add Comment Link". Finally, if you want to start a new topic, you can click the "Add a New Blog" at the top of the page. One function that is available to the Administrator that is not available to any other user is the ability to delete blogs. You can use this to keep the blog screen tidy or to remove any inappropriate content.</p>
-						<h3>manage rooms</h3>
-		   				<p>The manage rooms screen is where you create and label rooms in your vacation home. You should really only add rooms once and you should be very careful about deleting rooms. During the first time setup it is important to define the rooms in the house. You can come back and update room names and amenities at any time, however if you delete a room it will delete all occurrences of that room in your Owner's scheduled vacations. Even if you delete and add the room back with the same name, any visitors scheduled in the original room will be lost.</p><p>One important feature of this page is that if you do not schedule any rooms, Owners will not have the schedule visitors or manage visitors screens available to them. This is a good way to reduce the complexity of the site if you find that your Owners find the house too complicated.</p>
-						<h3>managing visitors</h3>
-						<p>The managing visitors screen is where you go to create new visitors that will show up in select box on the schedule visitors page. As the house administrator any visitors  that you add will be available to all of the Owners.</p>
 		   				<h3>administer users</h3>
 						<p>The administer users screen is the most important screen for the house administrator. This is where you create Owners of the house and give them access to the website. You are responsible for setting their initial password which the Owners can change themselves once they have accessed the website. You have the choice of setting up a new Owner with a confirmed account, or you can require that the Owner confirms the account before it can be used. In the latter case, an email is generated and is sent to the Owner's email account. The Owner then needs to open the email and click on the confirmation link which will activate the account. <strong>Please note that these confirmation emails almost always end up in junk mail. </strong></p>
 						<h3>delete vacations</h3>
@@ -92,6 +86,10 @@
 		</td>
 	</tr>	
 </table>
+
+</div>
+</div>
+
 <?php include("Footer.php") ?>
 
 

@@ -2,9 +2,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">		
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+	<link href="css/BeachStyle.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
+	<link href="css/lightbox.css" rel="stylesheet" />
 </HEAD>
 <body onload="init();">
 
@@ -43,17 +58,11 @@ return 0;
 <?php include('register_funcs.inc'); ?>
 <?php ActivityLog('Info', curPageURL(), 'User Administration Main',  NULL, NULL); ?>
 
-
+<div class="container vacation">	
+  <h2 class="featurette-heading">Owner Administration</h2>
+  <div style="text-align:left">
+  
 <table border="0" align="center" width="100%">
-	<tr valign="bottom" align="center" height="45">
-		<td colspan="2">
-			<table cellpadding="0" cellspacing="0" width="95%">
-				<tr>
-					<td class="Heading">Owner Administration</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
 	<tr align="center">
 		<td colspan="4">
 			<table border="0" class="FocusTable" align="center" width="70%" cellpadding="5">
@@ -119,9 +128,9 @@ if (isset($_POST['user_id'])) {
 					  WHERE user_id = ".$_POST['user_id']."
 					  AND HouseId = ".$_SESSION['HouseId'];
 		
-			$result = mysql_query($query);
+			$result = mysqli_query( $GLOBALS['link'], $query);
 			if (!$result) {
-				ActivityLog('Error', curPageURL(), 'Update Owner Administration',  $query, mysql_error());
+				ActivityLog('Error', curPageURL(), 'Update Owner Administration',  $query, mysqli_error($GLOBALS['link']));
 			  $status_message = 'Problem with user data entry';
 			} else {
 			  $status_message = 'Successfully edited user data';
@@ -139,15 +148,15 @@ $UserQuery = "SELECT u.user_id, u.user_name, u.first_name, u.last_name, u.email,
             WHERE u.role = 'Owner' AND HouseId = ".$_SESSION['HouseId']."
 			ORDER BY u.last_name, u.first_name, u.user_id";
 
-$UserResults = mysql_query( $UserQuery );
+$UserResults = mysqli_query( $GLOBALS['link'],  $UserQuery );
 if (!$UserResults)
 {
-	ActivityLog('Error', curPageURL(), 'Select Owner Info for Administration',  $UserQuery, mysql_error());
-	die ("Could not get Users from the database: <br />". mysql_error());
+	ActivityLog('Error', curPageURL(), 'Select Owner Info for Administration',  $UserQuery, mysqli_error($GLOBALS['link']));
+	die ("Could not get Users from the database: <br />". mysqli_error($GLOBALS['link']));
 }
-elseif (mysql_num_rows($UserResults) > 0)
+elseif (mysqli_num_rows($UserResults) > 0)
 {
-	while ($UserResultsRow = mysql_fetch_array($UserResults, MYSQL_ASSOC)) 
+	while ($UserResultsRow = mysqli_fetch_array($UserResults, MYSQL_ASSOC)) 
 	{
 		$user_id = $UserResultsRow['user_id'];
 		$user_name = $UserResultsRow['user_name'];
@@ -286,7 +295,7 @@ function PopulateUser(inValue, inForm) {
 //  site_header('User data edit page');
 
   $userform_str = <<< EOUSERFORMSTR
-<TABLE ALIGN=CENTER WIDTH=40%>
+<TABLE ALIGN=CENTER >
 <tr>
   <TD ROWSPAN=10><IMG WIDTH=15 HEIGHT=1 SRC="../images/spacer.gif"></td>
   <TD WIDTH=606></td>
@@ -299,7 +308,7 @@ function PopulateUser(inValue, inForm) {
 <TABLE>
 	<TR ALIGN=CENTER>
 		<TD COLSPAN=2>
-			<select SIZE=5 name=Users onclick="PopulateUser(this.value, this.form);">
+			<select SIZE=5 name=Users onclick="PopulateUser(this.value, this.form);" class="form-control">
 				$userlist;
 			</select>
 		</td>
@@ -315,53 +324,57 @@ function PopulateUser(inValue, inForm) {
 		</td>
 	</tr>
 	<tr>
-		<td>
-			Username:
+		<td>&nbsp;
 		</td>
-		<td>
-			Email:
+		<td>&nbsp;
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<INPUT TYPE="TEXT" NAME="user_name" SIZE="40">
+			<INPUT placeholder="Username" TYPE="TEXT" NAME="user_name" SIZE="40" class="form-control">
 		</td>
 		<td>
-			<INPUT TYPE="TEXT" NAME="email" SIZE="40">
+			<INPUT placeholder="Email" TYPE="TEXT" NAME="email" SIZE="40" class="form-control">
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;
+		</td>
+		<td>&nbsp;
 		</td>
 	</tr>
 	<tr>
 		<td>
-			First Name:
+			<INPUT placeholder="First Name" TYPE="TEXT" NAME="first_name" SIZE="40" class="form-control">
 		</td>
 		<td>
-			Last Name:
+			<INPUT placeholder="Last Name" TYPE="TEXT" NAME="last_name" SIZE="40" class="form-control">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<INPUT TYPE="TEXT" NAME="first_name" SIZE="40">
+			&nbsp;
 		</td>
 		<td>
-			<INPUT TYPE="TEXT" NAME="last_name" SIZE="40">
+			&nbsp;
 		</td>
 	</tr>
 	<tr>
 		<td>
-			Password:
+			<INPUT placeholder="Password" TYPE="PASSWORD" NAME="password1" SIZE="40" class="form-control">
 		</td>
 		<td>
-			Password Again:
+			<INPUT placeholder="Password Again" TYPE="PASSWORD" NAME="password2" SIZE="40" class="form-control">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<INPUT TYPE="PASSWORD" NAME="password1" SIZE="40">
+			&nbsp;
 		</td>
 		<td>
-			<INPUT TYPE="PASSWORD" NAME="password2" SIZE="40">
+			&nbsp;
 		</td>
-	</tr>
+	</tr>	
 	<tr>
 		<td>
 			Confirmed:
@@ -372,7 +385,7 @@ function PopulateUser(inValue, inForm) {
 	</tr>
 	<tr>
 		<td>
-			<INPUT TYPE="RADIO" NAME="confirmed" VALUE="1" CHECKED>Yes <INPUT TYPE="RADIO" NAME="confirmed" VALUE="0">
+			<INPUT TYPE="RADIO" NAME="confirmed" VALUE="1" CHECKED>Yes <INPUT TYPE="RADIO" NAME="confirmed" VALUE="0">No
 		</td>
 		<td>
 			<INPUT TYPE="RADIO" NAME="sendemail" VALUE="1" CHECKED>Yes <INPUT TYPE="RADIO" NAME="sendemail" VALUE="0">No
@@ -395,8 +408,8 @@ EOUSERFORMSTR;
   echo $userform_str;
 
 ?>
-<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Edit user data">
-<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Add new user" onclick="return ValidatePswd(this.form);">
+<INPUT class="btn btn-success" TYPE="SUBMIT" NAME="submit" VALUE="Edit user data">
+<INPUT class="btn btn-success" TYPE="SUBMIT" NAME="submit" VALUE="Add new user" onclick="return ValidatePswd(this.form);">
 </FORM>
 
 				</tr>
@@ -405,7 +418,7 @@ EOUSERFORMSTR;
 	</tr>
 </table>
 
-
+</div>
 
 <?php include("Footer.php") ?>
 

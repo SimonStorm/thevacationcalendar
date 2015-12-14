@@ -20,12 +20,12 @@ $HouseId = $_SESSION['HouseId'];
                   FROM user
                   WHERE user_name = '$change_user_name'
                   AND password = '$crypt_pass'";
-        $result = mysql_query($query);
+        $result = mysqli_query( $GLOBALS['link'], $query);
 		  if (!$result)
 		  {
-   			ActivityLog('Error', curPageURL(), 'Select user info for new password',  $query, mysql_error());
+   			ActivityLog('Error', curPageURL(), 'Select user info for new password',  $query, mysqli_error($GLOBALS['link']));
 		  }
-		  elseif (mysql_num_rows($result) < 1) {
+		  elseif (mysqli_num_rows($result) < 1) {
             ActivityLog('Error', curPageURL(), 'User not found or bad password',  $query, NULL);
             $feedback = 'ERROR - User not found or bad password';
             return $feedback;
@@ -41,10 +41,10 @@ $HouseId = $_SESSION['HouseId'];
                     WHERE user_name = '$change_user_name'
                     AND password = '$crypt_pass'
                     AND HouseId = ".$HouseId;
-          $result = mysql_query($query);
+          $result = mysqli_query( $GLOBALS['link'], $query);
 		  if (!$result)
 		  {
-   			ActivityLog('Error', curPageURL(), 'Update user with new password',  $query, mysql_error());
+   			ActivityLog('Error', curPageURL(), 'Update user with new password',  $query, mysqli_error($GLOBALS['link']));
             $feedback = 'ERROR - Problem updating password';
             return $feedback;
           } else {
@@ -92,12 +92,12 @@ $HouseId = $_SESSION['HouseId'];
               WHERE user_name = '$user_name'
               AND password = '$crypt_pass'
               AND HouseId = ".$HouseId;
-    $result = mysql_query($query);
+    $result = mysqli_query( $GLOBALS['link'], $query);
 		  if (!$result)
 		  {
-			  ActivityLog('Error', curPageURL(), 'Set new email',  $query, mysql_error());
+			  ActivityLog('Error', curPageURL(), 'Set new email',  $query, mysqli_error($GLOBALS['link']));
 		  }
-		  elseif (mysql_affected_rows() < 1) {
+		  elseif (mysqli_affected_rows($GLOBALS['link']) < 1) {
             ActivityLog('Error', curPageURL(), 'Wrong password',  $query, NULL);
             $feedback = 'ERROR - Problem updating password';
             return $feedback;

@@ -6,13 +6,13 @@ if (isset($_POST['AddComment']))
 {
 
 	$InsertCommentQuery = "INSERT INTO BlogComment (BlogId, Author, Content, BlogDate, HouseId,  Audit_user_name, Audit_Role, Audit_FirstName, Audit_LastName, Audit_Email) 
-			VALUES (".$_POST['AddComment'].", '".mysql_real_escape_string($_POST['Author'])."', '".mysql_real_escape_string($_POST['Comment'])."', now(), ".$_SESSION['HouseId'].", 
+			VALUES (".$_POST['AddComment'].", '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Author'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Comment'])."', now(), ".$_SESSION['HouseId'].", 
 			'".$_SESSION['user_name']."', '".$_SESSION['Role']."', '".$_SESSION['FirstName']."', '".$_SESSION['LastName']."', '".$_SESSION['Email']."')";
 		
-		if (!mysql_query( $InsertCommentQuery ))
+		if (!mysqli_query( $GLOBALS['link'],  $InsertCommentQuery ))
 		{
-			ActivityLog('Error', curPageURL(), 'Insert Blog Comment',  $InsertCommentQuery, mysql_error());
-			die ("Could not insert blog comment into the database: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Insert Blog Comment',  $InsertCommentQuery, mysqli_error($GLOBALS['link']));
+			die ("Could not insert blog comment into the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 		
 		echo "Congrats you have added your comment";
@@ -24,16 +24,16 @@ if (isset($_POST['AddBlog']))
 {
 
 	$InsertBlogQuery = "INSERT INTO Blog (HouseId, Author, Subject, Content, BlogDate,  Audit_user_name, Audit_Role, Audit_FirstName, Audit_LastName, Audit_Email) 
-			VALUES (".$_SESSION['HouseId'].", '".mysql_real_escape_string($_POST['Author'])."', '".mysql_real_escape_string($_POST['Subject'])."', '".mysql_real_escape_string($_POST['Content'])."', now(), 
+			VALUES (".$_SESSION['HouseId'].", '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Author'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Subject'])."', '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Content'])."', now(), 
 			'".$_SESSION['user_name']."', '".$_SESSION['Role']."', '".$_SESSION['FirstName']."', '".$_SESSION['LastName']."', '".$_SESSION['Email']."')";
 		
-		if (!mysql_query( $InsertBlogQuery ))
+		if (!mysqli_query( $GLOBALS['link'],  $InsertBlogQuery ))
 		{
-			ActivityLog('Error', curPageURL(), 'Insert Blog',  $InsertBlogQuery, mysql_error());
-			die ("Could not insert blog into the database: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Insert Blog',  $InsertBlogQuery, mysqli_error($GLOBALS['link']));
+			die ("Could not insert blog into the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 		
-		$BlogId = mysql_insert_id();
+		$BlogId = mysqli_insert_id($GLOBALS['link']);
 		
 		SendBlogNotification('inserted', $BlogId);
 

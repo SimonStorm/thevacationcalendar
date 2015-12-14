@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
 
 function NavIn(cell) 
@@ -47,94 +48,62 @@ else
 
 ?>
 
-<table border="0" align="center" width="<?php echo $PageWidth; ?>" cellpadding="0" cellspacing="0">
-	<tr>
-		<td>			
-			<table border="0" align="center" cellpadding="0" cellspacing="0">
-				<tr>
-					<td>
-						<table border="0" cellpadding="0" cellspacing="0" align="center">
-							<tr>
-								<td height="72px" align="left"><a href="/index.php"><img border="0" src="/images/branding.gif" alt="branding" /></a></td>
-								<td align="right" valign="bottom" bgcolor="#FFFBF0" width="<?php echo $ColWidth; ?>">&nbsp;<a href="/Instructions.php">Need Help?</a></td>
-								<td align="left" width="25px">&nbsp;</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<table cellpadding="0" cellspacing="0">
-							<tr bgcolor="white">
-								<td height="1px"></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<table border="0" cellpadding="0" cellspacing="0" align="center">
-							<tr align="center">
-								<td height="120px" align="left"><a href="/index.php"><img border="0" src="/images/photobanner.jpg" alt="photo banner" /></a></td>
-<?php
-if (isset($_SESSION['HouseId']))
-{
-	if (file_exists('images/customimage_'.$_SESSION['HouseId'].'.jpg'))
-	{
-		echo "<td width=\"".$ColWidth."\" bgcolor=\"#FFFBF0\" align=\"center\"><img src=\"/images/customimage_".$_SESSION['HouseId'].".jpg\" alt=\"house picture\" /></td>";
-	}
-	else
-	{
-		echo "<td width=\"".$ColWidth."\" bgcolor=\"#FFFBF0\" align=\"center\"><img src=\"/images/housedefault.jpg\" alt=\"house picture\" /></td>";
-	}
-}
-else
-{
-	echo "<td width=\"".$ColWidth."\" bgcolor=\"#FFFBF0\" align=\"center\"><img src=\"/images/housedefault.jpg\" alt=\"house picture\" /></td>";
-}
+    <div class="navbar-wrapper">
+      <div class="container">
 
-?>							
-								<td align="left"><img src="/images/photobannerpiece.jpg" alt="picture piece" /></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<table cellpadding="0" cellspacing="0">
-							<tr bgcolor="white">
-								<td height="1px"></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<table width="<?php echo $PageWidth; ?>" cellpadding="0" cellspacing="0" align="center">
-							<tr align="center">
-								
+        <nav class="navbar navbarapp navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.php"><img class="logoimg" src="img/calicon.png" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+							
 <?php
-$Calendar = "<td height=\"33px\" id=\"Calendar\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/Calendar.php';\"><a id=\"CalendarLink\" class=\"NavLink\" href=\"/Calendar.php\">calendar</a></td>";
-$ScheduleVacation = "<td height=\"33px\" id=\"Vacations\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/ScheduleVacations.php';\"><a class=\"NavLink\" id=\"VacationsLink\" href=\"/ScheduleVacations.php\">vacations</a></td>";
-//$EditVacation = "<td height=\"33px\" id=\"EditVacations\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\"><a class=\"NavLink\" id=\"EditVacationsLink\" href=\"/EditOwner.php\">edit vacation</a></td>";
-$AdministerVacation = "<td height=\"33px\" id=\"Admin\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/EditAdmin.php';\"><a class=\"NavLink\" id=\"AdminLink\" href=\"/EditAdmin.php\">delete<br/>vacations</a></td>";
-$ScheduleGuests = "<td height=\"33px\" id=\"Schedule\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/ScheduleGuests.php';\"><a class=\"NavLink\" id=\"ScheduleLink\" href=\"/ScheduleGuests.php\">schedule<br/>visitors</a></td>";
-$ManageGuests = "<td height=\"33px\" id=\"Guests\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/ManageGuests.php';\"><a class=\"NavLink\" id=\"GuestsLink\" href=\"/ManageGuests.php\">manage<br/>visitors</a></td>";
-$ManageRooms = "<td height=\"33px\" id=\"Rooms\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/ManageRooms.php';\"><a class=\"NavLink\" id=\"RoomsLink\" href=\"/ManageRooms.php\">manage<br/>rooms</a></td>";
-$HouseBlog = "<td height=\"33px\" id=\"Blog\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/Blog.php';\"><a class=\"NavLink\" id=\"BlogLink\" href=\"/Blog.php\">blog</a></td>";
-$ManageProfile = "<td height=\"33px\" id=\"Profile\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/ManageProfile.php';\"><a class=\"NavLink\" id=\"ProfileLink\" href=\"/ManageProfile.php\">manage<br/>account</a></td>";
-$AdministerUsers = "<td height=\"33px\" id=\"Users\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/OwnerAdministration.php';\"><a class=\"NavLink\" id=\"UsersLink\" href=\"/OwnerAdministration.php\">administer<br/>users</a></td>";
-$Board = "<td height=\"33px\" id=\"EditBoard\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/Board.php';\"><a class=\"NavLink\" id=\"EditBoardLink\" href=\"/Board.php\">manage<br/>bulletin board</a></td>";
-$Photos = "<td height=\"33px\" id=\"Photos\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/Photos.php';\"><a class=\"NavLink\" id=\"PhotosLink\" href=\"/Photos.php\">photo<br/>album</a></td>";
-$ViewBoard = "<td height=\"33px\" id=\"Board\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/ViewBoard.php';\"><a class=\"NavLink\" id=\"BoardLink\" href=\"/ViewBoard.php\">bulletin<br/>board</a></td>";
-$LogOut = "<td height=\"33px\" id=\"LogOut\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/logout.php';\"><a class=\"NavLink\" id=\"LogOutLink\" href=\"/logout.php\">log out</a></td>";
+$Calendar = "<li><a href=\"Calendar.php\">Calendar</a></li>";
+$ScheduleVacation = "<li><a href=\"ScheduleVacations.php\">Vacations</a></li>"; 
+$HouseBlog = "<li><a href=\"Blog.php\">Blog</a></li>"; 
+$ManageProfile = "<li><a href=\"ManageProfile.php\">Manage Account</a></li>";
+$AdministerUsers = "<li><a href=\"OwnerAdministration.php\">Administer Users</a></li>";
+$AdministerVacation = "<li><a href=\"EditAdmin.php\">Delete Vacation</a></li>";
+$Board = "<li><a href=\"Board.php\">Manage Bulletin Board</a></li>";
+$Photos = "<li><a href=\"Photos.php\">Photo Album</a></li>";
+$ViewBoard = "<li><a href=\"ViewBoard.php\">Bulletin Board</a></li>";
+$LogOut = "<li><a href=\"logout.php\">Log Out</a></li>";
 
-$Home = "<td height=\"33px\" id=\"Home\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/index.php';\"><a id=\"HomeLink\" class=\"NavLink\" href=\"/index.php\">home</a></td>";
-$Purchase = "<td height=\"33px\" id=\"Purchase\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = 'http://www.thevacationcalendar.com/NewHouseOne.php';\"><a id=\"PurchaseLink\" class=\"NavLink\" href=\"http://www.thevacationcalendar.com/NewHouseOne.php\">sign up</a></td>";
-$MoreInfo = "<td height=\"33px\" id=\"MoreInfo\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/MoreInfo.php';\"><a id=\"MoreInfoLink\" class=\"NavLink\" href=\"/MoreInfo.php\">site features</a></td>";
-$Contact = "<td height=\"33px\" id=\"Contact\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/Contact.php';\"><a id=\"ContactLink\" class=\"NavLink\" href=\"/Contact.php\">contact us</a></td>";
-$Blog = "<td height=\"33px\" id=\"Blog\" width=\"8%\" class=\"NavNormal\" colspan=\"1\" onmouseover=\"NavIn(this);\" onmouseout=\"NavOut(this);\" onclick=\"location.href = '/Blog/';\"><a id=\"BlogLink\" class=\"NavLink\" href=\"/Blog/\">more info</a></td>";
-$Tagline = "<td height=\"33px\" class=\"IndexHeader\" align=\"right\">manage your vacation home occupancy and availability&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
+$Home = "<li><a href=\"index.php\">Home</a></li>";
+$MoreInfo = "<li><a href=\"MoreInfo.php\">Site Features</a></li>";
+$Purchase = "<li><a href=\"NewHouseOne.php\">Sign Up</a></li>";
+$SignIn = "<li class=\"dropdown\">
+                  <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Sign In<span class=\"caret\"></span></a>
+                  <ul class=\"dropdown-menu dropdown-menusignin\" role=\"menu\">
+                    <li>
+						<form class=\"navbar-form\" role=\"form\" id=\"houseSearchForm\" action=\"indexLogin.php\" method=\"get\">
+							<div class=\"form-group\">
+							  <select placeholder=\"Enter House Name or Address Here and Select\" class=\"demo-default\" name=\"HouseId\" id=\"HouseName\">
+							  </select>							  
+							<div class=\"divider\"></div>							
+							  <button type=\"submit\" class=\"btn btn-success\" onclick=\"return Validate(this.form);\" >Go To House</button>
+						  </form>
+					</li>
+                  </ul>
+                </li>";
+
+$Contact = "<li><a href=\"Contact.php\">Contact Us</a></li>";
+$Blog = "<li><a href=\"Blog\">More Info</a></li>";
+$Help = "<li><a href=\"Instructions.php\">Help</a></li>";
+$HelpGuest = "<li><a href=\"Instructions.php#GuestsInst\">Help</a></li>";
+$HelpOwner = "<li><a href=\"Instructions.php#Owners\">Help</a></li>";
+$HelpAdmin = "<li><a href=\"Instructions.php#Admins\">Help</a></li>";
+
+
+$Blank = "<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>";
 
 if (isset($_SESSION['Role']))
 {
@@ -145,25 +114,22 @@ if (isset($_SESSION['Role']))
 		{
 			echo $ScheduleVacation;
 		}
-	//	echo $EditVacation;
-		if (HasRooms())
-		{
-			echo $ScheduleGuests;
-			echo $ManageGuests;
-		}
+
 		echo $HouseBlog;
 		echo $ViewBoard;
 		echo $Photos;
 		echo $ManageProfile;
+		echo $HelpOwner;		
 		echo $LogOut;
+		echo $Blank;
 	}
 	elseif ($_SESSION['Role'] == 'Guest')
 	{
 		echo $Calendar;
 		echo $HouseBlog;
-//		echo $ManageProfile;
 		echo $ViewBoard;
 		echo $Photos;
+		echo $HelpGuest;		
 		echo $LogOut;
 	}
 	elseif  ($_SESSION['Role'] == 'Administrator')
@@ -175,45 +141,108 @@ if (isset($_SESSION['Role']))
 			{
 				echo $ScheduleVacation;
 			}
-			if (HasRooms())
-			{
-				echo $ScheduleGuests;
-				echo $ManageGuests;
-			}
 		}
-		else
-		{
-			if (HasRooms())
-			{
-				echo $ManageGuests;
-			}
-		}
-		echo $ManageRooms;
-		echo $AdministerUsers;
-		echo $AdministerVacation;
+
 		echo $HouseBlog;
-		echo $Board;
 		echo $ViewBoard;
 		echo $Photos;
 		echo $ManageProfile;
-		echo $LogOut;
+        echo "<li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Administrator<span class=\"caret\"></span></a><ul class=\"dropdown-menu\" role=\"menu\">";
+		echo $AdministerUsers;	
+		echo $Board;
+		echo $AdministerVacation;
+		echo $HelpAdmin;	
+		echo "</ul></li>";
+		echo $LogOut;	
+		
 	}
 }
 else
 {
+		echo $SignIn;
 		echo $Home;
 		echo $Purchase;
-		echo $MoreInfo;
 		echo $Blog;
 		echo $Contact;
-		echo $Tagline;
+		echo $Help;
 
 }
 ?>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr align="center" valign="top">
-					<td height="650">
+              </ul>
 
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+	
+<?php
+if (isset($_SESSION['HouseId']))
+{
+	if (file_exists('images/customimage_'.$_SESSION['HouseId'].'.jpg'))
+	{
+		echo "<div class=\"img-circlediv2\" style=\"position:absolute\" ><a href=\"images/customimage_".$_SESSION['HouseId'].".jpg\" data-lightbox=\"image-1\" data-title=\"".$_SESSION['HouseName']."\"><img class=\"img-circle2\" src=\"images/customimage_".$_SESSION['HouseId'].".jpg\" alt=\"\"></a></div>";
+	}
+	else
+	{
+		echo "<div class=\"img-circlediv2\" style=\"position:absolute\" ><a href=\"images/housedefault.jpg\" data-lightbox=\"image-1\" data-title=\"Vacation House\"><img class=\"img-circle2\" src=\"images/housedefault.jpg\" alt=\"\"></a></div>";
+	}
+}
+
+?>		
+	
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	
+    <script src="js/jquery.js"></script>	
+	<script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery-ui-sliderAccess.js"></script>
+    <script src="js/jquery-ui-timepicker-addon.js"></script>	
+	<script src='js/jquery-ui.custom.min.js'></script>
+	<script src='fullcalendar/fullcalendar.js'></script>	
+    <script src="js/bootstrap.js"></script>
+    <script src="js/docs.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/lightbox.js"></script>
+	<script type="text/javascript" src="js/selectize.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/selectize.css" />
+	
+<script >
+
+$('#HouseName').selectize({
+    valueField: 'HouseId',
+    labelField: 'HouseVal',
+    searchField: 'HouseVal',
+    create: false,
+	options: [],
+    render: {
+        option: function(item, escape) {//alert('tes'+item.HouseName+' '+item.HouseVal);
+            return '<div id="houseoptions">' +
+                '<span class="title">' +
+                    '<span class="by">' + escape(item.HouseVal) + '</span>' +
+                '</span>' +
+            '</div>';
+        }
+    },
+    load: function(query, callback) {
+        if (!query.length) return callback();
+		//var params = JSON.parse(this.$input.attr('selectized'));
+		//alert(query);
+        $.ajax({
+            url: 'indexSearchResultsJSON.php' +  '/?HouseName=' + encodeURIComponent(query),
+            type: 'GET',
+			dataType: 'json',
+            error: function() {
+                callback();
+            },
+            success: function(res) {
+                return callback(res.houses);
+            }
+        });
+    }	
+});
+</script>

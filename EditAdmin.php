@@ -2,9 +2,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+    <LINK href="css/BeachStyle.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
+	<link href="css/jquery-ui.min.css" rel="stylesheet" />	
+	<link href="css/lightbox.css" rel="stylesheet" />	
+    <script src="js/jquery.js"></script>	
+	<script src="js/jquery-ui.min.js"></script>		
 </HEAD>
 
 <body onload="init();">
@@ -28,7 +46,20 @@ try {
 return 0;
 }
 
-
+    $(document).ready(function () {
+			$( ".admindeletelink" ).click(function( event ){
+				event.preventDefault();
+				$( "#confirmModal" ).modal('show');
+				$( "#vacationtodelete" ).val($(this).attr('href'));				
+			} );	
+	
+			$( "#deleteVacationButton" ).click(function( event ){
+			    //alert($( "#vacationtodelete" ).val());
+				window.location=$( "#vacationtodelete" ).val();
+				//$( "#submittype" ).val('deletesubmit');
+				//$( "#vacationform" ).submit();
+			} );
+	} );
 
 </SCRIPT>
 
@@ -44,17 +75,11 @@ return 0;
 <?php include("Navigation.php") ?>
 <?php ActivityLog('Info', curPageURL(), 'Administrator Delete Vacations Main Page',  NULL, NULL); ?>
 
-
+<div class="container vacation">	
+  <div>
+	  <h2 class="featurette-heading">Delete Vacations</h2>
+ </div>
 <table border="0" align="center" width="100%">
-	<tr valign="bottom" align="center" height="45">
-		<td colspan="2">
-			<table cellpadding="0" cellspacing="0" width="95%">
-				<tr>
-					<td class="Heading">Delete Vacations</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
 	<tr align="center">
 		<td colspan="4">
 			<table border="0" class="FocusTable" align="center" width="70%" cellpadding="5">
@@ -77,19 +102,7 @@ return 0;
 
 </form>
 
-<form action="SaveScheduledOwner.php" method="post">
-
-<?php 
-
-if ($_SESSION['Role'] != 'Administrator')
-{
-	include("InputOwnerSchedule.php");
-}
-
-?>
-
-</form>
-				
+			
 </table>
 <?php 
 	}
@@ -111,6 +124,21 @@ else
 
 
 <?php include("Footer.php") ?>
+</div>
+<div id="confirmModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+		  <div class="modal-body">
+			Are you sure you want to delete this vacation?
+			<input type="hidden" id="vacationtodelete" name="vacationtodelete" value="" />
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" data-dismiss="modal" class="btn btn-primary" id="deleteVacationButton">Delete</button>
+			<button type="button" data-dismiss="modal" class="btn">Cancel</button>
+		  </div>
+	</div>
+  </div>
+</div>	
 
 </body>
 </html>

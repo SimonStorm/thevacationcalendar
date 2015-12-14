@@ -2,9 +2,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">		
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+	<link href="css/BeachStyle.css" rel="stylesheet" type="text/css" />	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
+	<link href="css/lightbox.css" rel="stylesheet" />
 <script language="javascript" type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
 <script language="javascript" type="text/javascript">
 tinyMCE.init({
@@ -21,7 +37,7 @@ tinyMCE.init({
 		theme_advanced_toolbar_location : "top",
 		theme_advanced_toolbar_align : "left",
 		theme_advanced_statusbar_location : "bottom",
-		theme_advanced_resizing : true,
+		theme_advanced_resizing : false,
 
 		// Example content CSS (should be your site CSS)
 		content_css : "BeachStyle.css",
@@ -67,70 +83,38 @@ return 0;
 <?php include("Navigation.php") ?>
 <?php ActivityLog('Info', curPageURL(), 'Create House Board',  NULL, NULL); ?>
 
+<div class="container vacation">	
+
+  <h2 class="featurette-heading">House bulletin board</h2>
+<p class="Instructions">Use the editor on this screen to add content to your house message board. This is a great place to include house rules, driving instructions, favorite restaurants, and emergency contact information. Remember to save often. </p>
 <form action="ViewBoard.php" method="post">
-
-<table border="0" align="center" width="85%">
-	<tr align="center">
-		<td colspan="4"><h1>House Board</h1></td>
-	</tr>
-	<tr align="center">
-		<td colspan="4">
-			<table border="0" class="FocusTable" align="center" width="70%" cellpadding="5">
-				<tr align="center">
-					<td>
-						<p class="Instructions">Use the editor on this screen to add content to your house message board. This is a great place to include house rules, driving instructions, favorite restaurants, and emergency contact information. Remember to save often. </p>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr align="center">
-		<td colspan="4">
-			<table class="FocusTable" align="center" width="100%" cellpadding="5">
-				<TR ALIGN=CENTER>
-					<TD CLASS=TextItem COLSPAN=2>
-
-					</td>
-				</tr>
-				<TR ALIGN=CENTER>
-					<TD CLASS=TextItem>
-						Enter your board text:
-					</td>
-					<TD CLASS=TextItem>
-						<textarea cols="70" rows="20" name="Board">
-<?php
-$BoardQuery = "SELECT Board
-				FROM Board 
-				WHERE HouseId = ".$_SESSION["HouseId"];
-		  
-$BoardResult = mysql_query( $BoardQuery );
-if (!$BoardResult)
-{
-	ActivityLog('Error', curPageURL(), 'Select Board',  $BoardQuery, mysql_error());
-	die ("Could not query the database: <br />". mysql_error());
-}
-while ($BoardRow = mysql_fetch_array($BoardResult, MYSQL_ASSOC)) 
-{
-	echo stripslashes($BoardRow['Board']);
-}
-?>
+		<div class="form-group">
+		  <textarea  name="Board" class="form-control" rows="30" >
+						<?php
+						$BoardQuery = "SELECT Board
+										FROM Board 
+										WHERE HouseId = ".$_SESSION["HouseId"];
+								  
+						$BoardResult = mysqli_query( $GLOBALS['link'],  $BoardQuery );
+						if (!$BoardResult)
+						{
+							ActivityLog('Error', curPageURL(), 'Select Board',  $BoardQuery, mysqli_error($GLOBALS['link']));
+							die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
+						}
+						while ($BoardRow = mysqli_fetch_array($BoardResult, MYSQL_ASSOC)) 
+						{
+							echo stripslashes($BoardRow['Board']);
+						}
+						?>
 						
-						</textarea>
-					</td>
-				</tr>
-				<TR ALIGN=CENTER>
-					<TD CLASS=TextItem ALIGN=LEFT COLSPAN="2">
-						<input type="submit" value="Update Board" />
-					</td>
+		   </textarea>		  
+		</div>
+		<div class="form-group">
+		  <input class="btn btn-success" type="submit" value="Update Board" />
+		</div>
+	</form>
 
-
-</form>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
-
+</div>
 
 <?php include("Footer.php") ?>
 

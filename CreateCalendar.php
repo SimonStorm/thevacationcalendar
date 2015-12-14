@@ -1,308 +1,342 @@
-
- 
-<script type="text/javascript">
-// <![CDATA[
-function popitup2() {
-	newwindow2=window.open('','name','height=200,width=150');
-	var tmp = newwindow2.document;
-	tmp.write('<html><head><title>popup</title>');
-	tmp.write('<link rel="stylesheet" href="js.css">');
-	tmp.write('</head><body><p>this is once again a popup.</p>');
-	tmp.write('<p><a href="javascript:alert(self.location.href)">view location</a>.</p>');
-	tmp.write('<p><a href="javascript:self.close()">close</a> the popup.</p>');
-	tmp.write('</body></html>');
-	tmp.close();
-}
-
-function changeLayerVisibility(whichLayer, toWhat, source) {
-  var elem, vis;
-  if( document.getElementById ) // this is the way the standards work
-    elem = document.getElementById( whichLayer );
-  else if( document.all ) // this is the way old msie versions work
-      elem = document.all[whichLayer];
-  else if( document.layers ) // this is the way nn4 works
-    elem = document.layers[whichLayer];
-
-  if(toWhat == 'toggle') { elem.style.display = (elem.style.display == 'none' || elem.style.display == '') ? 'block' : 'none'; }
-  else { elem.style.display = toWhat; }
-
-  if(source) {
-  	y = (source.offsetTop-242 < 100) ? source.offsetTop : source.offsetTop - 240;
-	// check for the top of the page
-	y = (y < getScrollXY()[1]) ? getScrollXY()[1] + 10 : y;
-	// check for the virtual bottom of page
-	y = (y + 500) > (getScrollXY()[1] + getInnerDimensions()[1]) ? getScrollXY()[1] + getInnerDimensions()[1] - 515 : y;
-	// check for the bottom of the page (static bottom)
-	y = (y + 500) > document.body.clientHeight ? document.body.clientHeight - 515 : y;
-	// lastly, make sure when we set the bottom we didn't push it right off the top of the page
-	y = (y < 10 ) ? 10 : y;
-	// set it
-	elem.style.top = y + "px";
-  }
-}
-// ]]>
-</script>
-
-
 <?php ActivityLog('Info', curPageURL(), 'Build Calendar',  NULL, NULL); ?>
 
-<?php
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	
+	<form id="vacationform" action="EditCalendar.php" method="post" >
+	  <input type="hidden" name="VacationId" id="VacationId" value="" />
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Schedule Vacation</h4>
+      </div>
+      <div class="modal-body">
+	  <div id="myModalMessage" style="color:red" ></div>
+<div class="date-form">
 
-//This section gets the month that is displayed at the top of the calendar
-
-$self = $_SERVER['PHP_SELF'];
-
-if (isset($_GET["MonthIn"]))
- {
- 	if ($_GET["MonthIn"] == 0)
- 	{
- 		$Month = 12;
- 		$Year = ($_GET["YearIn"] - 1);
- 	}
- 	elseif ($_GET["MonthIn"] == 13)
- 	{
- 		$Month = 1;
- 		$Year = ($_GET["YearIn"] + 1);
- 	}
- 	else
- 	{
- 		$Month = $_GET["MonthIn"];
- 		$Year = $_GET["YearIn"];
- 	}
-
-	$query = "SELECT DATE_FORMAT(DATE_ADD(C.RealDate, INTERVAL -1 MONTH), '%M') 'PrevMonth',
-				DATE_FORMAT(C.RealDate, '%M') 'MonthText',
-				DATE_FORMAT(DATE_ADD(C.RealDate, INTERVAL 1 MONTH), '%M') 'NextMonth',
-				DATE_FORMAT(C.RealDate, '%Y') 'YearText',
-				C.Month,
-				C.Year
-			  FROM Calendar C
-			  WHERE DATE_FORMAT(C.RealDate, '%m') =".$Month." AND DATE_FORMAT(C.RealDate, '%Y') =".$Year;
-
- }
-else
- {
-
- 	$Month = '01';
- 	$Year = '2007';
-
-	$query = "SELECT DATE_FORMAT(DATE_ADD(C.RealDate, INTERVAL -1 MONTH), '%M') 'PrevMonth',
-				DATE_FORMAT(C.RealDate, '%M') 'MonthText',
-				DATE_FORMAT(DATE_ADD(C.RealDate, INTERVAL 1 MONTH), '%M') 'NextMonth',
-				DATE_FORMAT(C.RealDate, '%Y') 'YearText',
-				C.Month,
-				C.Year
-			  FROM Calendar C
-			  WHERE DATE_FORMAT(C.RealDate, '%m-%Y') = DATE_FORMAT(now(), '%m-%Y')";
- }
-
-
-
-$CalResult = mysql_query( $query );
-if (!$CalResult)
-{
-	ActivityLog('Error', curPageURL(), 'Select Date from Calendar',  $query, mysql_error());
-	die ("Could not query the database: <br />". mysql_error());
-}
-$row = mysql_fetch_row($CalResult);
-while ($row = mysql_fetch_array($CalResult, MYSQL_ASSOC))
-{
-	$Month = $row['Month'];
-	$Year = $row['Year'];
-	$MonthText = $row['MonthText'];
-	$YearText = $row['YearText'];
-	$Prev = $row['PrevMonth'];
-	$Next = $row['NextMonth'];
-}
-?>
-<table border="0" align="center" width="100%" cellpadding="0" cellspacing="0">
-	<tr align="center">
-		<td>
-			<table border="0" width="90%">
-				<tr>
-<?php
-		if (($Month - 1) == 0 && $Year == 2007)
-		{
-			echo "<td align=\"right\" width=\"40%\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-		}
-		else
-		{
-			echo "<td align=\"right\" width=\"40%\"><a href=\"".$self."?MonthIn=".($Month - 1)."&amp;YearIn=".$Year."\"> ".$Prev."</a></td>";
-		}
-?>
-					<td align="center" width="20.25%" class="Title"><?php echo $MonthText.' '.$YearText; ?></td>
-					<td align="left" width="10.25%"><?php echo "<a href=\"".$self."?MonthIn=".($Month + 1)."&amp;YearIn=".$Year."\"> ".$Next."</a>"; ?></td>
-					<td align="right" width="29.5%">
-						
-						<select name="MonthIn">
-						<?php
-							$JumpMonth = 1;
-							while ($JumpMonth < 13) 
-							{   	
-								if ($JumpMonth == $Month)
-								{
-									echo "<option selected=\"selected\" value=\"".$JumpMonth."\">".$JumpMonth."</option>";
-								}
-								else
-								{
-									echo "<option value=\"".$JumpMonth."\">".$JumpMonth."</option>";
-								}
-								$JumpMonth++;
-							}
-						?>
-						</select>
-						&nbsp;/&nbsp;
-						<select name="YearIn">
-						<?php
-							$JumpYear = 2007;
-							while ($JumpYear < 2018) 
-							{   	
-								if ($JumpYear == $Year)
-								{
-									echo "<option selected=\"selected\" value=\"".$JumpYear."\">".$JumpYear."</option>";
-								}
-								else
-								{
-									echo "<option value=\"".$JumpYear."\">".$JumpYear."</option>";
-								}
-								$JumpYear++;
-							}
-						?>
-						</select>
-						<input type="submit" value="Jump" />	
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr align="center">
-		<td>
-			<table class="Calendar" align="center" width="90%">
-				<tr>
-					<td height="25px" width="14%" class="CalendarHeader">Sunday</td>
-					<td width="14%" class="CalendarHeader">Monday</td>
-					<td width="14%" class="CalendarHeader">Tuesday</td>
-					<td width="14%" class="CalendarHeader">Wednesday</td>
-					<td width="14%" class="CalendarHeader">Thursday</td>
-					<td width="14%" class="CalendarHeader">Friday</td>
-					<td width="14%" class="CalendarHeader">Saturday</td>
-				</tr>
-
-<?php
-
-
-//This section identifies the number of blank cells to show at the beginning of the calendar
-$query = "SELECT DAYOFWEEK(C.RealDate) 'CalDay', C.Month, C.Day, C.Year, C.DateId FROM Calendar C
-			WHERE DATE_FORMAT(C.RealDate, '%m') =".$Month." AND DATE_FORMAT(C.RealDate, '%Y') =".$Year;
-
-$CalResult = mysql_query( $query );
-if (!$CalResult)
-{
-	ActivityLog('Error', curPageURL(), 'Select Day of Week from Calendar',  $query, mysql_error());
-	die ("Could not query the database: <br />". mysql_error());
-}
-
-$row = mysql_fetch_array($CalResult, MYSQL_ASSOC);
-
-$start = 1;
-echo '<tr>';
-
-while ($start < $row['CalDay']) {
-       echo '<td class=\"TableValue\>&nbsp;</td>';
-    $start++;
-}
-
-// Calls a function to get the array of room usage for the month
-GetUsedRooms($Month, $Year, &$UsedRoomsResults, &$Avail);
-
-// Calls a function to get the available rooms in the house
-GetAvailableRooms($Month, $Year, &$Avail);
-
-// Calls a function to get the vacation for the current date
-GetVacation($Month, $Year, &$VacationResults);
-
-// Reset the results and write out the calendar
-mysql_data_seek($CalResult, 0);
-
-while ($row = mysql_fetch_array($CalResult, MYSQL_ASSOC))
-{
-    
-//    echo "<td height=\"100\" valign=\"top\" class=\"CalendarDay\">".$row['Day']."  -  ";
-
-	mysql_data_seek($VacationResults, ($row['Day'] - 1));
-
-	$VacationRow = mysql_fetch_row($VacationResults);
-
-	if (!IS_NULL($VacationRow[0]))
-	{
-		if ($_SESSION['Role'] == "Owner" && $VacationRow[6] == $_SESSION['OwnerId'])
-		{
-			echo "<td bgcolor='#".$VacationRow[4]."' onclick=\"Javascript: document.getElementById('editor').src='EditCalendar.php?VacationId=".$VacationRow[1]."&amp;Change=Update'; changeLayerVisibility('editor-container', 'block', this);\" height=\"100\" valign=\"top\" class=\"CalendarDayFilled\"><font color='#".$VacationRow[5]."'>".$row['Day']."  -  ";
-		}
-		elseif ($_SESSION['Role'] == "Administrator" && IsAdminOwner() && $VacationRow[6] == $_SESSION['OwnerId'])
-		{
-			echo "<td bgcolor='#".$VacationRow[4]."' onclick=\"Javascript: document.getElementById('editor').src='EditCalendar.php?VacationId=".$VacationRow[1]."&amp;Change=Update'; changeLayerVisibility('editor-container', 'block', this);\" height=\"100\" valign=\"top\" class=\"CalendarDayFilled\"><font color='#".$VacationRow[5]."'>".$row['Day']."  -  ";
-		}
-		else 
-		{
-			echo "<td bgcolor='#".$VacationRow[4]."' height=\"100\" align=\"left\" valign=\"top\" class=\"CalendarDayFilled\"><font color='#".$VacationRow[5]."'>".$row['Day']."  -  ";
-		}
-		 		
-
-		// This finds the record that has the number of rooms used for this date within the array of room usage
-		mysql_data_seek($UsedRoomsResults, ($row['Day'] - 1));
-
-		$UsedRoomRow = mysql_fetch_row($UsedRoomsResults);
-
-		$Used = $UsedRoomRow[0];
-
-		$LeftOver = $Avail - $Used;
-
-		// Don't show link if $AllowGuests is set to N
-		if ($VacationRow[2] == "Y")
-		{
-			echo "<a href=\"ViewVacation.php?VacationId=".$VacationRow[1]."\">".stripslashes($VacationRow[0])."</a><br/><br/>Available Rooms: ".$LeftOver."</font>";
-		}
-		else
-		{
-		//	echo $VacationRow[0]."<br/><br/>Available Rooms: 0</font>";
-			echo $VacationRow[0]."</font>";
-		}
-	}
-	else
-	{
-		if ($_SESSION['Role'] == "Owner")
-		{
-			echo "<td onclick=\"Javascript: document.getElementById('editor').src='EditCalendar.php?StartDay=".$row['Day']."&amp;StartMonth=".$row['Month']."&amp;StartYear=".$row['Year']."&amp;Change=Insert'; changeLayerVisibility('editor-container', 'block', this);\" height=\"100\" valign=\"top\" class=\"CalendarDay\">".$row['Day']."  -  ";	
-		}
-		elseif ($_SESSION['Role'] == "Administrator" && IsAdminOwner())
-		{
-			echo "<td onclick=\"Javascript: document.getElementById('editor').src='EditCalendar.php?StartDay=".$row['Day']."&amp;StartMonth=".$row['Month']."&amp;StartYear=".$row['Year']."&amp;Change=Insert'; changeLayerVisibility('editor-container', 'block', this);\" height=\"100\" valign=\"top\" class=\"CalendarDay\">".$row['Day']."  -  ";	
-		}
-		else 
-		{
-			echo "<td height=\"100\" valign=\"top\" class=\"CalendarDay\">".$row['Day']."  -  ";	
-		}
-	}
-
-	echo '</td>';
-
-    if ($row['CalDay'] == 7)
-    {
-    	echo '</tr><tr>';
-    }
-
-}
-
-?>
-					<td>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
-        <div id="editor-container" class="shade"><img src="images/shadow.png" width="0" height="0" alt="" class="shade" />
-          <iframe id="editor" scrolling="no" style="" frameborder="0"></iframe>
+<div class="form-horizontal">
+    <div class="control-group">
+        <label for="vacStartDate" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+                <label for="vacStartDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                </label>
+                <input name="vacStartDate" id="vacStartDate" type="text" class="date-picker form-control" />
+            </div>
         </div>
+    </div>
+    <div class="control-group">
+        <label for="vacEndDate" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+                <label for="vacEndDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                </label>
+                <input name="vacEndDate" id="vacEndDate" type="text" class="date-picker form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+	    <label for="VacationName" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+                <input id="VacationName" name="VacationName" type="text" class="form-control" placeholder="Vacation Name" />
+            </div>
+        </div>
+    </div>	
+    <div class="control-group">
+	    <label for="BackGrndColor" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+				<select name="BackGrndColor" id="BackGrndColor" class="form-control" >
+					<option value="3a87ad" style="background-color: #3a87ad;">Default</option>
+					<option value="F48058" style="background-color: #F48058;">Red</option>
+					<option value="F4AC58" style="background-color: #F4AC58;">Orange</option>
+					<option value="F3F298" style="background-color: #F3F298;">Yellow</option>
+					<option value="B0EFA8" style="background-color: #B0EFA8;">Green</option>
+					<option value="B9EAE3" style="background-color: #B9EAE3;">Light Blue</option>
+					<option value="9ECCF8" style="background-color: #9ECCF8;">Dark Blue</option>
+					<option value="9EB1F8" style="background-color: #9EB1F8;">Purple</option>
+					<option value="DEB2F1" style="background-color: #DEB2F1;">Pink</option>
+					<option value="FFFBF0" style="background-color: #FFFBF0;">White</option>
+
+				</select>
+            </div>
+        </div>
+    </div>	
+    <div class="control-group">
+	    <label for="FontColor" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+			<select name="FontColor" id="FontColor" class="form-control">
+				<option value="ffffff" style="background-color: #ffffff;">Default</option>
+				<option value="FEFCF6" style="background-color: #FEFCF6;">White</option>
+				<option value="32302B" style="background-color: #32302B;">Black</option>
+				<option value="94918B" style="background-color: #94918B;">Gray</option>
+			</select>
+            </div>
+        </div>
+    </div>	
+</div>
+</div>
+
+      </div>
+      <div class="modal-footer" id="newvacationfooter">
+	    <input type="hidden" name="SaveScheduledOwner" value="N" />
+		<input type="hidden" id="submittype" name="submittype" value="savesubmit" />
+		<button type="submit" name="savesubmit" value="savesubmit" id="savesubmit" class="btn btn-primary">Schedule Vacation</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+      <div class="modal-footer" id="existingvacationfooter">
+		<input type="hidden" name="InitialStartRange" id="InitialStartRange" value="" />
+		<input type="hidden" name="InitialEndRange" id="InitialEndRange" value="" />	  
+		<button type="submit" name="updatesubmit" value="updatesubmit" id="updatesubmit" class="btn btn-primary">Update Vacation</button>
+		<button type="submit" name="deletesubmit" value="deletesubmit" id="deletesubmit" class="btn btn-primary">Delete Vacation</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>	 
+	  </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	
+	
+<div class="modal fade" id="myModalView" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	
+	<form id="vacationformjoin" action="RequestJoin.php" method="post" >
+	  <input type="hidden" name="VacationIdJoin" id="VacationIdJoin" value="" />
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Request to Join Vacation</h4>
+      </div>
+      <div class="modal-body">
+	  To request to join this vacation, provide your name, email, the dates you want to come and click "Request to Join"
+	  <div id="myModalMessage" style="color:red" ></div>
+<div class="date-form">
+
+<div class="form-horizontal">
+    <div class="control-group">
+	    <label for="VacationName" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group" id="viewVacationNameText" >
+            </div>
+        </div>
+    </div>	
+    <div class="control-group">
+	    <label for="RequestName" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+                <input id="RequestName" name="RequestName" type="text" class="form-control" placeholder="Name" />
+            </div>
+        </div>
+    </div>	
+	    <div class="control-group">
+	    <label for="RequestEmail" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+                <input id="RequestEmail" name="RequestEmail" type="text" class="form-control" placeholder="Email" />
+            </div>
+        </div>
+    </div>	
+    <div class="control-group">
+        <label for="vacStartDateJoin" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+                <label for="vacStartDateJoin" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                </label>
+                <input name="vacStartDateJoin" id="vacStartDateJoin" type="text" class="date-picker form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="vacEndDateJoin" class="control-label"></label>
+        <div class="controls">
+            <div class="input-group">
+                <label for="vacEndDateJoin" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                </label>
+                <input name="vacEndDateJoin" id="vacEndDateJoin" type="text" class="date-picker form-control" />
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+      </div>
+      <div class="modal-footer" id="existingvacationfooter">
+		<input type="hidden" name="InitialStartRangeJoin" id="InitialStartRangeJoin" value="" />
+		<input type="hidden" name="InitialEndRangeJoin" id="InitialEndRangeJoin" value="" />	  
+		<button type="submit" name="updatesubmitjoin" value="updatesubmitjoin" id="updatesubmitjoin" class="btn btn-primary">Request to Join</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+	  </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->	
+	
+	
+<div id="confirmModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+		  <div class="modal-body">
+			Are you sure you want to delete this vacation?
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" data-dismiss="modal" class="btn btn-primary" id="deleteVacationButton">Delete</button>
+			<button type="button" data-dismiss="modal" class="btn">Cancel</button>
+		  </div>
+	</div>
+  </div>
+</div>	
+	
+	
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("[id*='date-picker']").each(function () {
+            $(this).addClass("date-picker");
+        });
+        $('.date-picker').removeAttr('type');
+		
+        $('.date-picker').datetimepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-10:+10",
+            beforeShow: function () {
+                var $datePicker = $(".date-picker");
+                var zIndexModal = $datePicker.closest(".modal").css("z-index");
+                $datePicker.css("z-index", zIndexModal + 1);
+            },
+			showMinute:false,
+			stepMinute: 60,
+			hour: 12,
+			minute: 0,
+			addSliderAccess: true, 
+			sliderAccessArgs: { touchonly: false }
+        }).attr('readonly', 'true').
+            keypress(function (event) {
+                if (event.keyCode == 8) {
+                    event.preventDefault();
+                }
+            });
+			
+			
+			$( "#savesubmit" ).click(function( event ){$( "#submittype" ).val('savesubmit');} );
+			$( "#updatesubmit" ).click(function( event ){$( "#submittype" ).val('updatesubmit');} );
+			$( "#deletesubmit" ).click(function( event ){
+				event.preventDefault();
+				$( "#confirmModal" ).modal('show'); 
+
+			} );
+			$( "#deleteVacationButton" ).click(function( event ){
+				$( "#submittype" ).val('deletesubmit');
+				$( "#vacationform" ).submit();
+			} );
+			
+			
+			// Attach a submit handler to the form
+			$( "#vacationform" ).submit(function( event ) {
+			  // Stop form from submitting normally
+			  event.preventDefault();
+			  // Get some values from elements on the page:
+			  var $form = $( this ),
+				url = $form.attr( "action" );
+			  // Send the data using post
+			  var posting = $.post( url, $( "#vacationform" ).serialize()  );
+			  // Put the results in a div
+			  posting.done(function( data ) {	
+			    if(data.indexOf("Congrats") != -1){
+				    var initDate = new Date($( "#vacStartDate" ).val());
+					window.location = 'Calendar.php?year='+initDate.getFullYear()+'&month='+initDate.getMonth()+'&date='+initDate.getDate()+'&view='+$('#calendar').fullCalendar('getView').name;
+				}else{
+					$('#myModalMessage').html(data); 
+				}
+			  });
+			});
+    });
+</script>
+
+</script>	
+	
+<script type='text/javascript'>
+
+	$(document).ready(function() {
+	
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth()+1;
+		var y = date.getFullYear();
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'title',
+				center: 'prev,next today',
+				right: 'year,month,agendaWeek,agendaDay'
+			},
+			editable: false,
+
+<?php
+	    if(isset($_GET["year"]) && isset($_GET["month"]) && isset($_GET["date"]) && isset($_GET["view"])){
+			echo 'year: '.$_GET["year"].',';
+			echo 'month: '.$_GET["month"].',';
+			echo 'date: '.$_GET["date"].',';
+			echo 'defaultView: \''.$_GET["view"].'\',';
+		}
+
+		if ($_SESSION['Role'] == "Owner" || ( $_SESSION['Role'] == "Administrator" && IsAdminOwner()))
+		{
+			echo 'dayClick: function(date, jsEvent, view) { ';
+			echo 'date.setHours(12);';
+			echo '$(\'#newvacationfooter\').show();';
+			echo '$(\'#existingvacationfooter\').hide();';
+			echo '$(\'#myModalMessage\').empty();';			
+			echo '$(\'#myModal\').modal(\'show\');';
+			echo '$(\'#vacStartDate\').datepicker(\'setDate\', date);';
+			echo '$(\'#vacEndDate\').datepicker(\'setDate\', date);';
+			echo '$(\'#BackGrndColor\').val(\'3a87ad\').css( \'background-color\', \'#\'+$(\'#BackGrndColor\').val());';
+			echo '$(\'#FontColor\').val(\'ffffff\').css( \'background-color\', \'#\'+$(\'#FontColor\').val());';			
+			echo '$(\'#VacationName\').val(\'\');';	
+			echo '$(\'#VacationId\').val(\'\');';	
+			echo '},';
+		}
+?>
+			eventClick: function(calEvent, jsEvent, view) {
+				if(calEvent.className != 'noway'){
+					$('#newvacationfooter').hide();
+					$('#existingvacationfooter').show();
+					$('#myModalMessage').empty();
+					$('#myModal').modal('show'); 
+					$('#vacStartDate').datepicker('setDate', calEvent.start);
+					$('#vacEndDate').datepicker('setDate', calEvent.end);
+					if($('#vacEndDate').val().length == 0){
+						$('#vacEndDate').datepicker('setDate', calEvent.start);
+					}
+					$('#InitialStartRange').val($('#vacStartDate').val().slice(0,10));	
+					$('#InitialEndRange').val($('#vacStartDate').val().slice(0,10));					
+					$('#VacationName').val(calEvent.title);	
+					$('#VacationId').val(calEvent.id);
+					$('#BackGrndColor').val(calEvent.color.slice(1)).css( "background-color", calEvent.color ).change(function() {
+							$('#BackGrndColor').css( "background-color", '#'+$('#BackGrndColor').val() ); });
+					$('#FontColor').val(calEvent.textColor.slice(1)).css( "background-color", calEvent.textColor ).change(function() {
+							$('#FontColor').css( "background-color", '#'+$('#FontColor').val() ); });
+				}else{
+					$('#vacStartDateJoin').datepicker('setDate', calEvent.start);
+					$('#vacEndDateJoin').datepicker('setDate', calEvent.end);
+					$('#InitialStartRangeJoin').val(calEvent.start);	
+					$('#InitialEndRangeJoin').val(calEvent.end);
+					if($('#InitialEndRangeJoin').val().length == 0){
+						$('#InitialEndRangeJoin').val(calEvent.start);	
+					}					
+					$('#viewVacationNameText').html('Vacation Name : ' + calEvent.title);
+					$('#VacationIdJoin').val(calEvent.id);
+					$('#myModalView').modal('show'); 
+				}
+			},			
+			events: 'CreateCalendarJSON.php'
+		});
+		
+		$('#BackGrndColor').css( "background-color", '#'+$('#BackGrndColor').val()).change(function() {
+							$('#BackGrndColor').css( "background-color", '#'+$('#BackGrndColor').val() ); });
+		$('#FontColor').css( "background-color", '#'+$('#FontColor').val()).change(function() {
+							$('#FontColor').css( "background-color", '#'+$('#FontColor').val() ); });
+
+	});
+</script>
+
 

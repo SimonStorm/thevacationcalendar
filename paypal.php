@@ -225,13 +225,13 @@ switch ($_GET['action']) {
 			
 			//check if transaction ID has been processed before
 			$checkquery = "select txnid from paypal_payment_info where txnid='".$txn_id."'";
-			$sihay = mysql_query($checkquery);
+			$sihay = mysqli_query( $GLOBALS['link'], $checkquery);
 			if (!$sihay)
 			{
-				ActivityLog('Error', curPageURL(), 'Select txnid Info for PayPal',  $checkquery, mysql_error());
-				die("Duplicate txn id check query failed:<br/>" . mysql_error() . "<br/>" . mysql_errno());
+				ActivityLog('Error', curPageURL(), 'Select txnid Info for PayPal',  $checkquery, mysqli_error($GLOBALS['link']));
+				die("Duplicate txn id check query failed:<br/>" . mysqli_error($GLOBALS['link']) . "<br/>" . mysqli_errno($GLOBALS['link']));
 			}
-			$nm = mysql_num_rows($sihay);
+			$nm = mysqli_num_rows($sihay);
 		
 		
 			if ($nm == 0){
@@ -240,11 +240,11 @@ switch ($_GET['action']) {
 			
 			
 			 $strQuery = "insert into paypal_payment_info(paymentstatus,buyer_email,firstname,lastname,street,city,state,zipcode,country,mc_gross,mc_fee,itemnumber,itemname,os0,on0,os1,on1,quantity,memo,paymenttype,paymentdate,txnid,pendingreason,reasoncode,tax,datecreation) values ('".$payment_status."','".$payer_email."','".$first_name."','".$last_name."','".$address_street."','".$address_city."','".$address_state."','".$address_zip."','".$address_country."','".$mc_gross."','".$mc_fee."','".$item_number."','".$item_name."','".$option_name1."','".$option_selection1."','".$option_name2."','".$option_selection2."','".$quantity."','".$memo."','".$payment_type."','".$payment_date."','".$txn_id."','".$pending_reason."','".$reason_code."','".$tax."','".$fecha."')";
-			 $result = mysql_query($strQuery);
+			 $result = mysqli_query( $GLOBALS['link'], $strQuery);
 			 if (!$result)
 			 {
-				ActivityLog('Error', curPageURL(), 'Insert PayPal Payment info to Active - Subscribing for PayPal',  $strQuery, mysql_error());
-			 	die("Default - paypal_payment_info, Query failed:<br/>" . mysql_error() . "<br/>" . mysql_errno());
+				ActivityLog('Error', curPageURL(), 'Insert PayPal Payment info to Active - Subscribing for PayPal',  $strQuery, mysqli_error($GLOBALS['link']));
+			 	die("Default - paypal_payment_info, Query failed:<br/>" . mysqli_error($GLOBALS['link']) . "<br/>" . mysqli_errno($GLOBALS['link']));
 			 }
 			
 			
@@ -262,16 +262,16 @@ switch ($_GET['action']) {
 			
 			// insert subscriber payment info into paypal_payment_info table
 //			$strQuery = "insert into paypal_payment_info(paymentstatus,buyer_email,firstname,lastname,street,city,state,zipcode,country,mc_gross,mc_fee,memo,paymenttype,paymentdate,txnid,pendingreason,reasoncode,tax,datecreation, custom) values ('".$payment_status."','".$payer_email."','".$first_name."','".$last_name."','".$address_street."','".$address_city."','".$address_state."','".$address_zip."','".$address_country."','".$mc_gross."','".$mc_fee."','".$memo."','".$payment_type."','".$payment_date."','".$txn_id."','".$pending_reason."','".$reason_code."','".$tax."','".$fecha."','".$custom."')";
-//			$result = mysql_query($strQuery) or die("Subscription - paypal_payment_info, Query failed:<br/>" . mysql_error() . "<br/>" . mysql_errno());
+//			$result = mysqli_query( $GLOBALS['link'], $strQuery) or die("Subscription - paypal_payment_info, Query failed:<br/>" . mysqli_error($GLOBALS['link']) . "<br/>" . mysqli_errno($GLOBALS['link']));
 	
 	
 			// insert subscriber info into paypal_subscription_info table
 			$strQuery2 = "insert into paypal_subscription_info(subscr_id , sub_event, subscr_date ,subscr_effective,period1,period2, period3, amount1 ,amount2 ,amount3,  mc_amount1,  mc_amount2,  mc_amount3, recurring, reattempt,retry_at, recur_times, username ,password, payment_txn_id, subscriber_emailaddress, datecreation, custom) values ('".$subscr_id."', '".$txn_type."','".$subscr_date."','".$subscr_effective."','".$period1."','".$period2."','".$period3."','".$amount1."','".$amount2."','".$amount3."','".$mc_amount1."','".$mc_amount2."','".$mc_amount3."','".$recurring."','".$reattempt."','".$retry_at."','".$recur_times."','".$username."','".$password."', '".$txn_id."','".$payer_email."','".$fecha."','".$custom."')";
-			$result = mysql_query($strQuery2);
+			$result = mysqli_query( $GLOBALS['link'], $strQuery2);
 			if (!$result)
 			{
-				ActivityLog('Error', curPageURL(), 'Insert PayPal Subscribe info to Active - Subscribing for PayPal',  $strQuery2, mysql_error());
-				die("Subscription - paypal_subscription_info, Query failed:<br/>" . mysql_error() . "<br/>" . mysql_errno());
+				ActivityLog('Error', curPageURL(), 'Insert PayPal Subscribe info to Active - Subscribing for PayPal',  $strQuery2, mysqli_error($GLOBALS['link']));
+				die("Subscription - paypal_subscription_info, Query failed:<br/>" . mysqli_error($GLOBALS['link']) . "<br/>" . mysqli_errno($GLOBALS['link']));
 			}
 	
 	
@@ -292,10 +292,10 @@ switch ($_GET['action']) {
 							Audit_user_name = 'PAYPAL' WHERE HouseId = ".$custom;
 	 //		mail("admin@thevacationcalendar.com", "UPDATE HOUSE QUERY", $UpdateHouseQuery);
 	 
-			 if (!mysql_query( $UpdateHouseQuery ))
+			 if (!mysqli_query( $GLOBALS['link'],  $UpdateHouseQuery ))
 			 {
-				ActivityLog('Error', curPageURL(), 'Update House info to Active - Subscribing for PayPal',  $UpdateHouseQuery, mysql_error());
-				 mail("admin@thevacationcalendar.com", "UPDATE HOUSE QUERY FAILED", mysql_error());
+				ActivityLog('Error', curPageURL(), 'Update House info to Active - Subscribing for PayPal',  $UpdateHouseQuery, mysqli_error($GLOBALS['link']));
+				 mail("admin@thevacationcalendar.com", "UPDATE HOUSE QUERY FAILED", mysqli_error($GLOBALS['link']));
 	 // SEND FAILURE EMAIL
 			 }
 			 
@@ -304,10 +304,10 @@ switch ($_GET['action']) {
 							WHERE role= 'Administrator' AND HouseId = ".$custom;
 	 //		mail("admin@thevacationcalendar.com", "UPDATE USER QUERY", $UpdateUserQuery);
 			 
-			 if (!mysql_query( $UpdateUserQuery ))
+			 if (!mysqli_query( $GLOBALS['link'],  $UpdateUserQuery ))
 			 {
-				ActivityLog('Error', curPageURL(), 'Update User info to Active - Subscribing for PayPal',  $UpdateUserQuery, mysql_error());
-				 mail("admin@thevacationcalendar.com", "UPDATE USER QUERY FAILED", mysql_error());
+				ActivityLog('Error', curPageURL(), 'Update User info to Active - Subscribing for PayPal',  $UpdateUserQuery, mysqli_error($GLOBALS['link']));
+				 mail("admin@thevacationcalendar.com", "UPDATE USER QUERY FAILED", mysqli_error($GLOBALS['link']));
 	 // SEND FAILURE EMAIL
 			 }
 	 
@@ -330,11 +330,11 @@ switch ($_GET['action']) {
 			
 			// insert subscriber info into paypal_subscription_info table
 			$strQuery2 = "insert into paypal_subscription_info(subscr_id , sub_event, subscr_date ,subscr_effective,period1,period2, period3, amount1 ,amount2 ,amount3,  mc_amount1,  mc_amount2,  mc_amount3, recurring, reattempt,retry_at, recur_times, username ,password, payment_txn_id, subscriber_emailaddress, datecreation, custom) values ('".$subscr_id."', '".$txn_type."','".$subscr_date."','".$subscr_effective."','".$period1."','".$period2."','".$period3."','".$amount1."','".$amount2."','".$amount3."','".$mc_amount1."','".$mc_amount2."','".$mc_amount3."','".$recurring."','".$reattempt."','".$retry_at."','".$recur_times."','".$username."','".$password."', '".$txn_id."','".$payer_email."','".$fecha."','".$custom."')";
-			$result = mysql_query($strQuery2);
+			$result = mysqli_query( $GLOBALS['link'], $strQuery2);
 			if (!$result)
 			{
-				ActivityLog('Error', curPageURL(), 'Insert PayPal Subscription info to Cancelled for PayPal',  $strQuery2, mysql_error());
-				die("Subscription - paypal_subscription_info, Query failed:<br/>" . mysql_error() . "<br/>" . mysql_errno());
+				ActivityLog('Error', curPageURL(), 'Insert PayPal Subscription info to Cancelled for PayPal',  $strQuery2, mysqli_error($GLOBALS['link']));
+				die("Subscription - paypal_subscription_info, Query failed:<br/>" . mysqli_error($GLOBALS['link']) . "<br/>" . mysqli_errno($GLOBALS['link']));
 			}
 	
 		
@@ -342,20 +342,20 @@ switch ($_GET['action']) {
 			$UpdateHouseQuery = "UPDATE House SET Status = 'C',
 							Audit_user_name = 'PAYPAL' WHERE HouseId = ".$custom;
 	
-			if (!mysql_query( $UpdateHouseQuery ))
+			if (!mysqli_query( $GLOBALS['link'],  $UpdateHouseQuery ))
 			{
-				ActivityLog('Error', curPageURL(), 'Update House to Cancelled for PayPal',  $UpdateHouseQuery, mysql_error());
-				mail("admin@thevacationcalendar.com", "UPDATE HOUSE QUERY FAILED", mysql_error());
+				ActivityLog('Error', curPageURL(), 'Update House to Cancelled for PayPal',  $UpdateHouseQuery, mysqli_error($GLOBALS['link']));
+				mail("admin@thevacationcalendar.com", "UPDATE HOUSE QUERY FAILED", mysqli_error($GLOBALS['link']));
 			}
 			
 			$UpdateUserQuery = "UPDATE user SET is_confirmed = 0,
 							Audit_user_name = 'PAYPAL'
 							WHERE role= 'Administrator' AND HouseId = ".$custom;
 			
-			if (!mysql_query( $UpdateUserQuery ))
+			if (!mysqli_query( $GLOBALS['link'],  $UpdateUserQuery ))
 			{
-				ActivityLog('Error', curPageURL(), 'Update User to Cancelled for PayPal',  $UpdateUserQuery, mysql_error());
-				mail("admin@thevacationcalendar.com", "UPDATE USER QUERY FAILED", mysql_error());
+				ActivityLog('Error', curPageURL(), 'Update User to Cancelled for PayPal',  $UpdateUserQuery, mysqli_error($GLOBALS['link']));
+				mail("admin@thevacationcalendar.com", "UPDATE USER QUERY FAILED", mysqli_error($GLOBALS['link']));
 			}
 	
 			mail("admin@thevacationcalendar.com", "USER CANCELLED for House ".$custom, "$res\n $req\n $strQuery\n $struery\n  $strQuery2");

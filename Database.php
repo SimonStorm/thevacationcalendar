@@ -1,18 +1,14 @@
 <?php
 $db_host='localhost';
-$db_database='BeachHouse';
-$db_username='root';
-$db_password='root';
+$db_database='vacation_vacal';
+$db_username='vacation_vacal';
+$db_password='vacation';
 
-
-try {
-    $connection = new PDO('mysql:host=localhost;dbname=BeachHouse;charset=utf8', 'root', 'root');
-} catch(PDOException $ex) {
-    echo "Could not connect to the database: <br />"; 
-    echo $ex->getMessage();
-}
+global $link;
+$link = mysqli_connect('localhost', 'vacation_vacal', 'vacation');
+mysqli_select_db($link, 'vacation_vacal');
+mysqli_set_charset($link, 'UTF-8');
 
 
 ?>
-
 

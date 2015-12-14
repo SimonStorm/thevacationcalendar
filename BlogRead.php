@@ -3,12 +3,12 @@
 //This section displays the guests in the system
 	$GetType = $_GET['BlogId'];
 
-	GetBlog(&$BlogResult, $GetType, 'B');
+	$BlogResult = GetBlog($GetType, 'B');
 
-	DisplayBlog(&$BlogResult, 'B');
+	DisplayBlog($BlogResult, 'B');
 
-	GetBlog(&$BlogResult, $GetType, 'C');
+	$BlogResult = GetBlog($GetType, 'C');
 
-	DisplayBlog(&$BlogResult, 'C');
+	DisplayBlog($BlogResult, 'C');
 
 ?>

@@ -2,22 +2,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">		
 	<title>The Vacation Calendar - Reset your password</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+    <LINK href="css/BeachStyle.css" rel="stylesheet" type="text/css">
+	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+	
 </HEAD>
 <body>
 
 <?php include("Database.php") ?>
 <?php include("Functions.php") ?>
-<?php include("Navigation.php") ?>
+<?php include("NavigationLimited.php") ?>
 <?php ActivityLog('Info', curPageURL(), 'Forgot Password',  NULL, NULL); ?>
 
 
+<div class="container vacation">	
+
+  <h2 class="featurette-heading">Request new password</h2>
+
 <table border="0" align="center" width="100%">
-	<tr align="center">
-		<td colspan="4"><H1>Request new password</H1></td>
-	</tr>
 	<tr align="center">
 		<td colspan="4">
 			<table class="FocusTable" align="center" width="35%">
@@ -39,15 +55,15 @@ $FindHouseQuery = "SELECT HouseName
 					WHERE HouseId = ".$SelectedHouse;
 
 
-$FindHouseResult = mysql_query( $FindHouseQuery );
+$FindHouseResult = mysqli_query( $GLOBALS['link'],  $FindHouseQuery );
 if (!$FindHouseResult)
 {
-    ActivityLog('Error', curPageURL(), 'Select House Name',  $query, mysql_error());
-	die ("Could not search the database for selected houses: <br />". mysql_error());
+    ActivityLog('Error', curPageURL(), 'Select House Name',  $query, mysqli_error($GLOBALS['link']));
+	die ("Could not search the database for selected houses: <br />". mysqli_error($GLOBALS['link']));
 }
 else
 {
-	while ($FindHouseRow = mysql_fetch_array($FindHouseResult, MYSQL_ASSOC)) 
+	while ($FindHouseRow = mysqli_fetch_array($FindHouseResult, MYSQL_ASSOC)) 
 	{
 		$DisplayHouseString = $FindHouseRow['HouseName'];
 	}
@@ -76,13 +92,13 @@ if (isset($_POST['command']) && isset($_POST['email']))
 //echo $query;
 //echo '<br/><br/>';			  
 
-	  $result = mysql_query($query);
+	  $result = mysqli_query( $GLOBALS['link'], $query);
 		if (!$result)
 		{
-			ActivityLog('Error', curPageURL(), 'Select User Name',  $query, mysql_error());
-			die ("Could not search the database for user name: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Select User Name',  $query, mysqli_error($GLOBALS['link']));
+			die ("Could not search the database for user name: <br />". mysqli_error($GLOBALS['link']));
 		}	  
-	  $is_user = mysql_num_rows($result);
+	  $is_user = mysqli_num_rows($result);
 	
 	  if ($is_user == 1) {
 		// Generate a random password
@@ -104,11 +120,11 @@ if (isset($_POST['command']) && isset($_POST['email']))
 							Audit_Email = '".$_POST['email']."'
 					where email = '$as_email' and HouseId = $SelectedHouse";
 
-		$result = mysql_query($query);
+		$result = mysqli_query( $GLOBALS['link'], $query);
 		if (!$result)
 		{
-			ActivityLog('Error', curPageURL(), 'Select User Name',  $query, mysql_error());
-			die ("Could not update user password: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Select User Name',  $query, mysqli_error($GLOBALS['link']));
+			die ("Could not update user password: <br />". mysqli_error($GLOBALS['link']));
 		}	  
 		
 		$server = $_SERVER['HTTP_HOST'];
@@ -154,30 +170,25 @@ $form_str = <<< EOFORMSTR
 <TABLE BORDER=0 CELLPADDING=10 WIDTH=100%>
 	<TR ALIGN=CENTER>
 		<TD VALIGN=TOP COLSPAN=2 CLASS=TextItem>
-			Please enter your email address and a new password will be emailed to you. 
+			Please enter your email address and a new password will be emailed to you.<br/><br/> 
 		</td>
 	</tr>
 	<tr>
-		<TD CLASS=TextItem>
-			Vacation Home:
-		</td>
-		<td>
-			$DisplayHouseString
+		<td COLSPAN=2>
+			Vacation Home:  &nbsp; $DisplayHouseString <br/><br/>
 		</td>
 	</tr>
 	<tr>
-		<TD CLASS=TextItem>
-			Email:
-		</td>
-		<td>
-			<input type="text" name="email">
+		<td COLSPAN=2>
+			<input class="form-control" placeholder="Email" type="text" name="email">
 		</td>
 	</tr>
 	<TR ALIGN=CENTER>
 		<TD COLSPAN=2>
 			<input type="hidden" name="command" value="forgot">
 			<input type="hidden" name="HouseId" value="$SelectedHouse">
-			<input type="submit" value="Send password">
+			<br/>
+			<input class="btn btn-success" type="submit" value="Send password">
 		</td>
 	</tr>
 </TABLE>
@@ -198,6 +209,6 @@ echo $form_str;
 <?php include("Footer.php") ?>
 
 </form>
-
+</div>
 </body>
 </html>

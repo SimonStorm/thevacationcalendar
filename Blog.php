@@ -2,9 +2,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+    <link href="css/BeachStyle.css" rel="stylesheet" type="text/css" />
+	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
+	<link href="css/lightbox.css" rel="stylesheet" />
 </HEAD>
 <body onload="init();">
 
@@ -38,25 +54,21 @@ return 0;
 <?php include("Navigation.php") ?>
 <?php ActivityLog('Info', curPageURL(), 'Blog Main Page',  NULL, NULL); ?>
 
+<div class="container vacation">	
+  <h2 class="featurette-heading">House blog</h2>
+  <div style="text-align:left">
 
 <?php include("BlogFunctions.php") ?>
 <?php include("BlogInput.php") ?>
 
-<form action="Blog.php" method="post">
+
+
+<form  action="Blog.php" method="post">
 
 <table border="0" align="center" width="100%">
-	<tr valign="bottom" align="center" height="45">
-		<td colspan="2">
-			<table cellpadding="0" cellspacing="0" width="95%">
-				<tr>
-					<td class="Heading">House blog</td>
-				<tr>
-			</table>
-		</td>
-	</tr>
 	<tr align="center">
 		<td colspan="4">
-			<table border="0" class="FocusTable" align="center" width="65%" cellpadding="5">
+			<table border="0" class="FocusTable" align="center" width="95%" cellpadding="5">
 				<tr align="center">
 					<td align="left">
 						&nbsp;&nbsp;&nbsp;<a href="Blog.php?Request=Add">Add A New Blog</a>
@@ -111,7 +123,8 @@ echo "You are not logged in or do not have access to this site. <a href=\"index.
 ?>
 
 </form>
-
+</div>
+</div>
 
 </body>
 </html>

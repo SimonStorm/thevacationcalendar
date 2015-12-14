@@ -4,9 +4,9 @@
 
 	$GetType = 0;
 	
-	GetBlog(&$BlogResult, $GetType, 'B');
+	$BlogResult = GetBlog($GetType, 'B');
 
-	DisplayBlog(&$BlogResult, 'B');
+	DisplayBlog($BlogResult, 'B');
 
 
 ?>

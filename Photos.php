@@ -2,12 +2,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">		
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+	<link href="css/BeachStyle.css" rel="stylesheet" type="text/css" />	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
+	<link href="css/lightbox.css" rel="stylesheet" />
 <body onload="init();">
 
+		  
 
 
 <script type="text/javascript">
@@ -27,6 +42,15 @@ try {
 return 0;
 }
 
+
+function validatePhoto(){
+	var isValid = (new RegExp('(.jpg|.gif|.png'.replace(/\./g, '\\.') + ')$')).test($('#PhotoAlbumPictureText').val());
+	if(!isValid){
+		alert('Photo type is not valid.  It needs to be jpg, gif or png.');
+	}
+	return isValid;
+}
+
 </SCRIPT>
 
 <?php if (isset($_SESSION['Role']))
@@ -44,20 +68,20 @@ if (isset($_GET['Delete']))
 		WHERE HouseId = ".$_SESSION['HouseId']." 
 		AND PhotoId = ".$_GET['Delete'];
 	
-	if (!mysql_query( $DeletePhotoQuery ))
+	if (!mysqli_query( $GLOBALS['link'],  $DeletePhotoQuery ))
 	{
-		ActivityLog('Error', curPageURL(), 'Delete Photo from Album',  $DeletePhotoQuery, mysql_error());
-		die ("Could not delete photo from the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Delete Photo from Album',  $DeletePhotoQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not delete photo from the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
 	$DeleteAllPhotoCommentQuery = "DELETE FROM PhotoComment 
 		WHERE HouseId = ".$_SESSION['HouseId']." 
 		AND PhotoId = ".$_GET['Delete'];
 	
-	if (!mysql_query( $DeleteAllPhotoCommentQuery ))
+	if (!mysqli_query( $GLOBALS['link'],  $DeleteAllPhotoCommentQuery ))
 	{
-		ActivityLog('Error', curPageURL(), 'Delete Photo Comment from Album',  $DeleteAllPhotoCommentQuery, mysql_error());
-		die ("Could not delete photo comment from the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Delete Photo Comment from Album',  $DeleteAllPhotoCommentQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not delete photo comment from the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 	unlink("photos/photo_".$_SESSION['HouseId']."_".$_GET['Delete'].".jpg");
@@ -70,10 +94,10 @@ if (isset($_GET['DeleteComment']))
 		WHERE HouseId = ".$_SESSION['HouseId']." 
 		AND CommentId = ".$_GET['DeleteComment'];
 	
-	if (!mysql_query( $DeletePhotoCommentQuery ))
+	if (!mysqli_query( $GLOBALS['link'],  $DeletePhotoCommentQuery ))
 	{
-		ActivityLog('Error', curPageURL(), 'Delete Photo Comment from Album',  $DeletePhotoCommentQuery, mysql_error());
-		die ("Could not delete photo comment from the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Delete Photo Comment from Album',  $DeletePhotoCommentQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not delete photo comment from the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
 }
@@ -85,27 +109,29 @@ if (isset($_POST['AddComment']))
 						WHERE HouseId = ".$_SESSION['HouseId']."
 						ORDER BY 1";
 
-	$PhotoResult = mysql_query( $PhotoQuery );
+	$PhotoResult = mysqli_query( $GLOBALS['link'],  $PhotoQuery );
 	if (!$PhotoResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select Photo for Comment',  $PhotoQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select Photo for Comment',  $PhotoQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 	
 	$counter = 1;
-	while ($PhotoRow = mysql_fetch_array($PhotoResult, MYSQL_ASSOC)) 
+	while ($PhotoRow = mysqli_fetch_array($PhotoResult, MYSQL_ASSOC)) 
 	{
 		if (isset($_POST["PhotoComment_".$PhotoRow['HouseId']."_".$PhotoRow['PhotoId']]))
 		{
 			if (strlen(trim($_POST["PhotoComment_".$PhotoRow['HouseId']."_".$PhotoRow['PhotoId']])) > 0)
 			{
-				$InsertPhotoCommentQuery = "INSERT INTO PhotoComment (PhotoId, HouseId, Comment, UserId, CommentDate) 
-					VALUES (".$PhotoRow['PhotoId'].", ".$_SESSION['HouseId'].", '".$_POST["PhotoComment_".$PhotoRow['HouseId']."_".$PhotoRow['PhotoId']]."', '".$_SESSION['user_name']."', SYSDATE())";
+				$commentVar = mysqli_real_escape_string($GLOBALS['link'], $_POST["PhotoComment_".$PhotoRow['HouseId']."_".$PhotoRow['PhotoId']]);
 			
-				if (!mysql_query( $InsertPhotoCommentQuery ))
+				$InsertPhotoCommentQuery = "INSERT INTO PhotoComment (PhotoId, HouseId, Comment, UserId, CommentDate) 
+					VALUES (".$PhotoRow['PhotoId'].", ".$_SESSION['HouseId'].", '".$commentVar."', '".$_SESSION['user_name']."', SYSDATE())";
+			
+				if (!mysqli_query( $GLOBALS['link'],  $InsertPhotoCommentQuery ))
 				{
-					ActivityLog('Error', curPageURL(), 'Inserts Photo Comment into Album',  $InsertPhotoCommentQuery, mysql_error());
-					die ("Could not insert photo comment into the database: <br />". mysql_error());
+					ActivityLog('Error', curPageURL(), 'Inserts Photo Comment into Album',  $InsertPhotoCommentQuery, mysqli_error($GLOBALS['link']));
+					die ("Could not insert photo comment into the database: <br />". mysqli_error($GLOBALS['link']));
 				}
 			}
 		}
@@ -159,13 +185,13 @@ if (isset($_FILES['PhotoAlbumPicture']))
 		$InsertPhotoQuery = "INSERT INTO Photo (HouseId) 
 			VALUES (".$_SESSION['HouseId'].")";
 	
-		if (!mysql_query( $InsertPhotoQuery ))
+		if (!mysqli_query( $GLOBALS['link'],  $InsertPhotoQuery ))
 		{
-			ActivityLog('Error', curPageURL(), 'Inserts Picture into Album',  $InsertPhotoQuery, mysql_error());
-			die ("Could not insert picture into the database: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Inserts Picture into Album',  $InsertPhotoQuery, mysqli_error($GLOBALS['link']));
+			die ("Could not insert picture into the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 		
-		$PhotoId = mysql_insert_id();
+		$PhotoId = mysqli_insert_id($GLOBALS['link']);
 		
 		$IconSaveName = "photos/photo_".$_SESSION['HouseId']."_".$PhotoId.".jpg";
 	
@@ -183,42 +209,44 @@ if (isset($_FILES['PhotoAlbumPicture']))
 }
 
 ?>
-
-
+<div class="container vacation">	
+  <h2 class="featurette-heading">House Photo Album</h2>
+  <div style="text-align:left">
+	<div>
+			<form onsubmit="return validatePhoto();" enctype="multipart/form-data" action="Photos.php" method="post" id="PhotoAddForm" class="form-signin" role="form" >
+				<div class="input-group">
+					<span class="input-group-btn">
+						<span class="btn btn-primary btn-file">
+							Browse&hellip; <input type="file" class="form-control" name="PhotoAlbumPicture" id="PhotoAlbumPicture">
+						</span>
+					</span>
+					<input id="PhotoAlbumPictureText" type="text" class="form-control" readonly placeholder="Add a photo">
+					<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+				</div>	
+				<div class="input-group">
+					<br/>
+					<input class="btn btn-success" type="submit" value="Add Photo" />	
+				</div>				
+			</form>
+	</div>
 <table border="0" align="center" width="85%">
-	<tr align="center">
-		<td colspan="4"><h1>House Photo Album</h1></td>
-	</tr>
 	<tr align="center">
 		<td colspan="4">
 			<table border="0" class="FocusTable" align="center" width="70%" cellpadding="5">
 				<tr align="center">
 					<td>
-						<p class="Instructions">Add, view and comment on vacation photos</p>
+						<p class="Instructions">Add, view and comment on vacation photos.  Supported formats are jpg, png and gif.</p>
 					</td>
 				</tr>
 			</table>
 		</td>
 	</tr>
-	<tr align="center">
-		<td colspan="4">
-			<form enctype="multipart/form-data" action="Photos.php" method="post" id="PhotoAddForm">
-			<table class="FocusTable" align="center" width="100%" cellpadding="5">
-				<TR ALIGN=CENTER>
-					<TD CLASS=TextItem>
-						Add New Photo:
-					</td>
-					<td colspan="1"><!-- MAX_FILE_SIZE must precede the file input field -->
-				    	<input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input size="20" maxlength="2" type="file" name="PhotoAlbumPicture"></input>
-					</td>
-					<TD CLASS=TextItem ALIGN=LEFT COLSPAN="2">
-						<input type="submit" value="Add Photo" />
-					</td>
-				</tr>
-			</table>
-			</form>
-		</td>
-	</tr>
+	
+
+
+	<TR align="LEFT">
+	  <TD colspan="2" class="TextItem"><hr style="border-top: 1px solid #000000;"></TD>
+	</TR>	
 	<form action="Photos.php" method="post" id="PhotoCommentAddForm">
 	<tr align="center">
 		<td colspan="4">
@@ -229,20 +257,20 @@ if (isset($_FILES['PhotoAlbumPicture']))
 							WHERE HouseId = ".$_SESSION['HouseId']."
 							ORDER BY 1";
 	
-		$PhotoResult = mysql_query( $PhotoQuery );
+		$PhotoResult = mysqli_query( $GLOBALS['link'],  $PhotoQuery );
 		if (!$PhotoResult)
 		{
-			ActivityLog('Error', curPageURL(), 'Select Photo',  $PhotoQuery, mysql_error());
-			die ("Could not query the database: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Select Photo',  $PhotoQuery, mysqli_error($GLOBALS['link']));
+			die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 		
 		$counter = 1;
-		while ($PhotoRow = mysql_fetch_array($PhotoResult, MYSQL_ASSOC)) 
+		while ($PhotoRow = mysqli_fetch_array($PhotoResult, MYSQL_ASSOC)) 
 		{
 
 			$PhotoId = $PhotoRow['PhotoId'];
 
-			$PhotoDisplay = "<img src=\"photos/photo_".$PhotoRow['HouseId']."_".$PhotoRow['PhotoId'].".jpg\">";
+			$PhotoDisplay = "<img  class=\"img-responsive\" src=\"photos/photo_".$PhotoRow['HouseId']."_".$PhotoRow['PhotoId'].".jpg\">";
 
 			$PhotoComment = "PhotoComment_".$PhotoRow['HouseId']."_".$PhotoRow['PhotoId'];
 			if ($_SESSION['Role'] == 'Administrator')
@@ -260,15 +288,15 @@ if (isset($_FILES['PhotoAlbumPicture']))
 								AND PhotoId = ".$PhotoId."
 								ORDER BY CommentId";
 		
-			$PhotoCommentResult = mysql_query( $PhotoCommentQuery );
+			$PhotoCommentResult = mysqli_query( $GLOBALS['link'],  $PhotoCommentQuery );
 			if (!$PhotoCommentResult)
 			{
-				ActivityLog('Error', curPageURL(), 'Select Photo Comments for Display',  $PhotoCommentQuery, mysql_error());
-				die ("Could not query the database: <br />". mysql_error());
+				ActivityLog('Error', curPageURL(), 'Select Photo Comments for Display',  $PhotoCommentQuery, mysqli_error($GLOBALS['link']));
+				die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 			}
 			
 			$PhotoCommentEntry = "";
-			while ($PhotoCommentRow = mysql_fetch_array($PhotoCommentResult, MYSQL_ASSOC)) 
+			while ($PhotoCommentRow = mysqli_fetch_array($PhotoCommentResult, MYSQL_ASSOC)) 
 			{
 				$PhotoCommentEntry .= "<TR ALIGN=LEFT><TD CLASS=TextItem>[".$PhotoCommentRow['UserId']." wrote on ".$PhotoCommentRow['CommentDate']."]<br /><br /><font class=\"CommentColor\">".$PhotoCommentRow['Comment']."</font></td>";
 				if ($_SESSION['Role'] == 'Administrator')
@@ -287,22 +315,28 @@ if (isset($_FILES['PhotoAlbumPicture']))
 $photo_form = <<< EOPHOTOFORM
 
 <TR ALIGN=CENTER>
-					<TD CLASS=TextItem width=600>
+					<TD CLASS=TextItem >
 						$PhotoDisplay
 					</td>
 					<TD CLASS=TextItem ALIGN=LEFT>
 						$PhotoDelete
 					</td>
 				</tr>
+				<TR align="LEFT">
+				  <TD colspan="2" class="TextItem">&nbsp;</TD>
+				</TR>					
 				$PhotoCommentEntry
 				<TR ALIGN=CENTER>
-					<TD CLASS=TextItem>
-						<textarea cols="70" rows="3" name="$PhotoComment"></textarea>
+					<TD CLASS=TextItem >
+						<textarea class="form-control" cols="70" rows="3" name="$PhotoComment"></textarea>
 					</td>
-					<TD CLASS=TextItem ALIGN=LEFT>
-						<input type="submit" value="Add Comment" name="AddComment">
+					<TD CLASS=TextItem >
+						<input class="btn btn-success" type="submit" value="Add Comment" name="AddComment">
 					</td>
 				</tr>
+				<TR align="LEFT">
+					<TD  class="TextItem"><hr style="border-top: 1px solid #000000;"></TD>
+				</TR>	
 EOPHOTOFORM;
 
 echo $photo_form;
@@ -315,6 +349,8 @@ echo $photo_form;
 	</form>
 </table>
 
+	</div>
+</div>
 
 <?php include("Footer.php") ?>
 
@@ -326,6 +362,28 @@ echo "You are not logged in or do not have access to this site. <a href=\"index.
 
 }
 ?>
+
+<script type="text/javascript">
+
+$(document).on('change', '.btn-file :file', function () {
+    var input = $(this), numFiles = input.get(0).files ? input.get(0).files.length : 1, label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [
+        numFiles,
+        label
+    ]);
+});
+$(document).ready(function () {
+    $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+        var input = $(this).parents('.input-group').find(':text'), log = numFiles > 1 ? numFiles + ' files selected' : label;
+        if (input.length) {
+            input.val(log);
+        } else {
+            if (log)
+                alert(log);
+        }
+    });
+});
+</script>
 
 </body>
 </html>

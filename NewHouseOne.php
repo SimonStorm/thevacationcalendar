@@ -3,9 +3,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
 	<title>The Vacation Calendar - Signup for a vacation home calendar. The easy to use online calendar will help you manage when your vacation home is vacant and when it is occupied.</title>
     <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">	
 
 
 <script type="text/javascript">
@@ -59,99 +73,101 @@ function Validate(inForm) {
 
 <?php include("Database.php") ?>
 <?php include("Functions.php") ?>
-<?php include("Navigation.php") ?>
+<?php include("NavigationLimited.php") ?>
 <?php ActivityLog('Info', curPageURL(), 'New House Setup Page 1',  NULL, NULL); ?>
 
+<div class="container vacation">	
 
-<form enctype="multipart/form-data" id="inForm" action="NewHouseTwo.php" method="post">
-<table border="0" align="center" width="55%">
-	<tr align="center">
-		<td colspan="4"><h1>Create your Vacation House</h1></td>
-	</tr>
-	<tr align="center">
-		<td colspan="4">
-			<table border="0" class="FocusTable" align="center" cellpadding="5" width="100%">
-				<tr>
-					<td colspan="4"><h3>House Details</h3></td>
-				</tr>
-				<tr>
-					<td class="TextItem">House Name*:</td><td colspan="1"><input maxlength="40" type="text" name="HouseName"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Guest Password*:</td><td colspan="1"><input maxlength="40" type="password" name="HousePass"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Guest Password (confirm)*:</td><td colspan="1"><input maxlength="40" type="password" name="HouseConfirm"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Address Line 1:</td><td colspan="1"><input maxlength="40" type="text" name="Address1"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Address Line 2:</td><td colspan="1"><input maxlength="40" type="text" name="Address2"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">City:</td><td colspan="1"><input maxlength="40" type="text" name="City"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">State:</td><td colspan="1"><input size="2" maxlength="2" type="text" name="State"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Zip Code:</td><td colspan="1"><input size="5" maxlength="5" type="text" name="ZipCode"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Home Phone:</td><td colspan="1"><input size="12" maxlength="12" type="text" name="HomePhone"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Fax:</td><td colspan="1"><input size="12" maxlength="12" type="text" name="Fax"></input>
-				</tr>
-				<tr>
-					<td class="TextItem">Emergency Phone:</td><td colspan="1"><input size="12" maxlength="12" type="text" name="EmergencyPhone"></input>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr align="center">
-		<td colspan="4">
-			<table border="0" class="FocusTable" align="center" cellpadding="5" width="100%">
-				<tr>
-					<td colspan="4"><h3>Referral Info</h3></td>
-				</tr>
-				<tr>
-					<td colspan="4" class="Instructions">Please provide the PayPal account of the person that referred you to TheVacationCalendar.com. They will receive $5 via PayPal after this account remains open beyond the initial free trial period. Please note that the referral PayPal account cannot be the same as the account used to activate this house. Additionally, please note that standard PayPal service charges will be applied to the the $5.</td>
-				</tr>
-				<tr>
-					<td class="TextItem">PayPal Account of Referrer:</td><td colspan="1"><input maxlength="40" type="text" name="ReferredBy"></input>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr align="center">
-		<td colspan="4">
-			<table border="0" class="FocusTable" align="center" cellpadding="5" width="100%">
-				<tr>
-					<td colspan="4"><h3>House Picture</h3></td>
-				</tr>
-				<tr>
-					<td class="TextItem">Add a picture of your vacation home:</td><td colspan="1"><!-- MAX_FILE_SIZE must precede the file input field -->
-				    <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input size="20" maxlength="2" type="file" name="HousePicture"></input>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
-<table border="0" align="center" width="55%">
-	<tr>
-		<td align="left" colspan="3">* Required Field</td>
-		<td align="right"><input type="submit" value="Next" onclick="return Validate(this.form);"></td>
-	</tr>
-	<tr>
-		<td colspan="4">&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="4">&nbsp;</td>
-	</tr>
-</table>
+<form class="form-signin" role="form" enctype="multipart/form-data" id="inForm" action="NewHouseTwo.php" method="post">
+		<h3>Create your Vacation House</h3>
+		<div class="form-group">
+		  <h4>House Details</h4>
+		</div>
+		<div class="form-group">
+		  <input type="text" placeholder="House Name*" class="form-control" name="HouseName">
+		</div>		
+		<div class="form-group">
+		  <input type="password" placeholder="Guest Password*" class="form-control" name="HousePass">
+		</div>	
+		<div class="form-group">
+		  <input type="password" placeholder="Guest Password (confirm)*" class="form-control" name="HouseConfirm">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Address Line 1" class="form-control" name="Address1">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Address Line 2" class="form-control" name="Address2">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="City" class="form-control" name="City">
+		</div>		
+		<div class="form-group">
+		  <input type="text" placeholder="State" class="form-control" name="State">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Zip Code" class="form-control" name="ZipCode">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Home Phone" class="form-control" name="HomePhone">
+		</div>	
+		<div class="form-group">
+		  <input type="text" placeholder="Fax" class="form-control" name="Fax">
+		</div>		
+		<div class="form-group">
+		  <input type="text" placeholder="Emergency Phone" class="form-control" name="EmergencyPhone">
+		</div>	
+		<div class="form-group">
+		  Referral Info
+		</div>	
+		<div class="form-group">
+		  Please provide the PayPal account of the person that referred you to TheVacationCalendar.com. They will receive $5 via PayPal after this account remains open beyond the initial free trial period. Please note that the referral PayPal account cannot be the same as the account used to activate this house. Additionally, please note that standard PayPal service charges will be applied to the the $5.
+		</div>	
+		<div class="form-group">
+		  <input maxlength="40" type="text" placeholder="PayPal Account of Referrer" class="form-control" name="ReferredBy">
+		</div>	
+		<div class="form-group">
+		  <h4>House Picture</h4>
+		</div>	
+		<div class="input-group">
+			<span class="input-group-btn">
+				<span class="btn btn-primary btn-file">
+					Browse&hellip; <input type="file" class="form-control" name="HousePicture">
+				</span>
+			</span>
+			<input type="text" class="form-control" readonly placeholder="Add a picture of your vacation home">
+			<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+		</div>
+		<div class="form-group">					
+		  <h4>* Required Field</h4>
+	    </div>				
+		<div class="form-group">					
+		  <button type="submit" name="Submit" class="btn btn-success" onclick="return Validate(this.form);">Next</button>
+	    </div>
 </form>
+
+</div>
+
+<script type="text/javascript">
+
+$(document).on('change', '.btn-file :file', function () {
+    var input = $(this), numFiles = input.get(0).files ? input.get(0).files.length : 1, label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [
+        numFiles,
+        label
+    ]);
+});
+$(document).ready(function () {
+    $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+        var input = $(this).parents('.input-group').find(':text'), log = numFiles > 1 ? numFiles + ' files selected' : label;
+        if (input.length) {
+            input.val(log);
+        } else {
+            if (log)
+                alert(log);
+        }
+    });
+});
+</script>
 
 <?php include("Footer.php") ?>
 
@@ -164,5 +180,6 @@ try {
 var pageTracker = _gat._getTracker("UA-7019638-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
+
 </body>
 </html>

@@ -1,5 +1,11 @@
 <?php
 
+function mysqli_result($res, $row, $field=0) { 
+    $res->data_seek($row); 
+    $datarow = $res->fetch_array(); 
+    return $datarow[$field]; 
+} 
+
 // A string used for md5 encryption.  You could move it to a file 
 // outside the web tree for more security.
 $supersecret_hash_padding = 'A string that is used to pad out short strings for md5 encryption.';
@@ -83,7 +89,7 @@ function user_login() {
 	// Don't need to addslashes because we'll be hashing it
 
 	$crypt_pwd = md5($password);
-	$query = "SELECT u.user_name, u.is_confirmed, u.role, u.user_id OwnerId, u.first_name, u.last_name, u.email, h.Status 
+	$query = "SELECT u.user_name, u.is_confirmed, u.role, u.user_id OwnerId, u.first_name, u.last_name, u.email, h.Status, h.HouseName 
 			  FROM user u, House h
 			  WHERE u.user_name = '$user_name'
 			  AND u.password = '$crypt_pwd'
@@ -95,32 +101,33 @@ function user_login() {
 //echo '<br/><br/>';			  
 
 			  
-	$result = mysql_query($query);
+	$result = mysqli_query( $GLOBALS['link'], $query);
 	if (!$result) 
 	{
-		ActivityLog('Error', curPageURL(), 'Select Login Info',  $query, mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select Login Info',  $query, mysqli_error($GLOBALS['link']));
 		$feedback = 'ERROR - Unable to log un';
 		return $feedback;
 	}	
-	elseif (mysql_num_rows($result) < 1)
+	elseif (mysqli_num_rows($result) < 1)
 	{
-		ActivityLog('Warn', curPageURL(), 'Select Login Info',  $query, mysql_error());
+		ActivityLog('Warn', curPageURL(), 'Select Login Info',  $query, mysqli_error($GLOBALS['link']));
 		$feedback = 'ERROR - User not found or password incorrect';
 		return $feedback;
 	} 
 	else 
 	{
-		if ((mysql_result($result, 0, 'is_confirmed') == '1') && (mysql_result($result, 0, 'Status') == 'A')) 
+		if ((mysqli_result($result, 0, 'is_confirmed') == '1') && (mysqli_result($result, 0, 'Status') == 'A')) 
 		{
-			$role = mysql_result($result, 0, 'role');
-			$OwnerId = mysql_result($result, 0, 'OwnerId');
-			$FirstName = mysql_result($result, 0, 'first_name');
-			$LastName = mysql_result($result, 0, 'last_name');	       
-			$Email = mysql_result($result, 0, 'email');	       	       
-			user_set_tokens($user_name, $role, $OwnerId, $FirstName, $LastName, $Email, $houseid);
+			$role = mysqli_result($result, 0, 'role');
+			$OwnerId = mysqli_result($result, 0, 'OwnerId');
+			$FirstName = mysqli_result($result, 0, 'first_name');
+			$LastName = mysqli_result($result, 0, 'last_name');	       
+			$Email = mysqli_result($result, 0, 'email');	
+			$HouseName = mysqli_result($result, 0, 'HouseName');			
+			user_set_tokens($user_name, $role, $OwnerId, $FirstName, $LastName, $Email, $houseid, $HouseName);
 			return 1;
 		} 
-		elseif (mysql_result($result, 0, 'Status') != 'A')
+		elseif (mysqli_result($result, 0, 'Status') != 'A')
 		{
 			$SelectedHouse =  $_POST['HousePick'][0];
 			$feedback = 'Subscription has not been set up through PayPal<br/><br/>To sign up, please click here:<br/><br/>
@@ -148,7 +155,7 @@ function user_logout() {
 }
 
 
-function user_set_tokens($user_name_in, $role_in, $ownerid_in, $FirstName, $LastName, $Email, $houseid) {
+function user_set_tokens($user_name_in, $role_in, $ownerid_in, $FirstName, $LastName, $Email, $houseid, $HouseName) {
   global $supersecret_hash_padding;
   if (!$user_name_in) {
     $feedback =  'ERROR - No username';
@@ -169,6 +176,7 @@ function user_set_tokens($user_name_in, $role_in, $ownerid_in, $FirstName, $Last
     $_SESSION['OwnerId'] = $ownerid_in;
     $_SESSION['user_name'] = $user_name;
     $_SESSION['HouseId'] = $houseid;
+    $_SESSION['HouseName'] = $HouseName;	
 	$_SESSION['id_hash'] = $id_hash;
 	$_SESSION['Role'] = $role_in;
 	$_SESSION['FirstName'] = $FirstName;

@@ -2,9 +2,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">		
 	<title>The Vacation Calendar</title>
-    <LINK href="BeachStyle.css" rel="stylesheet" type="text/css">
+	<link href="css/BeachStyle.css" rel="stylesheet" type="text/css" />	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+	<link href="css/lightbox.css" rel="stylesheet" />	
 </HEAD>
 <body onload="init();">
 
@@ -84,15 +99,15 @@ $GetHouseAdrQuery = "SELECT Address1, Address2, City, State, ZipCode, HomePhone,
 					WHERE HouseId = ".$_SESSION['HouseId'];
 
 
-$GetHouseAdrResult = mysql_query( $GetHouseAdrQuery );
+$GetHouseAdrResult = mysqli_query( $GLOBALS['link'],  $GetHouseAdrQuery );
 if (!$GetHouseAdrResult)
 {
-	ActivityLog('Error', curPageURL(), 'Select House Info for Admin Profile',  $GetHouseAdrQuery, mysql_error());
-	die ("Could not search the database for houses: <br />". mysql_error());
+	ActivityLog('Error', curPageURL(), 'Select House Info for Admin Profile',  $GetHouseAdrQuery, mysqli_error($GLOBALS['link']));
+	die ("Could not search the database for houses: <br />". mysqli_error($GLOBALS['link']));
 }
 else
 {
-	while ($GetHouseAdrRow = mysql_fetch_array($GetHouseAdrResult, MYSQL_ASSOC)) 
+	while ($GetHouseAdrRow = mysqli_fetch_array($GetHouseAdrResult, MYSQL_ASSOC)) 
 	{
 		$Address1 = $GetHouseAdrRow['Address1'];
 		$Address2 = $GetHouseAdrRow['Address2'];
@@ -115,10 +130,10 @@ if (isset($_POST['CalEmailList']))
 							Audit_Email = '".$_SESSION['Email']."' 
 						WHERE HouseId = ".$_SESSION['HouseId'];
 
-	if (!mysql_query( $UpdateCalEmailList ))
+	if (!mysqli_query( $GLOBALS['link'],  $UpdateCalEmailList ))
 	{
-		ActivityLog('Error', curPageURL(), 'Update Email List',  $UpdateCalEmailList, mysql_error());
-		die ("Could not update email list in the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Update Email List',  $UpdateCalEmailList, mysqli_error($GLOBALS['link']));
+		die ("Could not update email list in the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 }
 
@@ -132,10 +147,10 @@ if (isset($_POST['BlogEmailList']))
 							Audit_Email = '".$_SESSION['Email']."' 
 						WHERE HouseId = ".$_SESSION['HouseId'];
 
-	if (!mysql_query( $UpdateBlogEmailList ))
+	if (!mysqli_query( $GLOBALS['link'],  $UpdateBlogEmailList ))
 	{
-		ActivityLog('Error', curPageURL(), 'Update Email List',  $UpdateBlogEmailList, mysql_error());
-		die ("Could not update email list in the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Update Email List',  $UpdateBlogEmailList, mysqli_error($GLOBALS['link']));
+		die ("Could not update email list in the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 }
 
@@ -150,10 +165,10 @@ if (isset($_POST['AdminOwner']) && isset($_POST['ShowOldSave']))
 						WHERE user_id = ".$_SESSION['OwnerId']."
 						AND HouseId = ".$_SESSION['HouseId'];
 
-	if (!mysql_query( $UpdateOwnerAdmin ))
+	if (!mysqli_query( $GLOBALS['link'],  $UpdateOwnerAdmin ))
 	{
-		ActivityLog('Error', curPageURL(), 'Update Admin Info Y for Admin Profile',  $UpdateOwnerAdmin, mysql_error());
-		die ("Could not update OwnerAdmin in the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Update Admin Info Y for Admin Profile',  $UpdateOwnerAdmin, mysqli_error($GLOBALS['link']));
+		die ("Could not update OwnerAdmin in the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 	echo "<meta http-equiv=\"Refresh\" content=\"1; url=ManageProfile.php\"/>";
@@ -171,10 +186,10 @@ elseif (isset($_POST['SubmitAdminOwner']) && isset($_POST['ShowOldSave']))
 						WHERE user_id = ".$_SESSION['OwnerId']."
 						AND HouseId = ".$_SESSION['HouseId'];
 
-	if (!mysql_query( $UpdateOwnerAdmin ))
+	if (!mysqli_query( $GLOBALS['link'],  $UpdateOwnerAdmin ))
 	{
-		ActivityLog('Error', curPageURL(), 'Update Admin Info Y for Admin Profile',  $UpdateOwnerAdmin, mysql_error());
-		die ("Could not update OwnerAdmin in the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Update Admin Info Y for Admin Profile',  $UpdateOwnerAdmin, mysqli_error($GLOBALS['link']));
+		die ("Could not update OwnerAdmin in the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 	echo "<meta http-equiv=\"Refresh\" content=\"1; url=ManageProfile.php\"/>";
@@ -192,10 +207,10 @@ elseif (isset($_POST['AdminOwner']) && isset($_POST['SubmitAdminOwner']))
 						WHERE user_id = ".$_SESSION['OwnerId']."
 						AND HouseId = ".$_SESSION['HouseId'];
 
-	if (!mysql_query( $UpdateOwnerAdmin ))
+	if (!mysqli_query( $GLOBALS['link'],  $UpdateOwnerAdmin ))
 	{
-		ActivityLog('Error', curPageURL(), 'Update Admin Info Y for Admin Profile',  $UpdateOwnerAdmin, mysql_error());
-		die ("Could not update OwnerAdmin in the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Update Admin Info Y for Admin Profile',  $UpdateOwnerAdmin, mysqli_error($GLOBALS['link']));
+		die ("Could not update OwnerAdmin in the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 	echo "<meta http-equiv=\"Refresh\" content=\"1; url=ManageProfile.php\"/>";
@@ -213,10 +228,10 @@ elseif (isset($_POST['SubmitAdminOwner']))
 						WHERE user_id = ".$_SESSION['OwnerId']."
 						AND HouseId = ".$_SESSION['HouseId'];
 
-	if (!mysql_query( $UpdateOwnerAdmin ))
+	if (!mysqli_query( $GLOBALS['link'],  $UpdateOwnerAdmin ))
 	{
-		ActivityLog('Error', curPageURL(), 'Update Admin Info N for Admin Profile',  $UpdateOwnerAdmin, mysql_error());
-		die ("Could not update OwnerAdmin in the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Update Admin Info N for Admin Profile',  $UpdateOwnerAdmin, mysqli_error($GLOBALS['link']));
+		die ("Could not update OwnerAdmin in the database: <br />". mysqli_error($GLOBALS['link']));
 	}
 
 	echo "<meta http-equiv=\"Refresh\" content=\"1; url=ManageProfile.php\"/>";
@@ -227,14 +242,14 @@ elseif (isset($_POST['SubmitAdminOwner']))
 if (isset($_POST['Address1']) || isset($_POST['Address2']) || isset($_POST['City']) || isset($_POST['ZipCode']) || isset($_POST['State']) || isset($_POST['HomePhone']) || isset($_POST['Fax']) || isset($_POST['EmergencyPhone'])) 
 {
 		$UpdateHouseQuery = "UPDATE House 
-							Set Address1 = '".mysql_real_escape_string($_POST['Address1'])."',
-								Address2 = '".mysql_real_escape_string($_POST['Address2'])."', 
-								City = '".mysql_real_escape_string($_POST['City'])."',
-								State = '".mysql_real_escape_string($_POST['State'])."',
-								ZipCode = '".mysql_real_escape_string($_POST['ZipCode'])."',
-								HomePhone = '".mysql_real_escape_string($_POST['HomePhone'])."',
-								Fax = '".mysql_real_escape_string($_POST['Fax'])."',
-								EmergencyPhone = '".mysql_real_escape_string($_POST['EmergencyPhone'])."',
+							Set Address1 = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Address1'])."',
+								Address2 = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Address2'])."', 
+								City = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['City'])."',
+								State = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['State'])."',
+								ZipCode = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['ZipCode'])."',
+								HomePhone = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['HomePhone'])."',
+								Fax = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['Fax'])."',
+								EmergencyPhone = '".mysqli_real_escape_string($GLOBALS['link'], $_POST['EmergencyPhone'])."',
 								Audit_user_name = '".$_SESSION['user_name']."',
 								Audit_Role = '".$_SESSION['Role']."',
 								Audit_FirstName = '".$_SESSION['FirstName']."',
@@ -242,10 +257,10 @@ if (isset($_POST['Address1']) || isset($_POST['Address2']) || isset($_POST['City
 								Audit_Email = '".$_SESSION['Email']."' 
 							WHERE HouseId = ".$_SESSION['HouseId'];
 
-		if (!mysql_query( $UpdateHouseQuery ))
+		if (!mysqli_query( $GLOBALS['link'],  $UpdateHouseQuery ))
 		{
-			ActivityLog('Error', curPageURL(), 'Update House Info for Admin Profile',  $UpdateHouseQuery, mysql_error());
-			die ("Could not update new house info 1 into the database: <br />". mysql_error());
+			ActivityLog('Error', curPageURL(), 'Update House Info for Admin Profile',  $UpdateHouseQuery, mysqli_error($GLOBALS['link']));
+			die ("Could not update new house info 1 into the database: <br />". mysqli_error($GLOBALS['link']));
 		}
 		echo "<meta http-equiv=\"Refresh\" content=\"1; url=ManageProfile.php\"/>";
 		echo "Congrats you have updated the house address";
@@ -288,6 +303,7 @@ if (isset($_FILES['HousePicture']))
 		$height = ImageSy($WorkingPicture);
 		$Ratio = $height/$width;
 
+
 		$IconCompress = 100;
 		
 		//
@@ -295,7 +311,7 @@ if (isset($_FILES['HousePicture']))
 		//
 		
 		// Creating the Icon Canvas
-		$NewHeight = 120;
+		$NewHeight = 300;
 		$NewWidth = $NewHeight/$Ratio;
 		
 		$IconPicture = imagecreatetruecolor($NewWidth, $NewHeight);
@@ -317,18 +333,10 @@ if (isset($_FILES['HousePicture']))
 }
 ?>
 
-
-
+<div class="container vacation">	
+  <h2 class="featurette-heading">Manage <?php echo $_SESSION['Role']; ?> Account</h2>
+  <div style="text-align:left">
 <table border="0" align="center" width="100%">
-	<tr valign="bottom" align="center">
-		<td colspan="2" height="45">
-			<table cellpadding="0" cellspacing="0" width="95%">
-				<tr>
-					<td class="Heading">Manage <?php echo $_SESSION['Role']; ?> Account</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
 	<tr align="center">
 		<td colspan="4">
 			<table border="0" class="FocusTable" align="center" width="70%" cellpadding="5">
@@ -468,7 +476,7 @@ $reg_str = <<< EOREGSTR
 						Send email when calendar changes (separate multiple by comma,<br />leave blank for no notification):
 					</td>
 					<TD CLASS=TextItem>
-						<textarea cols="30" rows="2" name="CalEmailList">$CalEmailList</textarea>
+						<textarea class="form-control" cols="30" rows="2" name="CalEmailList">$CalEmailList</textarea>
 					</td>
 				</tr>
 			</table>
@@ -493,7 +501,7 @@ $reg_str = <<< EOREGSTR
 						Send email when new blog items are added (separate multiple by comma,<br />leave blank for no notification):
 					</td>
 					<TD CLASS=TextItem>
-						<textarea cols="30" rows="2" name="BlogEmailList">$BlogEmailList</textarea>
+						<textarea class="form-control" cols="30" rows="2" name="BlogEmailList">$BlogEmailList</textarea>
 					</td>
 				</tr>
 
@@ -507,8 +515,8 @@ EOREGSTR;
 					<TD CLASS=TextItem>
 						
 					</td>
-					<TD CLASS=TextItem>
-						<input type="submit" value="Update" name="SubmitAdminOwner">
+					<TD CLASS=TextItem><br/>
+						<input class="btn btn-success" type="submit" value="Update" name="SubmitAdminOwner">
 					</td>
 				</tr>
 
@@ -613,13 +621,13 @@ $reg_str = <<< EOREGSTR
 							</tr>
 							<TR ALIGN=CENTER>
 								<TD CLASS=TextItem>
-										<input maxlength="40" type="text" name="HousePass"></input>
+										<input class="form-control" maxlength="40" type="text" name="HousePass"></input>
 								</td>
 								<TD CLASS=TextItem>
-										<input maxlength="40" type="text" name="HouseConfirm"></input>
+										<input class="form-control" maxlength="40" type="text" name="HouseConfirm"></input>
 								</td>
 								<TD CLASS=TextItem>
-									<input type="submit" value="Set Password" onclick="return Validate(this.form);">
+									<input class="btn btn-success" type="submit" value="Set Password" onclick="return Validate(this.form);">
 								</td>
 							</tr>
 						</TABLE>
@@ -630,7 +638,7 @@ $reg_str = <<< EOREGSTR
 	</tr>
 </table>
 </form>
-<form enctype="multipart/form-data" id="inForm" action="ManageProfile.php" method="post">
+<form enctype="multipart/form-data" id="inForm" action="ManageProfile.php" method="post"  class="form-signin" role="form">
 <table border="0" align="center" width="100%">
 	<tr valign="bottom" align="center" height="45">
 		<td colspan="2">
@@ -652,26 +660,23 @@ $reg_str = <<< EOREGSTR
 			</table>
 		</td>
 	</tr>
-	<tr align="center">
-		<td colspan="4">
-			<table border="0" class="FocusTable" align="center" width="50%" cellpadding="5">
-				<TR ALIGN=CENTER>
-					<TD CLASS=TextItem COLSPAN=2>
-
-					</td>
-				</tr>
-				<TR ALIGN=CENTER>
-					<TD CLASS=TextItem>
-						Add a picture:
-					</td>
-					<TD CLASS=TextItem>
-					    <input type="hidden" name="MAX_FILE_SIZE" value="30000000" /><input size="20" maxlength="2" type="file" name="HousePicture"></input>&nbsp;&nbsp;&nbsp;<input type="submit" value="Update Picture">
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
 </table>
+<div>
+<div class="input-group">
+	<span class="input-group-btn">
+		<span class="btn btn-primary btn-file">
+			Browse&hellip; <input type="file" class="form-control" name="HousePicture">
+		</span>
+	</span>
+	<input type="text" class="form-control" readonly placeholder="Add a picture of your vacation home">
+	<input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+
+</div>	
+<div class="input-group">
+	<br/>		
+	<input class="btn btn-success" type="submit" value="Update Picture">	
+</div>		
+</div>
 </form>
 <form enctype="multipart/form-data" id="inForm" action="ManageProfile.php" method="post">
 	<tr valign="bottom" align="center" height="45">
@@ -703,29 +708,32 @@ $reg_str = <<< EOREGSTR
 					</td>
 				</tr>
 				<tr>
-					<td class="TextItem">Address Line 1:</td><td colspan="1"><input maxlength="40" type="text" name="Address1" value="$Address1"></input>
+					<td class="TextItem">Address Line 1:</td><td colspan="1"><input class="form-control" maxlength="40" type="text" name="Address1" value="$Address1"></input></td>
 				</tr>
 				<tr>
-					<td class="TextItem">Address Line 2:</td><td colspan="1"><input maxlength="40" type="text" name="Address2" value="$Address2"></input>
+					<td class="TextItem">Address Line 2:</td><td colspan="1"><input class="form-control" maxlength="40" type="text" name="Address2" value="$Address2"></input></td>
 				</tr>
 				<tr>
-					<td class="TextItem">City:</td><td colspan="1"><input maxlength="40" type="text" name="City" value="$City"></input>
+					<td class="TextItem">City:</td><td colspan="1"><input class="form-control" maxlength="40" type="text" name="City" value="$City"></input></td>
 				</tr>
 				<tr>
-					<td class="TextItem">State:</td><td colspan="1"><input size="2" maxlength="2" type="text" name="State" value="$State"></input>
+					<td class="TextItem">State:</td><td colspan="1"><input class="form-control" size="2" maxlength="2" type="text" name="State" value="$State"></input></td>
 				</tr>
 				<tr>
-					<td class="TextItem">Zip Code:</td><td colspan="1"><input size="5" maxlength="5" type="text" name="ZipCode" value="$ZipCode"></input>
+					<td class="TextItem">Zip Code:</td><td colspan="1"><input class="form-control" size="5" maxlength="5" type="text" name="ZipCode" value="$ZipCode"></input></td>
 				</tr>
 				<tr>
-					<td class="TextItem">Home Phone:</td><td colspan="1"><input size="12" maxlength="12" type="text" name="HomePhone" value="$HomePhone"></input>
+					<td class="TextItem">Home Phone:</td><td colspan="1"><input class="form-control" size="12" maxlength="12" type="text" name="HomePhone" value="$HomePhone"></input></td>
 				</tr>
 				<tr>
-					<td class="TextItem">Fax:</td><td colspan="1"><input size="12" maxlength="12" type="text" name="Fax" value="$Fax"></input>
+					<td class="TextItem">Fax:</td><td colspan="1"><input class="form-control" size="12" maxlength="12" type="text" name="Fax" value="$Fax"></input></td>
 				</tr>
 				<tr>
-					<td class="TextItem">Emergency Phone:</td><td colspan="1"><input size="12" maxlength="12" type="text" name="EmergencyPhone" value="$EmergencyPhone"></input>&nbsp;&nbsp;&nbsp;<input type="submit" value="Update Address">
+					<td class="TextItem">Emergency Phone:</td><td colspan="1"><input class="form-control" size="12" maxlength="12" type="text" name="EmergencyPhone" value="$EmergencyPhone"></td>					</input>&nbsp;&nbsp;&nbsp;
 				</tr>
+				<tr>
+					<td class="TextItem">&nbsp;</td><td colspan="1"><br/><input class="btn btn-success"type="submit" value="Update Address"></td>
+				</tr>				
 			</table>
 		</td>
 	
@@ -750,6 +758,32 @@ echo "You are not logged in or do not have access to this site. <a href=\"index.
 
 }
 ?>
+
+</div>
+</div>
+
+<script type="text/javascript">
+
+$(document).on('change', '.btn-file :file', function () {
+    var input = $(this), numFiles = input.get(0).files ? input.get(0).files.length : 1, label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    input.trigger('fileselect', [
+        numFiles,
+        label
+    ]);
+});
+$(document).ready(function () {
+    $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+        var input = $(this).parents('.input-group').find(':text'), log = numFiles > 1 ? numFiles + ' files selected' : label;
+        if (input.length) {
+            input.val(log);
+        } else {
+            if (log)
+                alert(log);
+        }
+    });
+});
+</script>
+
 
 </body>
 </html>

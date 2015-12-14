@@ -1,7 +1,7 @@
 <?php
 	
 
-function GetBlog(&$BlogResult, $GetType, $BlogType)
+function GetBlog($GetType, $BlogType)
 {
 	// GetType = 0 will return all of the main blogs
 	// GetType = Integer will return the blog with that ID
@@ -33,25 +33,27 @@ function GetBlog(&$BlogResult, $GetType, $BlogType)
 					ORDER BY BlogDate";
 	}
 
-	$BlogResult = mysql_query( $BlogQuery );
+	$BlogResult = mysqli_query( $GLOBALS['link'],  $BlogQuery );
 
 	if (!$BlogResult)
 	{
-		ActivityLog('Error', curPageURL(), 'Select blog query',  $BlogQuery, mysql_error());
-		die ("Could not query the database: <br />". mysql_error());
+		ActivityLog('Error', curPageURL(), 'Select blog query',  $BlogQuery, mysqli_error($GLOBALS['link']));
+		die ("Could not query the database: <br />". mysqli_error($GLOBALS['link']));
 	}
+	
+	return $BlogResult;
 }
 
 
 
-function DisplayBlog(&$BlogResult, $BlogType)
+function DisplayBlog($BlogResult, $BlogType)
 {
 	
 	// BlogType = B means display a blog
 	// BlogType = C means display a comment
 
 	$Counter = 1;
-	while ( $BlogRow =  mysql_fetch_assoc($BlogResult)) 
+	while ( $BlogRow =  mysqli_fetch_assoc($BlogResult)) 
 	{
 		if ($BlogType == 'B')
 		{
